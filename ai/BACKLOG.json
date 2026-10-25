@@ -1,0 +1,10 @@
+[
+ {"id": "secretslider-auto", "title": "Генерация в secretslider через браузер-агента (Claude in Chrome): режим «Слайды с 1 персонажем», загрузка ава.png, вставка prompts_lines.txt, скачивание ZIP", "why": "сейчас человек вставляет руками", "done": false, "notes": "лимит 500 промтов на раз; тратит кредиты человека — только по его просьбе"},
+ {"id": "hf-clips", "title": "Авто-HyperFrames-вставки: 3–6 авторских анимаций на видео (кульминации разделов) → <проект>/clips/*.mp4 + edit_extra.json", "why": "изюминка, не одинаковые шаблоны", "done": false, "notes": "docs/MONTAGE.md §4"},
+ {"id": "thumbnail", "title": "Обложка: 3 варианта превью (стиль ава/обложка.png) + заголовок/описание/теги/главы в out/publish.md", "why": "публикация без ручной работы", "done": false, "notes": ""},
+ {"id": "theme-per-video", "title": "Своя визуальная тема на видео (палитра, объект-подпись, переход) по топику — как gray-car «сделай круто»", "why": "все видео не должны выглядеть одинаково", "done": false, "notes": "edit.md уже просит theme; расширить до caption_style/transition"},
+ {"id": "dup-check", "title": "Проверка темы на дубль с вышедшими видео канала перед сценарием", "why": "02 повторило вышедшее видео", "done": false, "notes": "yt_data.json own.videos"},
+ {"id": "cover-clothes", "title": "Авто-проверка кадров на открытую одежду/детальные глаза (vision-модель) и перегенерация", "why": "религиозное правило", "done": false, "notes": ""},
+ {"id": "cloud", "title": "Облако: анализ по расписанию (scheduled agent) → topics.json через git", "why": "мечта владельца: всё в облаке", "done": false, "notes": "озвучка/рендер остаются на ПК"},
+ {"id": "music-free-sfx", "title": "Больше своих SFX под темы (engine/gen_sfx.py)", "why": "звук понравился в gray-car", "done": false, "notes": "без музыки — её добавляет человек"}
+]

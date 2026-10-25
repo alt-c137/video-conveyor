@@ -1,0 +1,32 @@
+{
+ "name": "Logic of the Psyche",
+ "url": "https://www.youtube.com/@badass05",
+ "language": "English",
+ "niche": "Cognitive biases and how thinking works. Promise of the channel: no fluff, structured, practical.",
+ "audience": "18-35, self-improvement. Their pain: 'why do I get in my own way'.",
+ "format": "One bias per video. Bias -> how it breaks your life -> what to do. Every video ends with a practical exit.",
+ "honesty": "Facts only if verifiable. Disputed science gets ONE honest hedge (possibly / likely / we don't know for sure), then speak confidently. Scientific honesty is the channel's edge over competitors.",
+ "voice": "Then Life 2",
+ "minutes": [
+  13,
+  16
+ ],
+ "competitors": [],
+ "character": "the host",
+ "character_w": "a young woman in a long beige coat and a light headscarf",
+ "notes": "Cross-link related videos (IKEA effect <-> sunk cost).",
+ "wpm": 178,
+ "style_ref": "E:/Adobe/Канал 5/Референсы и стиль/ава.png",
+ "image_source": "secretslider.com: режим «Слайды с 1 персонажем», Персонаж/объект = style_ref (ава.png), промты из prompts_lines.txt. Или Flow Batch Multi (галочка «Конвейер»).",
+ "search": [
+  "cognitive bias explained",
+  "why your brain lies to you",
+  "psychology of self sabotage",
+  "thinking errors psychology",
+  "decision making psychology"
+ ],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
+}

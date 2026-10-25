@@ -1,0 +1,13 @@
+# секреты и локальные пути
+config.json
+*.key
+.env
+# тяжёлое и генерируемое
+projects/
+engine/node_modules
+engine/test/out/
+engine/test/public/
+zips_seen.json
+__pycache__/
+*.pyc
+stages/

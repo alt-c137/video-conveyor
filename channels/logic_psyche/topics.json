@@ -1,0 +1,20 @@
+{
+ "source": "analysis 2026-10-14 (chat), confirmed by user 2026-10-25",
+ "topics": [
+  {"n": 1, "title": "Why You Can't Quit Things That Are Ruining You", "safe_title": "The Sunk Cost Fallacy Explained",
+   "angle": "Sunk cost fallacy: why we hold on to bad studies, a bad job or a failing project because of what we already invested; practical way out of the trap at the end.",
+   "hedge": "", "demand": "proven", "difficulty": "low"},
+  {"n": 2, "title": "Nobody Is Actually Watching You", "safe_title": "The Spotlight Effect: Why We Feel Watched",
+   "angle": "Spotlight effect: shame and anxiety because 'everyone will notice'. Classic embarrassing T-shirt experiment (Gilovich, Medvec & Savitsky, 2000). How to lower social anxiety.",
+   "hedge": "", "demand": "proven", "difficulty": "low"},
+  {"n": 3, "title": "Why Smart People Believe Wrong Things", "safe_title": "Confirmation Bias: How Your Brain Lies to You",
+   "angle": "Confirmation bias: the brain looks for evidence for what it already thinks; why intelligence does not protect you (motivated reasoning); how to test yourself.",
+   "hedge": "", "demand": "proven", "difficulty": "medium"},
+  {"n": 4, "title": "Why the Least Skilled Are the Most Confident", "safe_title": "The Dunning-Kruger Effect, Honestly Explained",
+   "angle": "Dunning-Kruger effect with an honest breakdown of the criticism: part of the effect may be a statistical artifact (regression to the mean, better-than-average effect). Myth or not.",
+   "hedge": "Part of the effect may be a statistical artifact.", "demand": "proven + white space", "difficulty": "medium"},
+  {"n": 5, "title": "Your Brain Is Making Worse Decisions Right Now", "safe_title": "Decision Fatigue: Why Your Choices Get Worse",
+   "angle": "Decision fatigue: why we make more mistakes in the evening. Ending: how to simplify daily decisions.",
+   "hedge": "The 'ego depletion' / willpower-as-fuel theory replicates poorly.", "demand": "proven", "difficulty": "medium"}
+ ]
+}

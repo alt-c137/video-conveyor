@@ -1,0 +1,79 @@
+{
+ "_help": "Настройки конвейера. Ключи API вписывай сюда (или в панели). Какой ИИ на каком этапе — раздел stages.",
+ "llm": {
+  "providers": {
+   "claude": {
+    "type": "claude_cli",
+    "model": "opus",
+    "_note": "Claude Code с этого ПК (подписка), ключ не нужен"
+   },
+   "deepseek": {
+    "type": "openai",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "api_key": ""
+   },
+   "glm": {
+    "type": "openai",
+    "base_url": "https://api.z.ai/api/paas/v4",
+    "model": "glm-4.6",
+    "api_key": ""
+   },
+   "openai": {
+    "type": "openai",
+    "base_url": "https://api.openai.com/v1",
+    "model": "gpt-5",
+    "api_key": ""
+   },
+   "kimi": {
+    "type": "openai",
+    "base_url": "https://api.moonshot.ai/v1",
+    "model": "kimi-k2-0905-preview",
+    "api_key": ""
+   },
+   "qwen": {
+    "type": "openai",
+    "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen-max",
+    "api_key": ""
+   }
+  },
+  "stages": {
+   "analyze": "claude",
+   "script": "claude",
+   "check": "claude",
+   "scenes": "claude",
+   "edit": "claude"
+  }
+ },
+ "fish": {
+  "config": "E:/Adobe/Kanal 2/audio fish/fish_config.json",
+  "model": "s2.1-pro",
+  "speed": 1.0,
+  "temperature": 0.75,
+  "top_p": 0.7,
+  "repetition_penalty": 1.2,
+  "chunk_chars": 1800
+ },
+ "whisper": {
+  "exe": "E:/Adobe/Канал/виспер/.venv/Scripts/whisper.exe",
+  "model": "turbo"
+ },
+ "upscayl": {
+  "exe": "E:/Adobe/Upscayl/resources/bin/upscayl-bin.exe",
+  "models": "E:/Adobe/Upscayl/resources/models",
+  "model": "digital-art-4x",
+  "scale": 2
+ },
+ "flow": {
+  "downloads": "C:/Users/Shoha/Downloads",
+  "bridge_port": 8765
+ },
+ "shots_per_10min": 220,
+ "code_scene_every_sec": 18,
+ "voice_gain_db": 4.8,
+ "images": {
+  "source": "auto",
+  "_help": "auto = Flow-расширение (галочка «Конвейер») ИЛИ любой ZIP/папка с кадрами 1..N в Загрузках (secretslider и др.)"
+ }
+}

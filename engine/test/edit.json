@@ -1,0 +1,401 @@
+{
+ "fps": 30,
+ "duration": 195.0,
+ "title": "Test",
+ "channel": "Logic of the Psyche",
+ "voice": "voice.mp3",
+ "theme": {
+  "paper": "#EFEAE0",
+  "ink": "#24272C",
+  "a1": "#2F6F6B",
+  "a2": "#D39B45",
+  "a3": "#B8C9C1",
+  "dark": "#1E2124"
+ },
+ "shots": [],
+ "captions": [
+  {
+   "start": 0.2,
+   "end": 0.95,
+   "text": "Sunk Cost Fallacy",
+   "words": [],
+   "kind": "title"
+  }
+ ],
+ "sections": [
+  {
+   "n": 1,
+   "start": 0,
+   "title": "Hook"
+  },
+  {
+   "n": 2,
+   "start": 9,
+   "title": "The trap"
+  },
+  {
+   "n": 3,
+   "start": 100,
+   "title": "Exit"
+  }
+ ],
+ "scenes": [
+  {
+   "type": "title_card",
+   "start": 1.0,
+   "end": 8.0,
+   "props": {
+    "n": 2,
+    "title": "Why We Hold On"
+   },
+   "cues": []
+  },
+  {
+   "type": "question",
+   "start": 9.0,
+   "end": 16.0,
+   "props": {
+    "text": "Why do you keep going when you know it is wrong?"
+   },
+   "cues": []
+  },
+  {
+   "type": "quote",
+   "start": 17.0,
+   "end": 24.0,
+   "props": {
+    "text": "The money is gone either way. The only question is what you do next.",
+    "highlight": "next"
+   },
+   "cues": []
+  },
+  {
+   "type": "words",
+   "start": 25.0,
+   "end": 32.0,
+   "props": {
+    "words": [
+     "Stop",
+     "Counting",
+     "Losses"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "big_number",
+   "start": 33.0,
+   "end": 40.0,
+   "props": {
+    "value": 72,
+    "suffix": "%",
+    "label": "kept watching a movie they hated"
+   },
+   "cues": []
+  },
+  {
+   "type": "list",
+   "start": 41.0,
+   "end": 48.0,
+   "props": {
+    "title": "The 3-question exit",
+    "items": [
+     "Would I start this today?",
+     "What does staying cost me?",
+     "What would I tell a friend?"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "recap",
+   "start": 49.0,
+   "end": 56.0,
+   "props": {
+    "title": "Remember",
+    "items": [
+     "Past costs are gone",
+     "Decide for the future",
+     "Quitting is a skill"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "myth_fact",
+   "start": 57.0,
+   "end": 64.0,
+   "props": {
+    "myth": "Quitting means you are weak",
+    "fact": "Quitting a bad path frees time for a good one"
+   },
+   "cues": []
+  },
+  {
+   "type": "study",
+   "start": 65.0,
+   "end": 72.0,
+   "props": {
+    "who": "Arkes & Blumer",
+    "year": "1985",
+    "setup": "People bought two ski trips for the same weekend",
+    "finding": "Most chose the pricier trip, even though they liked the other one more"
+   },
+   "cues": []
+  },
+  {
+   "type": "split",
+   "start": 73.0,
+   "end": 80.0,
+   "props": {
+    "left": {
+     "title": "What you think",
+     "items": [
+      "I already invested 3 years",
+      "Leaving wastes it all"
+     ]
+    },
+    "right": {
+     "title": "Reality",
+     "items": [
+      "Those years are spent",
+      "Staying costs more years"
+     ]
+    }
+   },
+   "cues": []
+  },
+  {
+   "type": "cards",
+   "start": 81.0,
+   "end": 88.0,
+   "props": {
+    "title": "Where it hides",
+    "cards": [
+     {
+      "icon": "\ud83d\udcda",
+      "title": "Studies",
+      "text": "wrong major"
+     },
+     {
+      "icon": "\ud83d\udcbc",
+      "title": "Work",
+      "text": "dead-end job"
+     },
+     {
+      "icon": "\ud83d\udcc8",
+      "title": "Projects",
+      "text": "failing idea"
+     }
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "bars",
+   "start": 89.0,
+   "end": 96.0,
+   "props": {
+    "title": "Money already spent",
+    "unit": "$",
+    "items": [
+     {
+      "label": "Ticket A",
+      "value": 100
+     },
+     {
+      "label": "Ticket B",
+      "value": 50,
+      "highlight": true
+     }
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "dots",
+   "start": 97.0,
+   "end": 104.0,
+   "props": {
+    "title": "Out of 100 people",
+    "total": 100,
+    "highlight": 54,
+    "caption": "54 chose the worse option"
+   },
+   "cues": []
+  },
+  {
+   "type": "scale",
+   "start": 105.0,
+   "end": 112.0,
+   "props": {
+    "title": "What really matters",
+    "left": "Future gain",
+    "right": "Past cost",
+    "heavier": "left"
+   },
+   "cues": []
+  },
+  {
+   "type": "iceberg",
+   "start": 113.0,
+   "end": 120.0,
+   "props": {
+    "top": "I can't quit",
+    "below": [
+     "Fear of waste",
+     "Pride",
+     "What others think"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "meter",
+   "start": 121.0,
+   "end": 128.0,
+   "props": {
+    "label": "Commitment",
+    "value": 90,
+    "from": 20,
+    "low": "LOW",
+    "high": "HIGH"
+   },
+   "cues": []
+  },
+  {
+   "type": "curve",
+   "start": 129.0,
+   "end": 136.0,
+   "props": {
+    "title": "Confidence vs skill",
+    "kind": "dk",
+    "x_label": "Skill",
+    "y_label": "Confidence",
+    "labels": [
+     {
+      "x": 0.13,
+      "text": "Peak of confidence"
+     },
+     {
+      "x": 0.45,
+      "text": "Valley"
+     },
+     {
+      "x": 0.9,
+      "text": "Real skill"
+     }
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "steps",
+   "start": 137.0,
+   "end": 144.0,
+   "props": {
+    "title": "The trap",
+    "steps": [
+     "Invest",
+     "It goes badly",
+     "Invest more",
+     "Can't leave"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "loop",
+   "start": 145.0,
+   "end": 152.0,
+   "props": {
+    "title": "The cycle",
+    "center": "Sunk cost",
+    "items": [
+     "Invest",
+     "Doubt",
+     "Justify",
+     "Invest more"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "battery",
+   "start": 153.0,
+   "end": 160.0,
+   "props": {
+    "label": "Willpower through the day",
+    "from": 100,
+    "to": 12,
+    "marks": [
+     "Morning",
+     "Noon",
+     "Evening"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "clock",
+   "start": 161.0,
+   "end": 168.0,
+   "props": {
+    "label": "A day of decisions",
+    "from": 8,
+    "to": 22,
+    "events": [
+     "What to wear",
+     "Emails",
+     "What to eat",
+     "Big decision"
+    ]
+   },
+   "cues": []
+  },
+  {
+   "type": "spotlight",
+   "start": 169.0,
+   "end": 176.0,
+   "props": {
+    "before": "Everyone is looking at me",
+    "after": "Nobody is looking"
+   },
+   "cues": []
+  },
+  {
+   "type": "thought",
+   "start": 177.0,
+   "end": 184.0,
+   "props": {
+    "expression": "sad",
+    "pose": "drop",
+    "thought": "But I already spent so much...",
+    "label": "The trap talks"
+   },
+   "cues": []
+  },
+  {
+   "type": "pile",
+   "start": 185.0,
+   "end": 192.0,
+   "props": {
+    "title": "Everything you invested",
+    "icons": [
+     "\u23f3",
+     "\ud83d\udcb5",
+     "\ud83d\udcda"
+    ],
+    "count": 28,
+    "caption": "It's already spent"
+   },
+   "cues": []
+  }
+ ],
+ "sfx": [],
+ "cta": {
+  "intro": 0,
+  "outro": 0
+ },
+ "endSeconds": 5
+}
