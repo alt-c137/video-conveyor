@@ -4,7 +4,7 @@
 Каждый этап читает и пишет файлы в этой папке, поэтому любой этап можно
 перезапустить отдельно, а работу может подхватить другой ИИ.
 """
-import json, os, re, subprocess, sys, time, datetime, shutil
+import json, os, re, subprocess, sys, threading, time, datetime, shutil
 import requests
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -32,9 +32,15 @@ def rj(path, default=None):
 
 def wj(path, data):
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    tmp = path + ".tmp"
+    tmp = f"{path}.{os.getpid()}.{threading.get_ident()}.tmp"  # свой tmp у каждого процесса/потока
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
+    for i in range(20):  # Windows: файл могут держать открытым другие процессы конвейера — ждём
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:
+            time.sleep(0.1 + 0.05 * i)
     os.replace(tmp, path)
 
 
