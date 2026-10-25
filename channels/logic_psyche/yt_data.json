@@ -1,0 +1,805 @@
+{
+ "own": {
+  "channel": "Logic of the Psyche",
+  "subscribers": 6,
+  "median_views": 128,
+  "videos": [
+   {
+    "title": "The Brain's Biggest Lie: Why You Feel Like You've Mastered It",
+    "views": 1,
+    "duration_min": 11.2,
+    "id": "qqT0zLqaYkc",
+    "x": 0.0
+   },
+   {
+    "title": "Why You Think Everyone Is Looking At You (And Why They Aren't)",
+    "views": 515,
+    "duration_min": 7.6,
+    "id": "wv6kseBzctk",
+    "x": 4.0
+   },
+   {
+    "title": "Why the Harder You Want It, the Less You Get (6 Laws of Detachment)",
+    "views": 128,
+    "duration_min": 12.2,
+    "id": "mDZBzHhOqpI",
+    "x": 1.0
+   }
+  ]
+ },
+ "search: cognitive bias explained": {
+  "channel": "YouTube search",
+  "videos": [
+   {
+    "title": "Introduction to Cognitive Bias: Crash Course Scientific Thinking #1 [CrashCourse]",
+    "views": 1226060,
+    "duration_min": 11.8,
+    "x": null
+   },
+   {
+    "title": "12 Cognitive Biases Explained - How to Think Better and More Logically Removing Bias [Practical Psychology]",
+    "views": 2838502,
+    "duration_min": 10.1,
+    "x": null
+   },
+   {
+    "title": "What is Cognitive Bias? (Explained Simply) [Mind & Madness]",
+    "views": 1085,
+    "duration_min": 2.2,
+    "x": null
+   },
+   {
+    "title": "IB Psychology - Learning and Cognition - Cognitive Biases [IB Psych Resource Studio]",
+    "views": 486,
+    "duration_min": 7.6,
+    "x": null
+   },
+   {
+    "title": "The Most Common Cognitive Bias [Veritasium]",
+    "views": 17417419,
+    "duration_min": 4.7,
+    "x": null
+   },
+   {
+    "title": "Cognitive Bias, Why You’re Rightfully Wrong | Yaqine Saada | TEDxClearLakeHighSchool [TEDx Talks]",
+    "views": 23139,
+    "duration_min": 14.2,
+    "x": null
+   },
+   {
+    "title": "Cognitive Bias | Ethics Defined [McCombs School of Business]",
+    "views": 90490,
+    "duration_min": 2.2,
+    "x": null
+   },
+   {
+    "title": "Every Cognitive Bias Explained in 10 Minutes [Explained-4-You]",
+    "views": 48128,
+    "duration_min": 9.8,
+    "x": null
+   },
+   {
+    "title": "What is a cognitive bias? Learn it in less than 3 minutes [School of Thinking - English]",
+    "views": 1309,
+    "duration_min": 2.8,
+    "x": null
+   },
+   {
+    "title": "The psychology behind irrational decisions - Sara Garofalo [TED-Ed]",
+    "views": 2443932,
+    "duration_min": 4.7,
+    "x": null
+   },
+   {
+    "title": "Introduction to Cognitive Bias: Crash Course [The Mindset Mentor Podcast]",
+    "views": 8409,
+    "duration_min": 17.0,
+    "x": null
+   },
+   {
+    "title": "12 Cognitive Biases Explained In 5 Minutes [In Search of Self]",
+    "views": 10222,
+    "duration_min": 5.0,
+    "x": null
+   },
+   {
+    "title": "CRITICAL THINKING - Cognitive Biases: Anchoring [HD] [Wireless Philosophy]",
+    "views": 398024,
+    "duration_min": 4.9,
+    "x": null
+   },
+   {
+    "title": "Every Cognitive Bias Explained Slowly (For Sleep) [Cosmo Explains Psychology and Cosmo Explains]",
+    "views": 39124,
+    "duration_min": 113.2,
+    "x": null
+   },
+   {
+    "title": "Top 7 Cognitive Biases Explained in Minutes #psychology [Simplified In Short ]",
+    "views": 4937,
+    "duration_min": 3.9,
+    "x": null
+   },
+   {
+    "title": "21 Mind Traps : The Ultimate Guide to your most common Thinking errors [Escaping Ordinary (B.C Marx) ]",
+    "views": 7475807,
+    "duration_min": 21.9,
+    "x": null
+   },
+   {
+    "title": "(Almost) Every Type of Cognitive Bias Explained [The Wiser Way]",
+    "views": 11004,
+    "duration_min": 25.1,
+    "x": null
+   },
+   {
+    "title": "Every Bias Explained in 8 Minutes [The Paint Explainer]",
+    "views": 1812875,
+    "duration_min": 8.2,
+    "x": null
+   },
+   {
+    "title": "The Confirmation Bias [Sprouts]",
+    "views": 395594,
+    "duration_min": 4.9,
+    "x": null
+   },
+   {
+    "title": "Cognitive Biases - The self-serving bias [MinuteVideos]",
+    "views": 215304,
+    "duration_min": 2.9,
+    "x": null
+   },
+   {
+    "title": "Cognitive Biases Explained in 3 Minutes [PSYCHOLOGY CLASSROOM]",
+    "views": 743,
+    "duration_min": 3.2,
+    "x": null
+   },
+   {
+    "title": "What Is Confirmation Bias? | Psychological Explanation & Examples [MindfulThinks]",
+    "views": 99433,
+    "duration_min": 2.8,
+    "x": null
+   },
+   {
+    "title": "Cognitive Bias - explained [B2Bwhiteboard]",
+    "views": 1079,
+    "duration_min": 1.0,
+    "x": null
+   },
+   {
+    "title": "Why People Are So Confident When They're Wrong [Veritasium]",
+    "views": 6266972,
+    "duration_min": 24.0,
+    "x": null
+   },
+   {
+    "title": "Cognitive Biases 101, with Peter Baumann  | Big Think [Big Think]",
+    "views": 180509,
+    "duration_min": 6.2,
+    "x": null
+   }
+  ]
+ },
+ "search: why your brain lies to you": {
+  "channel": "YouTube search",
+  "videos": [
+   {
+    "title": "Is your brain deceiving you?  | Ashley Smith | TEDxEdina [TEDx Talks]",
+    "views": 103143,
+    "duration_min": 16.6,
+    "x": null
+   },
+   {
+    "title": "Your Brain is Lying to You (And You're Believing It) [Dr. Lee Warren]",
+    "views": 143010,
+    "duration_min": 18.9,
+    "x": null
+   },
+   {
+    "title": "No.1 Brain Scientist: Your Brain Is Lying To You! Here's How I Discovered The Truth! [The Diary Of A CEO]",
+    "views": 5012216,
+    "duration_min": 95.9,
+    "x": null
+   },
+   {
+    "title": "Your Brain Is Lying to You – Here’s Proof [THINK DEEPER]",
+    "views": 1447,
+    "duration_min": 3.8,
+    "x": null
+   },
+   {
+    "title": "No.1  Neuroscientist: you can change who you are in 30 days [The Diary Of A CEO]",
+    "views": 4105654,
+    "duration_min": 126.5,
+    "x": null
+   },
+   {
+    "title": "Why Your Brain Blinds You For 2 Hours Every Day [Kurzgesagt – In a Nutshell]",
+    "views": 8546996,
+    "duration_min": 12.6,
+    "x": null
+   },
+   {
+    "title": "The Highlight Reel: Why Your Brain Lies to You After a Toxic Breakup [Lise Leblanc]",
+    "views": 15231,
+    "duration_min": 11.6,
+    "x": null
+   },
+   {
+    "title": "Stop Believing Everything You Think: The Evidence Check Technique [Dr. Tracey Marks]",
+    "views": 176111,
+    "duration_min": 10.4,
+    "x": null
+   },
+   {
+    "title": "How your brain is working against you [Better Ideas]",
+    "views": 451760,
+    "duration_min": 9.9,
+    "x": null
+   },
+   {
+    "title": "Why Your Brain Lies To You Every Day (Psychology Explained) [confidentsoul]",
+    "views": 544,
+    "duration_min": 14.7,
+    "x": null
+   },
+   {
+    "title": "Anxiety Is Lying to You: The Negative Visualization Fix + 21 More [Mark Manson]",
+    "views": 533076,
+    "duration_min": 11.3,
+    "x": null
+   },
+   {
+    "title": "Why Your Brain Lies to You in Recovery | Defence Mechanisms & Cognitive Distortions [EPIC Recovery]",
+    "views": 393,
+    "duration_min": 6.3,
+    "x": null
+   },
+   {
+    "title": "The language of lying — Noah Zandan [TED-Ed]",
+    "views": 22592602,
+    "duration_min": 5.7,
+    "x": null
+   },
+   {
+    "title": "3 Ways Your Mind Lies To You | Answers With Joe [Joe Scott]",
+    "views": 530474,
+    "duration_min": 19.2,
+    "x": null
+   },
+   {
+    "title": "Why Your Brain Lies to You — And How Samurai Fixed It [Presence & Path]",
+    "views": 16087,
+    "duration_min": 26.3,
+    "x": null
+   },
+   {
+    "title": "Your Brain Is Lying to You About Reality (Here's Proof) | Nir Eyal [André Duqum]",
+    "views": 82002,
+    "duration_min": 100.2,
+    "x": null
+   },
+   {
+    "title": "Why Your Brain Lies To You (And You Believe It) [Thought Archive and The Unseen Signal]",
+    "views": 0,
+    "duration_min": 13.6,
+    "x": null
+   },
+   {
+    "title": "Why your brain lies to you about your choices and memory [Does It Replicate]",
+    "views": 3,
+    "duration_min": 8.9,
+    "x": null
+   },
+   {
+    "title": "Your Brain Lies to You Every Single Day (Here’s How) ? [BRAIN FOSSIL]",
+    "views": 0,
+    "duration_min": 7.6,
+    "x": null
+   },
+   {
+    "title": "How optical illusions trick your brain - Nathan S. Jacobs [TED-Ed]",
+    "views": 1326921,
+    "duration_min": 5.3,
+    "x": null
+   },
+   {
+    "title": "Pathological Lying Vs Normal Lying? How To Tell the Difference [Dr. Tracey Marks]",
+    "views": 517042,
+    "duration_min": 6.8,
+    "x": null
+   },
+   {
+    "title": "5 Anxiety Lies Your Brain Tells You | A Psychologist Explains [Dr. Tab Shamsi]",
+    "views": 6819,
+    "duration_min": 14.3,
+    "x": null
+   },
+   {
+    "title": "How Your Brain Lies To You [The Learning Hive Academy]",
+    "views": 2106,
+    "duration_min": 7.0,
+    "x": null
+   },
+   {
+    "title": "Cognitive Distortions-How Your brain lies to you [Live by Design with Grace Kariuki]",
+    "views": 467,
+    "duration_min": 8.2,
+    "x": null
+   },
+   {
+    "title": "Why Your Brain Lies to You: Dual Process Theory Explained [The Nerds Club]",
+    "views": 13615,
+    "duration_min": 4.7,
+    "x": null
+   }
+  ]
+ },
+ "search: psychology of self sabotage": {
+  "channel": "YouTube search",
+  "videos": [
+   {
+    "title": "Psychology of Self-Sabotage (And How to Hack Your Brain to Stop It) [PsychToons]",
+    "views": 65421,
+    "duration_min": 14.8,
+    "x": null
+   },
+   {
+    "title": "Carl Jung & The Psychology of Self-Sabotage (feat. Emerald) [Einzelgänger]",
+    "views": 1246974,
+    "duration_min": 15.7,
+    "x": null
+   },
+   {
+    "title": "5 Reasons Why We Self Sabotage [Psych2Go]",
+    "views": 155512,
+    "duration_min": 6.8,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self Sabotaging [Mythic Psyche]",
+    "views": 47219,
+    "duration_min": 27.9,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self-Sabotage and Resistance [Academy of Ideas]",
+    "views": 971699,
+    "duration_min": 8.7,
+    "x": null
+   },
+   {
+    "title": "Give me 17 minutes and I'll ELIMINATE your self-sabotage forever [Clark Kegley]",
+    "views": 1950507,
+    "duration_min": 17.1,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self-Sabotage: Why You Destroy Your Own Success? [UnordinaryMind]",
+    "views": 89451,
+    "duration_min": 15.2,
+    "x": null
+   },
+   {
+    "title": "How to Hack Your Brain to Stop Self-Sabotaging [Psyphoria]",
+    "views": 515375,
+    "duration_min": 28.2,
+    "x": null
+   },
+   {
+    "title": "2 Unexpected Ways to Stop Sabotaging Yourself [The School of Life]",
+    "views": 566825,
+    "duration_min": 2.4,
+    "x": null
+   },
+   {
+    "title": "Breaking the Cycle of Self Sabotage  | Tanya Chernova | TEDxEtTagammo [TEDx Talks]",
+    "views": 2344557,
+    "duration_min": 17.2,
+    "x": null
+   },
+   {
+    "title": "Why You Self-Sabotage and How to Stop [The Mindset Mentor Podcast]",
+    "views": 64600,
+    "duration_min": 16.8,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self Sabotage | Why We Destroy Our Own Success [Kee]",
+    "views": 18252,
+    "duration_min": 13.2,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self Sabotage - Why We Sabotage Ourselves [BRAINY DOSE]",
+    "views": 69495,
+    "duration_min": 5.7,
+    "x": null
+   },
+   {
+    "title": "Why We Sabotage Ourselves - The Psychology of Self-Handicapping [Academy of Ideas]",
+    "views": 69408,
+    "duration_min": 11.0,
+    "x": null
+   },
+   {
+    "title": "You’re Not Lazy — This Is SELF-SABOTAGE [Psych2Go]",
+    "views": 47616,
+    "duration_min": 8.0,
+    "x": null
+   },
+   {
+    "title": "The Psychology Of Why People Sabotage Good Relationships [The Psychology of WHY]",
+    "views": 1171,
+    "duration_min": 3.3,
+    "x": null
+   },
+   {
+    "title": "Carl Jung Reveals the Real Reason You Struggle with Self-Sabotage [Whispering ideas]",
+    "views": 330248,
+    "duration_min": 21.9,
+    "x": null
+   },
+   {
+    "title": "Self Sabotage [The School of Life]",
+    "views": 1141471,
+    "duration_min": 3.8,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self-Sabotage: This Is Why You Ruin Your Own Life [ChamiaTiarra]",
+    "views": 52221,
+    "duration_min": 49.8,
+    "x": null
+   },
+   {
+    "title": "The self sabotage cure you don't want to hear [Newel of Knowledge ]",
+    "views": 347228,
+    "duration_min": 12.3,
+    "x": null
+   },
+   {
+    "title": "Self Sabotage Psychology | Psychology of Self Sabotage | Psychology Trends [Psychology Trends]",
+    "views": 101,
+    "duration_min": 6.0,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self-Sabotage - Why You Can’t Hold On to Good Things [Let's Talk Psychology Podcast]",
+    "views": 15697,
+    "duration_min": 16.9,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self-Sabotage: Why Success Feels Unsafe [natalie etched]",
+    "views": 5789,
+    "duration_min": 15.6,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Self Sabotage - Why the Mind Protects You From What You Want | Carl Jung [Fractal Wisdom]",
+    "views": 10863,
+    "duration_min": 18.7,
+    "x": null
+   },
+   {
+    "title": "Turn Self Sabotage Into Self Improvement [MedCircle]",
+    "views": 929191,
+    "duration_min": 25.5,
+    "x": null
+   }
+  ]
+ },
+ "search: thinking errors psychology": {
+  "channel": "YouTube search",
+  "videos": [
+   {
+    "title": "A Revealing Look at Thinking Errors and Cognitive Distortions [Doc Snipes]",
+    "views": 12480,
+    "duration_min": 31.8,
+    "x": null
+   },
+   {
+    "title": "What are Cognitive Distortions? [Therapist Aid]",
+    "views": 474562,
+    "duration_min": 5.1,
+    "x": null
+   },
+   {
+    "title": "Cognitive Distortions Explained: 10 Thinking Errors in CBT [Just Passing Time]",
+    "views": 1872,
+    "duration_min": 8.4,
+    "x": null
+   },
+   {
+    "title": "CBT What Are Cognitive Distortions? [Just Passing Time]",
+    "views": 123685,
+    "duration_min": 7.5,
+    "x": null
+   },
+   {
+    "title": "21 Mind Traps : The Ultimate Guide to your most common Thinking errors [Escaping Ordinary (B.C Marx) ]",
+    "views": 7475807,
+    "duration_min": 21.9,
+    "x": null
+   },
+   {
+    "title": "Cognitive Distortions: Cognitive Behavioral Therapy Techniques 18/30 [Therapy in a Nutshell]",
+    "views": 928150,
+    "duration_min": 17.4,
+    "x": null
+   },
+   {
+    "title": "12 Cognitive Biases Explained - How to Think Better and More Logically Removing Bias [Practical Psychology]",
+    "views": 2838502,
+    "duration_min": 10.1,
+    "x": null
+   },
+   {
+    "title": "9 Cognitive Distortions that can Cause Anxiety and Depression [Mind Known]",
+    "views": 151764,
+    "duration_min": 5.5,
+    "x": null
+   },
+   {
+    "title": "Do You Make These Thinking Errors? [The Art of Improvement]",
+    "views": 50110,
+    "duration_min": 5.0,
+    "x": null
+   },
+   {
+    "title": "10 Thinking Errors Keeping You Miserable  6 Weeks to a Happier Healthier You Quickstart Guide [Doc Snipes]",
+    "views": 6752,
+    "duration_min": 30.7,
+    "x": null
+   },
+   {
+    "title": "Cognitive Distortions in 3 Minutes [JayWFoster]",
+    "views": 14641,
+    "duration_min": 3.2,
+    "x": null
+   },
+   {
+    "title": "Stop Believing Everything You Think: The Evidence Check Technique [Dr. Tracey Marks]",
+    "views": 176096,
+    "duration_min": 10.4,
+    "x": null
+   },
+   {
+    "title": "Introduction to Cognitive Bias: Crash Course Scientific Thinking #1 [CrashCourse]",
+    "views": 1226060,
+    "duration_min": 11.8,
+    "x": null
+   },
+   {
+    "title": "Black-and-White Thinking: Cognitive Distortion #1 [Therapy in a Nutshell]",
+    "views": 350612,
+    "duration_min": 9.0,
+    "x": null
+   },
+   {
+    "title": "Cognitive Distortions [JayWFoster]",
+    "views": 45644,
+    "duration_min": 6.0,
+    "x": null
+   },
+   {
+    "title": "What are Thinking Errors? [Practical Psychiatry with Dr. Q]",
+    "views": 7344,
+    "duration_min": 3.0,
+    "x": null
+   },
+   {
+    "title": "Catastrophizing: How to Stop Making Yourself Depressed and Anxious: Cognitive Distortion Skill #6 [Therapy in a Nutshell]",
+    "views": 1858307,
+    "duration_min": 17.4,
+    "x": null
+   },
+   {
+    "title": "Common Errors in our Thinking [Braive]",
+    "views": 37230,
+    "duration_min": 1.9,
+    "x": null
+   },
+   {
+    "title": "Mental Filtering: Why You May Only Notice the Negative: Cognitive Distortion #4 [Therapy in a Nutshell]",
+    "views": 169703,
+    "duration_min": 14.3,
+    "x": null
+   },
+   {
+    "title": "Cognitive Behavioral Therapy and Understanding Cognitive Distortions: Dr. Dawn Elise Snipes [Doc Snipes]",
+    "views": 390002,
+    "duration_min": 66.9,
+    "x": null
+   },
+   {
+    "title": "How to overcome your mistakes [TED-Ed]",
+    "views": 2139038,
+    "duration_min": 4.9,
+    "x": null
+   },
+   {
+    "title": "Cognitive Distortions [Role of Cognitive Distortions in Cognitive Behavior Therapy] Cognitive Errors [Prof. Suresh Bada Math]",
+    "views": 12142,
+    "duration_min": 17.5,
+    "x": null
+   },
+   {
+    "title": "8 Self-Defeating Thoughts that Wreak Havoc [Dr. Tracey Marks]",
+    "views": 287446,
+    "duration_min": 6.6,
+    "x": null
+   },
+   {
+    "title": "The psychology of Thinking: 10 common thinking errors and how to avoid them [Wellness & Lifestyle (W&L)]",
+    "views": 689,
+    "duration_min": 7.8,
+    "x": null
+   },
+   {
+    "title": "How to Change How You Think 💪 Cognitive Distortions Part 2 [Therapy in a Nutshell]",
+    "views": 395484,
+    "duration_min": 13.6,
+    "x": null
+   }
+  ]
+ },
+ "search: decision making psychology": {
+  "channel": "YouTube search",
+  "videos": [
+   {
+    "title": "This Is Your Brain on Decision-making [Knowledge at Wharton]",
+    "views": 18393,
+    "duration_min": 3.9,
+    "x": null
+   },
+   {
+    "title": "Why It's So Hard To Make Decisions [HealthyGamerGG]",
+    "views": 646110,
+    "duration_min": 35.8,
+    "x": null
+   },
+   {
+    "title": "How to make smart decisions more easily [TED-Ed]",
+    "views": 2276603,
+    "duration_min": 5.3,
+    "x": null
+   },
+   {
+    "title": "How to Improve Your Decision Making Process | Dr. Michael Platt & Dr. Andrew Huberman [Huberman Lab Clips]",
+    "views": 39836,
+    "duration_min": 13.5,
+    "x": null
+   },
+   {
+    "title": "The psychology behind irrational decisions - Sara Garofalo [TED-Ed]",
+    "views": 2443932,
+    "duration_min": 4.7,
+    "x": null
+   },
+   {
+    "title": "Do You Have Problems Making Decisions? - Childhood Trauma [Patrick Teahan ]",
+    "views": 928021,
+    "duration_min": 30.0,
+    "x": null
+   },
+   {
+    "title": "Psychological Theories of Decision Making [Vizi Courseware]",
+    "views": 1139,
+    "duration_min": 4.1,
+    "x": null
+   },
+   {
+    "title": "The Future of Science on Decision Making - Multiple Scientific Perspectives [American Psychological Association]",
+    "views": 1839,
+    "duration_min": 50.6,
+    "x": null
+   },
+   {
+    "title": "Making Sense of How Our Brains Form Decisions [The Wall Street Journal]",
+    "views": 50558,
+    "duration_min": 3.5,
+    "x": null
+   },
+   {
+    "title": "How People Make Decisions | The Psychology of choice. [Dr. Becky Spelman | The Human Pattern]",
+    "views": 1734,
+    "duration_min": 19.5,
+    "x": null
+   },
+   {
+    "title": "How to Make Better Decisions | Dr. Michael Platt [Andrew Huberman]",
+    "views": 397463,
+    "duration_min": 228.9,
+    "x": null
+   },
+   {
+    "title": "THE POWER OF DECISION-MAKING | BENEDIKT AHLFELD | TEDxGraz [TEDx Talks]",
+    "views": 445649,
+    "duration_min": 17.4,
+    "x": null
+   },
+   {
+    "title": "How I overcame decision paralysis | Mary Steffel | TEDxNortheasternU [TEDx Talks]",
+    "views": 342805,
+    "duration_min": 12.7,
+    "x": null
+   },
+   {
+    "title": "What Is Decision Fatigue? | Psychological Explanation & Solutions [MindfulThinks]",
+    "views": 36416,
+    "duration_min": 4.5,
+    "x": null
+   },
+   {
+    "title": "Cognitive Psychology - Judgment and Decision Making Pt1 - Heuristics, Biases, Fallacies [The Cognitive Psychologist]",
+    "views": 9371,
+    "duration_min": 57.9,
+    "x": null
+   },
+   {
+    "title": "Decision-Making and Problem-Solving | Psychology [Course Hero]",
+    "views": 27916,
+    "duration_min": 5.3,
+    "x": null
+   },
+   {
+    "title": "Why You Shouldn't Second Guess Your Decisions [The School of Life]",
+    "views": 331847,
+    "duration_min": 3.6,
+    "x": null
+   },
+   {
+    "title": "How to Best Guide Your Life Decisions & Path | Dr. Jordan Peterson [Andrew Huberman]",
+    "views": 4171214,
+    "duration_min": 231.2,
+    "x": null
+   },
+   {
+    "title": "How to Make a Decision [The School of Life]",
+    "views": 245408,
+    "duration_min": 3.6,
+    "x": null
+   },
+   {
+    "title": "The Psychology of Decision Making:  Strategies for Better Choices [The Mindset Mentor Podcast]",
+    "views": 18618,
+    "duration_min": 23.0,
+    "x": null
+   },
+   {
+    "title": "Decision making and the adolescent brain [Dovetail Qld]",
+    "views": 145484,
+    "duration_min": 2.4,
+    "x": null
+   },
+   {
+    "title": "How To Make Optimal Decisions | Prof. Dr. Soyoung Park | TEDxPotsdam [TEDx Talks]",
+    "views": 4328,
+    "duration_min": 13.8,
+    "x": null
+   },
+   {
+    "title": "Are All Decisions Based on Emotions? | Emotion vs. Cognition in Decision-making [Dr. Todd Grande]",
+    "views": 25477,
+    "duration_min": 15.2,
+    "x": null
+   },
+   {
+    "title": "Trust Your Gut: How to Make a Hard Decision [Mel Robbins]",
+    "views": 1010451,
+    "duration_min": 49.5,
+    "x": null
+   },
+   {
+    "title": "Heuristics and biases in decision making, explained [Learn Liberty]",
+    "views": 757046,
+    "duration_min": 3.8,
+    "x": null
+   }
+  ]
+ }
+}

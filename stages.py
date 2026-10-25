@@ -65,7 +65,8 @@ def compact(data):
 
 def free_topics(cid):
     """Темы из плана, по которым ещё нет проекта."""
-    used = {(q.state.get("topic") or {}).get("title") for q in core.projects() if q.state.get("channel") == cid}
+    used = {(q.state.get("topic") or {}).get("title") for q in core.projects(archived=True)
+            if q.state.get("channel") == cid}
     return [t for t in rj(os.path.join(core.CHANNELS, cid, "topics.json"), {"topics": []})["topics"]
             if t.get("title") not in used]
 
@@ -621,6 +622,7 @@ def status_md():
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # консоль Windows cp1251 падает на ✅
     a = sys.argv[1:]
     if not a:
         print(__doc__)

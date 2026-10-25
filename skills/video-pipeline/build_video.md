@@ -27,7 +27,7 @@ Its `ОТЧЁТ_ДЛЯ_ИИ.md` has architecture + 14 pitfalls — read it first
 7. Missing Flow images → cover that range with code scenes (user liked it more than the images).
 
 ## Hard rules (user was furious when broken)
-- Images: **Ken Burns push-in only, constant speed, centred.** NO sideways/vertical drift alternating per shot
+- Images: **smooth varied camera** (push/pull/pan/tilt, eased; conveyor engine `layers/Images.tsx` does it). NEVER a direction reversal from shot to shot, never jitter. Earlier rule was push-in only because of fast sideways drift alternating per shot
   ("earthquake"), NO boil/wobble, NO parallax cut-outs, NO film grain. Shake only as a rare one-off accent.
 - Don't copy the GLM/Z.AI projects' design (detachment-2k etc.) — only node_modules/flags.
 - Cover revealing women's clothing in images (bare shoulders/legs) — `cover.py` pattern; images are hardlinks →

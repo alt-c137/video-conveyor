@@ -145,7 +145,8 @@ def running_stage(p):
     return None
 
 
-def projects(cid=None):
+def projects(cid=None, archived=False):
+    """Проекты; архивные (state "archived") скрыты: им не подкладывают картинки и не отдают задания Flow."""
     out = []
     if not os.path.isdir(PROJECTS):
         return out
@@ -155,7 +156,9 @@ def projects(cid=None):
         for d in sorted(os.listdir(os.path.join(PROJECTS, c))):
             sp = os.path.join(PROJECTS, c, d, "state.json")
             if os.path.exists(sp):
-                out.append(Project(os.path.dirname(sp)))
+                q = Project(os.path.dirname(sp))
+                if archived or not q.state.get("archived"):
+                    out.append(q)
     return out
 
 

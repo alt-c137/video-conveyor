@@ -87,7 +87,7 @@ def build_shots(shots, have):
     for s in shots:
         src = have.get(s["id"])
         if src:
-            out.append({"id": s["id"], "start": s["start"], "end": s["end"], "src": src})
+            out.append({"id": s["id"], "start": s["start"], "end": s["end"], "src": src, **({"cam": s["cam"]} if s.get("cam") else {})})
         elif out:
             out[-1]["end"] = s["end"]
         else:

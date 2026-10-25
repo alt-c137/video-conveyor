@@ -1,20 +1,201 @@
 {
  "source": "analysis 2026-10-14 (chat), confirmed by user 2026-10-25",
  "topics": [
-  {"n": 1, "title": "Why You Can't Quit Things That Are Ruining You", "safe_title": "The Sunk Cost Fallacy Explained",
+  {
+   "n": 1,
+   "title": "Why You Can't Quit Things That Are Ruining You",
+   "safe_title": "The Sunk Cost Fallacy Explained",
    "angle": "Sunk cost fallacy: why we hold on to bad studies, a bad job or a failing project because of what we already invested; practical way out of the trap at the end.",
-   "hedge": "", "demand": "proven", "difficulty": "low"},
-  {"n": 2, "title": "Nobody Is Actually Watching You", "safe_title": "The Spotlight Effect: Why We Feel Watched",
+   "hedge": "",
+   "demand": "proven",
+   "difficulty": "low"
+  },
+  {
+   "n": 2,
+   "title": "Nobody Is Actually Watching You",
+   "safe_title": "The Spotlight Effect: Why We Feel Watched",
    "angle": "Spotlight effect: shame and anxiety because 'everyone will notice'. Classic embarrassing T-shirt experiment (Gilovich, Medvec & Savitsky, 2000). How to lower social anxiety.",
-   "hedge": "", "demand": "proven", "difficulty": "low"},
-  {"n": 3, "title": "Why Smart People Believe Wrong Things", "safe_title": "Confirmation Bias: How Your Brain Lies to You",
+   "hedge": "",
+   "demand": "proven",
+   "difficulty": "low"
+  },
+  {
+   "n": 3,
+   "title": "Why Smart People Believe Wrong Things",
+   "safe_title": "Confirmation Bias: How Your Brain Lies to You",
    "angle": "Confirmation bias: the brain looks for evidence for what it already thinks; why intelligence does not protect you (motivated reasoning); how to test yourself.",
-   "hedge": "", "demand": "proven", "difficulty": "medium"},
-  {"n": 4, "title": "Why the Least Skilled Are the Most Confident", "safe_title": "The Dunning-Kruger Effect, Honestly Explained",
+   "hedge": "",
+   "demand": "proven",
+   "difficulty": "medium"
+  },
+  {
+   "n": 4,
+   "title": "Why the Least Skilled Are the Most Confident",
+   "safe_title": "The Dunning-Kruger Effect, Honestly Explained",
    "angle": "Dunning-Kruger effect with an honest breakdown of the criticism: part of the effect may be a statistical artifact (regression to the mean, better-than-average effect). Myth or not.",
-   "hedge": "Part of the effect may be a statistical artifact.", "demand": "proven + white space", "difficulty": "medium"},
-  {"n": 5, "title": "Your Brain Is Making Worse Decisions Right Now", "safe_title": "Decision Fatigue: Why Your Choices Get Worse",
+   "hedge": "Part of the effect may be a statistical artifact.",
+   "demand": "proven + white space",
+   "difficulty": "medium"
+  },
+  {
+   "n": 5,
+   "title": "Your Brain Is Making Worse Decisions Right Now",
+   "safe_title": "Decision Fatigue: Why Your Choices Get Worse",
    "angle": "Decision fatigue: why we make more mistakes in the evening. Ending: how to simplify daily decisions.",
-   "hedge": "The 'ego depletion' / willpower-as-fuel theory replicates poorly.", "demand": "proven", "difficulty": "medium"}
- ]
+   "hedge": "The 'ego depletion' / willpower-as-fuel theory replicates poorly.",
+   "demand": "proven",
+   "difficulty": "medium"
+  },
+  {
+   "title": "Why You Think Everyone Can See You're Nervous",
+   "safe_title": "The Illusion of Transparency Explained",
+   "angle": "Illusion of transparency (Gilovich, Savitsky & Medvec, 1998: people who told lies, or tasted a disgusting drink and tried to hide it, overestimated how many observers would notice). How it breaks your life: you freeze in presentations, interviews and new groups because you think your anxiety is written on your face. What to do: remember others see far less; name the effect to yourself before speaking. Savitsky & Gilovich (2003) found that simply telling speakers about the illusion made them calmer and rated as better speakers.",
+   "hedge": "",
+   "demand": "proven: own outlier 'Why You Think Everyone Is Looking At You (And Why They Aren't)', x4.0; 'Anxiety Is Lying to You' (Mark Manson) 533K",
+   "difficulty": "low",
+   "minutes": 13,
+   "why": "The direct sequel to the channel's only hit, the same social fear from a new angle. Ride the momentum first.",
+   "series_link": "Cross-links to 'Why You Think Everyone Is Looking At You'; sets up the liking gap (#4).",
+   "n": 6
+  },
+  {
+   "title": "Why You Only See What You Already Believe",
+   "safe_title": "Confirmation Bias Explained Simply",
+   "angle": "Confirmation bias (Wason, 1960: in the 2-4-6 rule task, people test only cases that confirm their guess and almost never try to disprove it). How it breaks your life: you keep a wrong opinion of yourself ('I'm bad at maths', 'people don't like me') and collect only the proof for it. What to do: the 'try to break it' test. Before any conclusion, look for one case that would prove you wrong.",
+   "hedge": "",
+   "demand": "proven: 'The Most Common Cognitive Bias' (Veritasium) 17.4M; 'The Confirmation Bias' (Sprouts) 396K",
+   "difficulty": "low",
+   "minutes": 14,
+   "why": "The biggest proven topic in the niche, and a base video that later ones can link back to.",
+   "series_link": "Cross-links to 'Why Smart People Believe Wrong Things'; sets up the negativity filter (#3).",
+   "n": 7
+  },
+  {
+   "title": "Why You Remember One Insult, Not Ten Compliments",
+   "safe_title": "Negativity Bias and the Mental Filter",
+   "angle": "Negativity bias and the mental filter (Baumeister, Bratslavsky, Finkenauer & Vohs, 2001, 'Bad Is Stronger Than Good': a review showing negative events hit harder and stay longer across many areas of life). How it breaks your life: one bad comment wipes out a good day, and you conclude you are failing. What to do: an evening 'evidence log' with three concrete things that went well, and separating the event from your interpretation of it (a CBT technique).",
+   "hedge": "",
+   "demand": "proven: 'Mental Filtering: Why You May Only Notice the Negative' (Therapy in a Nutshell) 170K; '8 Self-Defeating Thoughts that Wreak Havoc' (Dr. Tracey Marks) 287K",
+   "difficulty": "low",
+   "minutes": 14,
+   "why": "Continues confirmation bias (#2): the brain filters for the negative as well as for what it believes.",
+   "series_link": "Back to #2; forward to catastrophizing (#5).",
+   "n": 8
+  },
+  {
+   "title": "People Like You More Than You Think (Here's Proof)",
+   "safe_title": "The Liking Gap Explained",
+   "angle": "The liking gap (Boothby, Cooney, Sandstrom & Clark, 2018: after a conversation with a stranger, people consistently underestimated how much the other person liked them and enjoyed the talk). How it breaks your life: you avoid new classmates, colleagues and friends because you assume you made a bad impression. What to do: after a conversation, assume your estimate is too low and still make the next step, a message or another conversation. Examples: classmates, colleagues, neighbours (no romance).",
+   "hedge": "",
+   "demand": "white space: no video like this in the data, but it is the same social fear as the channel outlier (x4.0) and the spotlight effect, with a positive, relieving payoff",
+   "difficulty": "medium",
+   "minutes": 13,
+   "why": "Builds the social-self line that already works for the channel into a mini-series.",
+   "series_link": "Back to #1 and the spotlight video; forward to the fundamental attribution error (#8).",
+   "n": 9
+  },
+  {
+   "title": "Why Your Brain Always Expects the Worst",
+   "safe_title": "Catastrophizing: How to Stop It",
+   "angle": "Catastrophizing, the cognitive distortion described by Aaron Beck and Albert Ellis: one small trigger grows into a chain of 'and then everything collapses'. How it breaks your life: you don't send the application, don't start the project, and lose sleep over scenarios that never happen. What to do: 'decatastrophizing' from CBT. Write the worst, best and most likely outcome, then 'what would I actually do if the worst happened'.",
+   "hedge": "These techniques likely help most people with everyday worry, but they don't replace a professional when anxiety is severe.",
+   "demand": "proven: 'Catastrophizing: How to Stop Making Yourself Depressed and Anxious' (Therapy in a Nutshell) 1.86M",
+   "difficulty": "low",
+   "minutes": 15,
+   "why": "The strongest outlier in the 'thinking errors' search and the exact pain of the audience.",
+   "series_link": "Back to #3; forward to self-handicapping (#6).",
+   "n": 10
+  },
+  {
+   "title": "Why You Sabotage Yourself Right Before It Matters",
+   "safe_title": "Self-Handicapping: The Psychology of Self-Sabotage",
+   "angle": "Self-handicapping: building in an excuse ahead of time so that a failure 'doesn't count' (the term comes from Berglas & Jones, 1978; Tice & Baumeister, 1990, showed people deliberately practising less before a test that mattered to their self-image). How it breaks your life: procrastinating before an exam or launch, 'I didn't even try', and so never finding out what you can really do. What to do: separate your worth from the result, and set a 'full effort' standard, judging the effort and not the outcome. Do not depict the original 1978 drug-choice experiment; tell it through practice and preparation.",
+   "hedge": "",
+   "demand": "proven: 'Breaking the Cycle of Self Sabotage' (TEDx) 2.3M; 'Why We Sabotage Ourselves - The Psychology of Self-Handicapping' (Academy of Ideas) 69K",
+   "difficulty": "medium",
+   "minutes": 15,
+   "why": "The most direct answer to the audience's pain 'why do I get in my own way', with million-view demand.",
+   "series_link": "Back to #5; forward to all-or-nothing thinking (#7) and 'Why You Can't Quit Things That Are Ruining You'.",
+   "n": 11
+  },
+  {
+   "title": "Why One Mistake Makes You Quit Everything",
+   "safe_title": "All-or-Nothing Thinking and the What-the-Hell Effect",
+   "angle": "Black-and-white thinking and the 'what-the-hell effect' (Polivy & Herman, 1985, on restrained eaters: once a strict diet rule was broken, people ate more, not less). How it breaks your life: you skip one workout or study day and drop the whole plan. What to do: the 'never miss twice' rule, replacing 'perfect / failed' with a scale, and minimum versions of a habit. Examples: food, sport, study.",
+   "hedge": "The original studies were on eating behaviour, so the effect possibly works differently in other habits; the pattern itself is widely recognised in CBT.",
+   "demand": "proven: 'Black-and-White Thinking: Cognitive Distortion #1' (Therapy in a Nutshell) 351K",
+   "difficulty": "medium",
+   "minutes": 14,
+   "why": "Continues self-sabotage (#6) through habits, which is the practical core of self-improvement.",
+   "series_link": "Back to #6; forward to the planning fallacy (#10).",
+   "n": 12
+  },
+  {
+   "title": "Why You Judge Others Harder Than Yourself",
+   "safe_title": "Fundamental Attribution Error Explained",
+   "angle": "Fundamental attribution error and self-serving bias (Ross, Amabile & Steinmetz, 1977: in a 'quizmaster' game with randomly assigned roles, observers rated the question-writer as smarter, ignoring that the role gave the advantage). How it breaks your life: conflicts with colleagues, family and friends ('he's lazy', but 'I'm just tired'), and blaming yourself for others' successes. What to do: the 'what situation would make me do the same?' question, explaining others through circumstances first.",
+   "hedge": "",
+   "demand": "proven: 'Cognitive Biases - The self-serving bias' (MinuteVideos) 215K; '21 Mind Traps' (Escaping Ordinary) 7.5M includes it",
+   "difficulty": "medium",
+   "minutes": 14,
+   "why": "Moves the social line from 'how others see me' to 'how I see others', giving a fresh angle without leaving the niche.",
+   "series_link": "Back to #4 the liking gap; forward to #9 second-guessing.",
+   "n": 13
+  },
+  {
+   "title": "Why You Keep Second-Guessing Your Decisions",
+   "safe_title": "Hindsight Bias: 'I Knew It All Along'",
+   "angle": "Hindsight bias (Fischhoff, 1975, and Fischhoff & Beyth, 1975: once people learned the outcome, they believed they would have predicted it and misremembered their earlier forecasts). How it breaks your life: endless 'I should have known' and self-blame, fear of the next decision, freezing. What to do: a 'decision journal'. Write down why you decided and what you knew before the outcome, then judge the quality of the decision, not the outcome.",
+   "hedge": "",
+   "demand": "proven: 'Why You Shouldn't Second Guess Your Decisions' (The School of Life) 332K; 'How I overcame decision paralysis' (TEDx) 343K",
+   "difficulty": "low",
+   "minutes": 13,
+   "why": "Opens the decisions line demanded by the 'decision making psychology' search (TED-Ed 2.4M and 2.3M).",
+   "series_link": "Back to 'Your Brain Is Making Worse Decisions Right Now'; forward to #10.",
+   "n": 14
+  },
+  {
+   "title": "Why Everything Takes Longer Than You Think",
+   "safe_title": "The Planning Fallacy Explained",
+   "angle": "Planning fallacy (Kahneman & Tversky, 1979; Buehler, Griffin & Ross, 1994: students' 'realistic' estimates of how long their thesis would take were far too optimistic, and most finished later than they predicted). How it breaks your life: missed deadlines, burnout, the feeling 'I'm always behind', and quitting. What to do: the 'outside view'. Look at how long similar tasks took last time, break the task into steps, add a buffer, and set implementation intentions ('when / where / what I'll do').",
+   "hedge": "",
+   "demand": "white space: no video like this in the data, but the 'why you get in your own way' / self-sabotage demand (millions of views) shows a clear practical problem with a concrete, deliverable fix",
+   "difficulty": "medium",
+   "minutes": 14,
+   "why": "Closes the habits/procrastination block with a fully practical tool and sets up a future compilation of all the biases.",
+   "series_link": "Back to #7 and #6; forward to a future compilation video.",
+   "n": 15
+  }
+ ],
+ "diagnosis_2026-10-25": "1) The competitor outliers fall into three groups. Group one: the viewer's own mind turning against them ('self-sabotage', 'your brain lies to you', 'thinking errors'): TEDx 'Breaking the Cycle of Self Sabotage' 2.3M, Clark Kegley 1.95M, 'Catastrophizing' (Therapy in a Nutshell) 1.86M. Group two: one well-known bias told as a story with an experiment, like Veritasium 'The Most Common Cognitive Bias' 17.4M (confirmation bias, the 2-4-6 task). Group three: big collections, '21 Mind Traps' 7.5M and 'Every Bias Explained' 1.8M.\n2) Behind each title is one personal question: 'why do I do this to myself / why do I see it wrong'. Patterns that work: 'Why You/People...', 'X Is Lying to You', '[Distortion]: how to stop...'. A practical exit is promised in the title or the description.\n3) Length: the self-sabotage and distortion outliers run 15-17 min, so the 13-16 min format is supported. The channel's own outlier is 7.6 min, but with only 3 videos that is not yet a signal.\n4) The channel itself: one hit, the spotlight effect (x4.0, 515 views). It is a social-self bias with a 'Why You Think... (And Why They Aren't)' title, a personal fear plus relief in the brackets. The abstract topic about the feeling of mastery (illusion of competence) failed (x0.0, 'The Brain's Biggest Lie'): no clear personal question.\n5) Started but not continued: the social-self line ('everyone is watching you'), the 'quitting / sunk cost' line, and decisions under fatigue.\n6) Gaps with proven demand that the channel has not covered: confirmation bias, catastrophizing, black-and-white thinking, the negativity filter, self-handicapping, second-guessing / hindsight. Logical white space: the liking gap and the planning fallacy, both direct continuations of 'why do I get in my own way'.\n7) Assumption: we follow the 'one bias = one video' format and build each title as 'Why You... (And...)', like the channel's only outlier.",
+ "niches_2026-10-25": [
+  {
+   "name": "Cognitive distortions (CBT) sub-series",
+   "titles": [
+    "Why You Read Minds That Aren't Thinking About You",
+    "Why 'Should' Is Making You Miserable",
+    "Why You Feel It, So You Think It's True"
+   ],
+   "evidence": "The 'thinking errors psychology' search is full of distortion videos: Catastrophizing 1.86M, Cognitive Distortions 928K, Black-and-White Thinking 351K, Mental Filtering 170K (all Therapy in a Nutshell). The topics are halal-neutral and practical."
+  },
+  {
+   "name": "Decisions without regret",
+   "titles": [
+    "Why More Options Make You Choose Worse",
+    "The First Number You Hear Controls Your Choices",
+    "Why You Stay Stuck Instead of Choosing"
+   ],
+   "evidence": "'The psychology behind irrational decisions' (TED-Ed) 2.4M, 'How to make smart decisions more easily' (TED-Ed) 2.3M, 'Why It's So Hard To Make Decisions' (HealthyGamerGG) 646K, Anchoring (Wireless Philosophy) 398K. Examples: work, study, purchases; no investing or credit."
+  },
+  {
+   "name": "Long compilations (hub videos of the channel's biases)",
+   "titles": [
+    "12 Mind Traps That Keep You Stuck",
+    "Every Self-Sabotage Bias Explained",
+    "The Thinking Errors Ruining Your Week"
+   ],
+   "evidence": "'21 Mind Traps' 7.5M (21.9 min), 'Every Bias Explained in 8 Minutes' 1.8M, '12 Cognitive Biases Explained' 2.8M. Collections can be built from parts of videos already made and link viewers to the single-bias videos."
+  }
+ ],
+ "last_analysis": "2026-10-25"
 }

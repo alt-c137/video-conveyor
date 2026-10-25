@@ -19,7 +19,7 @@ Code-drawn characters = round head + dot eyes + line mouth + simple body; reusab
 Motion via `spring({damping: 200})` or `Easing.bezier(0.33,0,0.2,1)`. Nothing linear.
 
 ## Base layer for image shots
-- Ken Burns push-in only (1.00→1.045, constant speed, centred). NO sideways/vertical drift, NO boil/wobble, NO parallax cut-outs, NO grain.
+- Camera on stills: smooth, eased, varied — push-in, pull-out, pan left/right, tilt up/down, push+pan (scale ≤1.08, pan ≤6% of frame per shot). Never reverse direction on the next shot (reads as an earthquake), short shots (<2 s) push/pull only. Break it up with code animations every ~15-20 s. NO boil/wobble, NO jitter, NO grain.
 - 4-frame crossfade between shots; occasional themed wipe on a new thought; dip to black before section title cards.
 
 ## On-screen text (the `overlay` field)

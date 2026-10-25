@@ -9,7 +9,7 @@ export type Theme = {
 };
 
 export type Word = { w: string; t: number; e: number };
-export type Shot = { id: number; start: number; end: number; src: string | null };
+export type Shot = { id: number; start: number; end: number; src: string | null; cam?: string };
 export type Caption = { start: number; end: number; text: string; words: Word[]; kind: "phrase" | "title" };
 export type Section = { n: number; start: number; title: string };
 export type Scene = { type: string; start: number; end: number; props: Record<string, any>; cues?: number[] };

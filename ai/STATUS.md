@@ -20,3 +20,9 @@
 - Тем в плане больше нет → сделать анализ: `python stages.py analyze logic_psyche 10` и проверить темы на дубли
   с уже вышедшими видео (02 частично повторяет вышедшее «Why You Think Everyone Is Looking At You»).
 - BACKLOG: `ai/BACKLOG.json`.
+
+## 2026-10-25 23:00 — замена 02
+- Старое 02 (spotlight, дубль вышедшего видео) в архиве: `state.archived`, скрыто из core.projects() — не получает ZIP и задания Flow.
+- Новое 02 = тема №11 «Why You Sabotage Yourself Right Before It Matters» (15.2 мин, 359 кадров), ждёт картинки.
+- Анализ 2026-10-25: +10 тем (№6–15), свободных 9.
+- Камера: 8 плавных движений (Images.tsx), без разворотов направления; правило «спроси, какой канал» в AGENTS.md.

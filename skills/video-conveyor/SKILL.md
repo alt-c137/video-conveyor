@@ -14,4 +14,4 @@ description: Operate and improve the user's local YouTube video conveyor (E:\Ado
 5. Reply to the user in Russian, short and warm: what is ready, where, what you need from them (1-2 items).
 
 Never: kill user processes, delete old versions, print API keys, publish to YouTube, spend the user's image credits
-without being asked, break the montage rules (Ken Burns push-in only, no drift/boil/grain).
+without being asked, break the montage rules (smooth varied camera — push/pull/pan/tilt, never a direction reversal on the next shot, no jitter/boil/grain; code animations every ~15-20 s so it is never just moving pictures). Ask which channel if the user did not say (2 channels, see AGENTS.md).

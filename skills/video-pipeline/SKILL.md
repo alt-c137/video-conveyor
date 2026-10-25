@@ -53,7 +53,7 @@ section title cards, recap. Each: timecode, what animates, SFX. Include CTA timi
 ## Rules (from user feedback — do not break)
 - Remotion must do real animation. Never a brief that is just Ken Burns + text over images.
 - Text on screen must be readable: bold font + dark blurred pill (already in template).
-- NO film grain, NO boil/wobble, NO sideways drift of images (reads as an earthquake). Ken Burns push-in only.
+- NO film grain, NO boil/wobble, NO jitter. Camera on stills: smooth varied moves (push/pull/pan/tilt), never reverse direction on the next shot (earthquake); always break it up with code animations.
 - 2K output, self-check stages (template has them).
 - Prompt format exactly: `N. Flat vector cartoon style. LOCATION: ... SCENE: ... 16:9.` with blank line between.
 
