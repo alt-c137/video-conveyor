@@ -327,3 +327,39 @@ def render(p, log=print):
     log("Рендер на видеокарте (gl=angle). Прогресс: out/render_log.txt")
     node([p.path], log)
     log(f"Готово: {p.f('out', 'final.mp4')}")
+    check_images(p, log)
+
+
+def check_images(p, log=print, n=12):
+    """После рендера: кадры посреди КАРТИНОК (не код-сцен) -> out/check_images.jpg; почти чёрные = тревога.
+    Урок 2026-10-27: апскейл дал чёрные кадры, лист код-сцен этого не видел, ролик ушёл на чёрном фоне."""
+    import subprocess
+    from PIL import Image, ImageStat
+    e = rj(p.f("edit.json"))
+    busy = [(s["start"] - 0.5, s["end"] + 0.5) for s in e["scenes"]]
+    mids = [round((s["start"] + s["end"]) / 2, 2) for s in e["shots"]
+            if s.get("src") and not any(a <= (s["start"] + s["end"]) / 2 <= b for a, b in busy)]
+    pick = [mids[i * len(mids) // n] for i in range(n)] if len(mids) >= n else mids
+    out_dir = p.f("out", "check")
+    os.makedirs(out_dir, exist_ok=True)
+    ims, dark = [], []
+    for t in pick:
+        f = os.path.join(out_dir, f"img_{t:g}.jpg")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", p.f("out", "final.mp4"), "-frames:v", "1",
+                        "-vf", "scale=640:-1", f], check=False)
+        if not os.path.exists(f):
+            continue
+        im = Image.open(f).convert("RGB")
+        ims.append(im)
+        if ImageStat.Stat(im.convert("L")).mean[0] < 12:
+            dark.append(t)
+    if ims:
+        sheet = Image.new("RGB", (4 * 640, ((len(ims) + 3) // 4) * 360), "white")
+        for i, im in enumerate(ims):
+            sheet.paste(im.resize((640, 360)), ((i % 4) * 640, (i // 4) * 360))
+        sheet.save(p.f("out", "check_images.jpg"), quality=82)
+    if dark:
+        log(f"ВНИМАНИЕ: чёрные кадры на месте картинок ({len(dark)} из {len(ims)}): {dark} — проверь images_2x")
+    else:
+        log(f"Картинки в ролике видны: out/check_images.jpg ({len(ims)} кадров)")
+    return dark
