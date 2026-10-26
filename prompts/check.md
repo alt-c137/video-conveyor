@@ -9,12 +9,14 @@ Check, in this order:
 4. Repetition: the same thought repeated in other words = "fix".
 5. Structure: micro-cliffhangers between blocks, practical method, strong ending, soft CTA. Missing = "fix".
 6. Voiceover: sentences over ~22 words, brackets, symbols, hard-to-read words = "fix".
-7. Length: more than 12% off the target = "fix".
+7. Length: more than 12% off the target = "fix". Count it, do not guess.
+8. Interest: any stretch of ~60 seconds (~180 words) with no new example, twist, question or number = "fix" (type "boring"). Each block must give the viewer something they did not know.
+9. Value: the practical block must be usable today; vague advice = "fix".
 
 {{rules}}
 
 Answer ONLY with JSON:
-{"verdict": "ok" | "fix", "issues": [{"severity": "block|fix|minor", "type": "rules|fact|hook|repeat|structure|voice|length", "quote": "<exact words from the script>", "why": "<short>", "fix": "<what to do>"}], "summary": "<one sentence>"}
+{"verdict": "ok" | "fix", "issues": [{"severity": "block|fix|minor", "type": "rules|fact|hook|repeat|structure|voice|length|boring|value", "quote": "<exact words from the script>", "why": "<short>", "fix": "<what to do>"}], "summary": "<one sentence>"}
 "verdict" is "ok" only if there are no block/fix issues.
 
 SCRIPT:

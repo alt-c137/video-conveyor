@@ -1,0 +1,33 @@
+{
+ "name": "Brand on the Couch",
+ "url": "https://www.youtube.com/@WhyWeChoosehq",
+ "language": "English",
+ "niche": "Consumer and brand psychology: what the things people buy and drive (cars, brands, phones, clothes, habits of spending) say about them and why we really choose them. Promise: the hidden psychology behind everyday choices, told with humour and respect.",
+ "audience": "18-40, curious about people and themselves, car and brand fans. Their pull: 'what does my choice say about me?' and 'why do I really want this?'.",
+ "format": "One choice per video (a car colour, a brand, a buying habit). Hook with a relatable scene -> 3-5 'types' or hidden reasons backed by real research (marketing, consumer psychology) -> what it says about you -> a smart takeaway about choosing freely. Light, witty, never mocking the viewer.",
+ "honesty": "Facts only if verifiable (real studies, real brand history, real numbers). Personality-from-car-colour claims are pop psychology: say so with ONE honest hedge, then have fun with it. Never invent statistics, surveys or quotes.",
+ "voice": "Then Life 2",
+ "wpm": 180,
+ "minutes": [
+  10,
+  13
+ ],
+ "competitors": [],
+ "character": "the host",
+ "character_w": "a young woman in a long beige coat and a light headscarf",
+ "notes": "Proven on the channel: car/brand psychology (BMW vs Mercedes vs Audi best, grey-car 'types' video). Cross-link car videos as a series.",
+ "style_ref": "E:/Adobe/Канал 5/Референсы и стиль/ава.png",
+ "image_source": "secretslider.com: режим «Слайды с 1 персонажем», Персонаж/объект = style_ref (ава.png), промты из prompts_lines.txt. Или Flow Batch Multi (галочка «Конвейер»).",
+ "search": [
+  "car psychology what your car says about you",
+  "brand psychology why we buy",
+  "consumer psychology explained",
+  "psychology of luxury brands",
+  "why people buy expensive cars",
+  "marketing psychology tricks"
+ ],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
+}

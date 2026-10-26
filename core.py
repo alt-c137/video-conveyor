@@ -182,26 +182,66 @@ def prompt(name, **kw):
 
 
 # ---------- ИИ ----------
-def llm(text, stage=None, provider=None, system="", log=print, retries=2):
+def llm(text, stage=None, provider=None, system="", log=print, retries=2, retry=None):
     """Один запрос к ИИ. provider: имя из config.llm.providers; иначе берётся по этапу."""
     cfg = config()["llm"]
     name = provider or cfg["stages"].get(stage or "", "") or "claude"
-    p = cfg["providers"][name]
+    p = cfg["providers"].get(name, {"type": "agent"})
     last = None
     for attempt in range(retries + 1):
         try:
             t0 = time.time()
             if p["type"] == "claude_cli":
                 out = _claude_cli(text, system, p)
+            elif p["type"] == "agent":
+                out = _agent(text, system, stage, log, retry)
             else:
                 out = _openai(text, system, p)
             log(f"ИИ {name}: {len(out)} симв. за {time.time() - t0:.0f} с")
             return out
         except Exception as e:  # сеть, лимиты — пробуем ещё
             last = e
+            if "authenticate" in str(e) or "api_key" in str(e):
+                break  # повтор не поможет
             log(f"ИИ {name}: ошибка ({e}); попытка {attempt + 2}")
             time.sleep(10 * (attempt + 1))
+    fb = cfg.get("fallback", "agent")
+    if fb and name != fb:  # CLI разлогинен / нет ключа -> отдаём запрос агенту в чате
+        log(f"ИИ {name} не ответил ({str(last)[:120]}); запрос -> {fb} (ai/inbox)")
+        prim = p if p["type"] != "agent" else None
+        again = (lambda: _claude_cli(text, system, prim) if prim["type"] == "claude_cli" else _openai(text, system, prim)) if prim else None
+        return llm(text, stage, fb, system, log, 0, again)
     raise RuntimeError(f"ИИ {name} не ответил: {last}")
+
+
+INBOX = os.path.join(ROOT, "ai", "inbox")
+
+
+def _agent(text, system, stage, log, retry=None):
+    """ИИ = агент в чате (Claude Code, ZCode/GLM...). Запрос: ai/inbox/<id>.prompt.md,
+    агент пишет ответ в <id>.answer.md (целиком, в формате, который просит промт). Ждём до 12 ч."""
+    os.makedirs(INBOX, exist_ok=True)
+    rid = f"{time.strftime('%m%d_%H%M%S')}_{stage or 'llm'}_{os.getpid()}"
+    q, a = os.path.join(INBOX, rid + ".prompt.md"), os.path.join(INBOX, rid + ".answer.md")
+    with open(q, "w", encoding="utf-8") as f:
+        f.write(("<!-- system -->\n" + system + "\n\n" if system else "") + text)
+    log(f"ЖДУ АГЕНТА: ответ на ai/inbox/{rid}.prompt.md -> {rid}.answer.md")
+    for _ in range(12 * 360):
+        if os.path.exists(a) and os.path.getsize(a) > 0:
+            time.sleep(2)  # дописывается
+            out = open(a, encoding="utf-8").read().strip()
+            os.replace(q, q.replace(".prompt.md", ".done.md"))
+            return out
+        if retry and _ % 30 == 29:  # раз в 5 мин: вдруг основной ИИ снова доступен (вошли в claude CLI)
+            try:
+                out = retry()
+                os.replace(q, q.replace(".prompt.md", ".done.md"))
+                log("основной ИИ снова отвечает — запрос ушёл ему")
+                return out
+            except Exception:
+                pass
+        time.sleep(10)
+    raise RuntimeError("агент не ответил за 12 ч")
 
 
 def _claude_cli(text, system, p):

@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import { AbsoluteFill, Easing, Img, interpolate, staticFile } from "remotion";
 import { clamp, useT } from "../kit";
-import type { Shot } from "../types";
+import type { Scene, Shot } from "../types";
 
-const XF = 0.14; // кроссфейд, с
+const XF = 0.45; // кроссфейд, с: новая картинка проявляется поверх старой и полностью видна ровно на своём таймкоде
 
 /** Камера по картинке: наезд, отъезд, панорамы влево/вправо, наклон вверх/вниз, наезд со сдвигом.
  * Плавный разгон/торможение, без дрожи и случайного дрейфа. Сдвиг всегда в пределах запаса масштаба (края не видны). */
@@ -26,6 +26,41 @@ const WEIGHTS: [Cam, number][] = [["in", 36], ["out", 16], ["left", 10], ["right
 const OPPOSITE: Partial<Record<Cam, Cam[]>> = { left: ["right", "in_right"], right: ["left", "in_left"], up: ["down"],
   down: ["up"], in_left: ["right", "in_right"], in_right: ["left", "in_left"] };
 const ease = Easing.inOut(Easing.quad);
+const MIN = 1.6; // картинка на экране не меньше, с
+
+/** Что реально видно между код-сценами. Кадры под сценой не показываются; от кадра, который выглядывает
+ * из-под сцены на 0.1-1 с, оставалась «мелькалка» (жалоба 2026-10-26: на 2:12 проскочили 2-3 картинки).
+ * Теперь в каждом окне между сценами куски короче MIN сливаются с соседним кадром. */
+export const visibleShots = (shots: Shot[], scenes: Scene[]): Shot[] => {
+  const end = shots.length ? shots[shots.length - 1].end : 0;
+  const sc = [...scenes].sort((a, b) => a.start - b.start);
+  const free: [number, number][] = [];
+  let a = 0;
+  for (const s of sc) {
+    if (s.start > a) free.push([a, s.start]);
+    a = Math.max(a, s.end);
+  }
+  if (a < end) free.push([a, end]);
+  const out: Shot[] = [];
+  for (const [lo, hi] of free) {
+    const ps = shots.filter((s) => s.src && s.end > lo && s.start < hi)
+      .map((s) => ({ ...s, start: Math.max(s.start, lo), end: Math.min(s.end, hi) }));
+    const win: Shot[] = [];
+    for (const p of ps) {
+      const last = win[win.length - 1];
+      if (last && win.length === 1 && last.end - last.start < MIN) win[0] = { ...p, start: last.start }; // короткий первый — его место занимает следующий
+      else if (last && last.end - last.start < MIN) last.end = p.end; // короткий предыдущий тянется дальше
+      else if (last && p.end - p.start < MIN && p.end >= hi) last.end = p.end; // короткий хвост окна
+      else win.push(p);
+    }
+    if (!win.length) continue;
+    // запас под края сцены: пока сцена проявляется/гаснет, под ней уже/ещё нужная картинка
+    if (lo > 0) win[0].start = lo - 0.4;
+    if (hi < end) win[win.length - 1].end = hi + 0.4;
+    out.push(...win);
+  }
+  return out;
+};
 
 /** Движения всех кадров: из edit.json (shot.cam) или детерминированно по номеру; соседние не повторяются,
  * без разворота направления, короткие кадры (< 2 с) — только наезд/отъезд. */
@@ -55,12 +90,16 @@ const One: React.FC<{ s: Shot; cam: Cam; t: number }> = ({ s, cam, t }) => {
   );
 };
 
-export const Images: React.FC<{ shots: Shot[] }> = ({ shots }) => {
+export const Images: React.FC<{ shots: Shot[]; scenes?: Scene[] }> = ({ shots: all, scenes = [] }) => {
   const { t } = useT();
+  const shots = useMemo(() => visibleShots(all, scenes), [all, scenes]);
   const cams = useMemo(() => camsFor(shots), [shots]);
   // только кадр сейчас и предыдущий (на время кроссфейда) — не монтируем сотни картинок
-  let i = shots.findIndex((s) => t >= s.start - XF && t < s.end);
-  if (i < 0) i = t < (shots[0]?.start ?? 0) ? 0 : shots.length - 1;
+  // берём ПОСЛЕДНИЙ начавшийся (с учётом проявления) кадр; раньше findIndex отдавал старый кадр,
+  // и новый не рисовался во время перехода — выходила резкая склейка (жалоба 2026-10-26)
+  let i = -1;
+  for (let j = 0; j < shots.length && t >= shots[j].start - XF; j++) i = j;
+  if (i < 0) i = 0;
   const list = [shots[i - 1], shots[i]].filter((s) => s && s.src && t >= s.start - XF && t < s.end + XF) as Shot[];
   return (
     <AbsoluteFill style={{ background: "#111" }}>

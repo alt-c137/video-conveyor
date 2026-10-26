@@ -1,0 +1,155 @@
+{
+ "topics": [
+  {
+   "title": "Why Every Car Seems to Have a Face (and a Mood)",
+   "safe_title": "The Psychology of Car Faces: Why Cars Look Angry or Friendly",
+   "angle": "Our brain sees faces everywhere (pareidolia); designers use headlights and grilles as eyes and mouths -> we pick cars whose 'face' matches how we want to be seen -> notice the face, then choose the car for what it does for you.",
+   "hedge": "Studies show people read car fronts like faces quite consistently; whether that face really drives buying decisions is likely but not fully proven.",
+   "demand": "proven: 'The Hidden Psychology Behind a Car's Face' [Frank Stephenson] 116k views; channel's own car line (BMW video x4.6)",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Visual, surprising, perfect for cartoon images; opens the channel to all car fans, not one brand.",
+   "series_link": "-> 'Why You REALLY Chose BMW, Mercedes, or Audi' (brand faces)",
+   "n": 1
+  },
+  {
+   "title": "The Psychology of People Who Drive the Same Car for 10+ Years",
+   "safe_title": "Why Some People Keep the Same Car for Over 10 Years",
+   "angle": "Keeping one car long is called cheap, but research on loyalty, attachment to objects and satisfaction shows calm, low-status-anxiety people -> 5 types of long-keepers -> what it says about how you measure your own life.",
+   "hedge": "The 'types' are a fun lens, not a clinical test; the research is about attachment and spending, not personality diagnosis.",
+   "demand": "proven: 'Driving The Same Car For 10 Years Says A Lot About You...' [The Gen X Way] 734k; 'Keeping a Car Past 300000 Miles' [Nous Psychology]",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Strongest search outlier in the car niche, flattering for the viewer, 'types' format already proven on our grey-car video.",
+   "series_link": "-> 5 Types of Men Who Drive Grey Cars; sets up 'Why Rich People Drive Boring Cars'",
+   "n": 2
+  },
+  {
+   "title": "The Psychology of People Who Drive White Cars",
+   "safe_title": "What Driving a White Car Says About You",
+   "angle": "White is the world's most popular car colour year after year -> the real reasons (resale, heat, safety perception, 'clean' look, avoiding attention) -> 4 types of white-car drivers -> choosing for yourself vs choosing to blend in.",
+   "hedge": "Colour-personality links are pop psychology; we say so once and have fun with it.",
+   "demand": "white space: continues our own colour series (grey x1.9, red x1.0) with the most common colour on the road, so the largest audience can see themselves.",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Completes the colour trilogy and cross-links two older videos.",
+   "series_link": "-> red cars, grey cars videos",
+   "n": 3
+  },
+  {
+   "title": "Why Luxury Logos Get Smaller as Prices Get Bigger",
+   "safe_title": "Quiet Luxury Psychology: Why Expensive Brands Hide Their Logos",
+   "angle": "Big logos sell to people who want to be seen, tiny logos sell to insiders (Berger & Ward 2010) -> how brands play both groups -> how to know whether you buy for yourself or for an audience.",
+   "hedge": "",
+   "demand": "proven: 'How Luxury Brands Brainwash You to Buy' [Sabri Suby] 3.9M; 'The Psychology of Premium Branding' [Omar Eddaoudi] 1.4M",
+   "difficulty": "medium",
+   "minutes": 12,
+   "why": "Brings the huge luxury-brand audience in through a fresh, specific mechanism.",
+   "series_link": "-> BMW/Mercedes/Audi (badges); -> next 'Why Rich People Drive Boring Cars'",
+   "n": 4
+  },
+  {
+   "title": "Why Many Rich People Drive Boring Cars",
+   "safe_title": "The Psychology of Wealthy People Who Drive Ordinary Cars",
+   "angle": "Stanley and Danko's 'The Millionaire Next Door' found many millionaires drive ordinary used cars -> status signals vs real security -> what a modest car can say about confidence.",
+   "hedge": "The book's data is from US surveys in the 1990s; habits may differ today and across countries.",
+   "demand": "proven: 'Why RICH People Buy CHEAP Cars...' [Marks Dream Garage] 8.7k; 'How Broke People Afford Nice Cars' [SocialOrbit] 437k (same question from the other side)",
+   "difficulty": "medium",
+   "minutes": 11,
+   "why": "Pairs with 'same car for 10 years' and 'small logos'; flattering and useful.",
+   "series_link": "-> same car 10 years; -> small logos",
+   "n": 5
+  },
+  {
+   "title": "Why $9.99 Still Works on You (Even Though You Know)",
+   "safe_title": "Pricing Psychology Explained: Why .99 Prices Work",
+   "angle": "Left-digit effect (Thomas & Morwitz 2005), anchoring with a decoy option, 'was/now' prices -> how each one quietly moves your hand -> a 10-second check before buying.",
+   "hedge": "",
+   "demand": "proven: 'What ACTUALLY Makes People Buy Things (Pricing Psychology Explained)' [orenmeetsworld] 225k",
+   "difficulty": "medium",
+   "minutes": 11,
+   "why": "Evergreen, every viewer meets it daily, easy diagrams.",
+   "series_link": "-> supermarket video",
+   "n": 6
+  },
+  {
+   "title": "How Apple Made You Want a Phone You Didn't Need",
+   "safe_title": "The Psychology of Apple's Branding: Why People Love Apple",
+   "angle": "Simplicity, rituals (unboxing), belonging to a tribe, ecosystem 'switching costs' -> why upgrading feels necessary -> how to tell a need from a brand feeling.",
+   "hedge": "Brain-scan claims about brand love are early research; we mention them carefully or not at all.",
+   "demand": "proven: 'How Apple and Nike have branded your brain' [Big Think] 4.9M; 'The Dark Psychology Behind Apple's Marketing' [History of Gadgets] 14k",
+   "difficulty": "medium",
+   "minutes": 12,
+   "why": "Biggest-name brand, high search; starts a tech-brand sub-series.",
+   "series_link": "-> later iPhone vs Android",
+   "n": 7
+  },
+  {
+   "title": "The Psychology of People Who Keep Their Car Spotless",
+   "safe_title": "What a Clean Car Says About Your Personality",
+   "angle": "Control, pride, care, calming routine -> 4 types of spotless-car owners -> when care is healthy and when it becomes stress.",
+   "hedge": "The 'types' are a fun lens, not a diagnosis.",
+   "demand": "proven: 'The Psychology of People Who Keep Their Cars Spotless' [Nous Psychology] 115k",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Proven 'habit' format, very relatable, positive.",
+   "series_link": "-> same car 10 years",
+   "n": 8
+  },
+  {
+   "title": "How Supermarkets Decide What Ends Up in Your Cart",
+   "safe_title": "Supermarket Psychology: How Store Layout Makes You Spend More",
+   "angle": "Essentials at the back, eye-level shelves, big carts, end-of-aisle displays -> how the route is designed -> a simple plan to shop on purpose.",
+   "hedge": "",
+   "demand": "proven: 'How Grocery Stores Exploit Consumer Psychology' [In Human Form] 10.8k; 'How Brands Use Design & Marketing to Control Your Mind' [Design Theory] 3.4M",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Everyday, family-friendly, great visual map of a store.",
+   "series_link": "-> $9.99 pricing",
+   "n": 9
+  },
+  {
+   "title": "The Psychology of People Who Modify Their Cars",
+   "safe_title": "Why People Modify Their Cars: The Psychology Explained",
+   "angle": "Identity, IKEA effect (we value what we built), belonging to a scene -> 4 types of modifiers -> making something yours vs proving something.",
+   "hedge": "",
+   "demand": "proven: 'The Psychology of People Who Modify Their Cars' [Nous Psychology] 407k",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Big proven demand, car fans share it.",
+   "series_link": "-> same car 10 years; -> car faces",
+   "n": 10
+  }
+ ],
+ "diagnosis_2026-10-26": "Own channel: 9 subs, median 109 views. The only real outlier is 'Why You REALLY Chose BMW, Mercedes, or Audi' (x4.6, 9.9 min): brand names the viewer already owns or wants + 'really' (hidden reason). Grey-car 'types' (x1.9) is the second hit, so the car-psychology line works; the off-niche 'Why He Stopped Posting' (x0.3) flopped and the debt-flavoured 'cars they can't afford' underperformed (x0.7).\nNiche demand: 'The Psychology of People Who ...' about one concrete car habit is a proven machine (Nous Psychology: 620k know how to work on cars, 407k modify their cars, 115k keep cars spotless; 'Driving the same car for 10 years says a lot about you' 734k). Viewer question behind all of them: 'what does my habit/choice say about me?'.\nBrand psychology has huge outliers when it names famous brands and exposes the hidden mechanism: 'How Apple and Nike have branded your brain' 4.9M, 'How luxury brands brainwash you to buy' 3.9M, 'The psychology of premium branding' 1.4M, 'Pricing psychology explained' 225k. 'The hidden psychology behind a car's face' (116k) joins both lines.\nLength: winners sit at 8-12 min; our best was 9.9 min, so 10-12 min is the target, not 15.\nGaps: car-face design, keeping one car for years, white cars (colour series started with red and grey), quiet luxury logos, why rich people drive boring cars, pricing tricks, supermarket layout, car modifying. Title pattern to keep: 'Why You REALLY…', 'The Psychology of People Who…', a concrete object + a hidden reason.",
+ "niches_2026-10-26": [
+  {
+   "name": "Tech brand psychology",
+   "titles": [
+    "iPhone vs Android: What Your Phone Says About You",
+    "Why New Phones Feel Necessary Every Two Years",
+    "The Psychology of People Who Never Upgrade Their Phone"
+   ],
+   "evidence": "'How Apple and Nike have branded your brain' 4.9M; 'The Dark Psychology Behind Apple's Marketing' 14k"
+  },
+  {
+   "name": "Store and shopping design",
+   "titles": [
+    "Why IKEA Makes You Walk the Whole Store",
+    "Why Shopping Online Is So Hard to Stop",
+    "The Psychology of the Checkout Line"
+   ],
+   "evidence": "'How Brands Use Design & Marketing to Control Your Mind' 3.4M; 'How Grocery Stores Exploit Consumer Psychology' 10.8k"
+  },
+  {
+   "name": "Habits of ordinary things (the 'Psychology of People Who...' machine)",
+   "titles": [
+    "The Psychology of People Who Always Arrive Early",
+    "The Psychology of People Who Keep Their Shoes Like New",
+    "The Psychology of People Who Wear the Same Clothes Every Day"
+   ],
+   "evidence": "Nous Psychology habit videos: 620k, 407k, 390k, 115k"
+  }
+ ],
+ "last_analysis": "2026-10-26"
+}

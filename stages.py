@@ -25,7 +25,14 @@ def target_minutes(p):
 
 def wpm(p):
     """Слов в минуту у голоса канала (замерено по готовой озвучке, см. calibrate_wpm)."""
-    return float(p.state.get("wpm") or p.channel.get("wpm") or 150)
+    w = p.state.get("wpm") or p.channel.get("wpm")
+    if not w:  # новый канал: берём темп того же голоса с другого канала (урок 2026-10-25: 150 -> видео короче на треть)
+        for c in os.listdir(core.CHANNELS):
+            ch = core.channel(c)
+            if ch.get("voice") == p.channel.get("voice") and ch.get("wpm"):
+                w = ch["wpm"]
+                break
+    return float(w or 180)
 
 
 def words(text):
@@ -341,7 +348,51 @@ def stage_scenes(p, log=print):
         if clean and r[0] - clean[-1][0] < 1.3:
             continue
         clean.append(r)
+    if core.config().get("code_scenes_first", True):
+        clean = skip_under_scenes(p, clean, end_total, log)
     build_shots(p, clean, end_total, log)
+
+
+def skip_under_scenes(p, rows, end_total, log=print, MIN=1.6):
+    """Код-сцены выбираются ДО картинок (edit_parts/ кэшируется — монтаж потом возьмёт те же сцены).
+    Кадры под сценой не генерим (раньше ~половина картинок уходила под сцены — кредиты впустую),
+    после сцены картинка встаёт ровно на её конец, ни одна не мелькает короче MIN (урок 2026-10-26)."""
+    import edit
+    tr = rj(p.f("transcript.json"))
+    words = edit.all_words(tr)
+    secs = edit.sections(p, words)
+    raw, _ = edit.ask_scenes(p, tr, words, secs, [], log)
+    sc = edit.clean_scenes(raw, secs, float(p.state.get("duration") or end_total))
+    under = lambda t: any(s["start"] - 0.3 <= t < s["end"] for s in sc)
+    kept = [list(r) for r in rows if not under(r[0])]
+    for i, s in enumerate(sc):
+        nxt_scene = sc[i + 1]["start"] if i + 1 < len(sc) else end_total
+        if nxt_scene - s["end"] < MIN:
+            continue  # окно крошечное — сцена держится до следующей (Video.tsx)
+        nxt = next((r for r in kept if r[0] >= s["end"]), None)
+        if nxt and nxt[0] - s["end"] < MIN:
+            nxt[0] = s["end"]
+        else:  # о чём говорили под сценой — то и показываем сразу после неё
+            hid = [r for r in rows if s["start"] - 0.3 <= r[0] < s["end"]]
+            if hid:
+                kept.append([s["end"], hid[-1][1], ""])
+    kept.sort(key=lambda r: r[0])
+
+    def vis(i):
+        a, b = kept[i][0], kept[i + 1][0] if i + 1 < len(kept) else end_total
+        return b - a - sum(max(0, min(b, s["end"]) - max(a, s["start"])) for s in sc)
+    i = 0
+    while i < len(kept) and len(kept) > 1:
+        if vis(i) < MIN:
+            same = i + 1 < len(kept) and not any(kept[i][0] < s["start"] < kept[i + 1][0] for s in sc)
+            del kept[i + 1 if same else i]
+            i = max(0, i - 1)
+            continue
+        i += 1
+    if kept:
+        kept[0][0] = 0.0
+    log(f"Код-сцен: {len(sc)}; картинок нужно {len(kept)} из {len(rows)} (под сценами не генерим)")
+    return kept
 
 
 def build_shots(p, rows, end_total, log=print):
@@ -638,6 +689,12 @@ if __name__ == "__main__":
         p = Project(a[1])
         import_images(p, a[2], force="--force" in a)
         print("есть %d, нет %s" % collect_images(p))
+    elif a[0] == "package":  # заголовки, превью-идеи, описание, теги -> out/youtube.md
+        import package
+        package.plan(Project(a[1]))
+    elif a[0] == "thumbs":  # thumbs/raw/A..D -> превью с текстом + лист проверки
+        import package
+        package.thumbs(Project(a[1]))
     elif a[0] == "auto":
         run_auto(Project(a[1]), a[2] if len(a) > 2 else None, a[3] if len(a) > 3 else None)
     else:

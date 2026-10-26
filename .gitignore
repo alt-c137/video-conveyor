@@ -11,3 +11,4 @@ zips_seen.json
 __pycache__/
 *.pyc
 stages/
+ai/inbox/

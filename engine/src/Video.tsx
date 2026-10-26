@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, OffthreadVideo, Sequence, staticFile, useVideoConfig } from "remotion";
 import { H, ThemeCtx, useSceneFade, useT, W } from "./kit";
 import { Images } from "./layers/Images";
@@ -40,15 +40,21 @@ const Stage: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `scale(${width / W})`, transformOrigin: "0 0", overflow: "hidden" }}>{children}</div>;
 };
 
-export const Video: React.FC<Edit> = (e) => {
+export const Video: React.FC<Edit> = (e0) => {
   const { t } = useT();
+  // окно между двумя сценами короче 1.6 с — сцена держится до следующей, без мелькнувшей картинки
+  const e = useMemo(() => {
+    const sc = [...e0.scenes].sort((a, b) => a.start - b.start)
+      .map((s, i, all) => (all[i + 1] && all[i + 1].start - s.end < 1.6 && all[i + 1].start > s.end ? { ...s, end: all[i + 1].start } : s));
+    return { ...e0, scenes: sc };
+  }, [e0]);
   const { fps } = useVideoConfig();
   const inScene = (x: number) => e.scenes.some((s) => x >= s.start - 0.1 && x < s.end + 0.1);
   const active = e.scenes.filter((s) => t >= s.start - 0.05 && t < s.end + 0.05);
   return (
     <ThemeCtx.Provider value={e.theme}>
       <AbsoluteFill style={{ background: "#111" }}>
-        <Images shots={e.shots} />
+        <Images shots={e.shots} scenes={e.scenes} />
         <Stage>
           {active.map((s, i) => <SceneLayer key={s.start + "_" + i} sc={s} />)}
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 85% 80% at 50% 50%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.22))" }} />
