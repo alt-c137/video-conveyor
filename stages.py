@@ -594,7 +594,10 @@ DOWNSTREAM_CACHE = {"script": ["motifs.json", "scenes_parts", "edit_parts", "edi
 
 def invalidate(p, stage):
     """Перезапуск этапа делает устаревшими кэши следующих этапов."""
+    keep = {"edit_parts"} if stage == "edit" and core.config().get("code_scenes_first", True) else set()
     for f in DOWNSTREAM_CACHE.get(stage, []):
+        if f in keep:  # код-сцены выбраны на этапе сцен, под них уже не генерили картинки — не выбрасывать
+            continue
         fp = p.f(f)
         if os.path.isdir(fp):
             shutil.rmtree(fp, ignore_errors=True)
