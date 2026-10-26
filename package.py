@@ -86,7 +86,7 @@ def draw_text(img, text, accent="", side="left"):
     """Крупный текст в 1-2 строки на свободной трети кадра: белый + жёлтое акцентное слово, толстая обводка, тень."""
     from PIL import Image, ImageDraw, ImageFilter, ImageFont
     words = text.upper().split()
-    lines = [" ".join(words)] if len(words) <= 2 else [" ".join(words[:len(words) // 2]), " ".join(words[len(words) // 2:])]
+    lines = [" ".join(words)] if len(words) <= 1 else [" ".join(words[:len(words) // 2]), " ".join(words[len(words) // 2:])]
     box_w = W * 0.46
     size = 240
     while size > 60:
