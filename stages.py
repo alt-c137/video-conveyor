@@ -588,7 +588,35 @@ def stage_upscale(p, log=print):
     core.run([cfg["exe"], "-i", tmp, "-o", dst, "-m", cfg["models"], "-n", cfg["model"], "-s", str(cfg["scale"]),
               "-f", "png"], log=log)
     shutil.rmtree(tmp, ignore_errors=True)
+    bad = black_upscales(src, dst, todo)
+    if bad:  # видеокарта занята (рендер) -> upscayl молча пишет чёрные кадры; весь ролик выходил на чёрном фоне
+        log(f"Апскейл: {len(bad)} чёрных картинок — повтор")
+        for f in bad:
+            os.remove(os.path.join(dst, os.path.splitext(f)[0] + ".png"))
+        os.makedirs(tmp)
+        for f in bad:
+            shutil.copy2(os.path.join(src, f), tmp)
+        core.run([cfg["exe"], "-i", tmp, "-o", dst, "-m", cfg["models"], "-n", cfg["model"], "-s", str(cfg["scale"]),
+                  "-f", "png"], log=log)
+        shutil.rmtree(tmp, ignore_errors=True)
+        from PIL import Image
+        for f in black_upscales(src, dst, bad):  # снова чёрная — берём оригинал, увеличенный обычным способом
+            im = Image.open(os.path.join(src, f)).convert("RGB")
+            im.resize((im.width * int(cfg["scale"]), im.height * int(cfg["scale"])), Image.LANCZOS)                 .save(os.path.join(dst, os.path.splitext(f)[0] + ".png"))
+            log(f"Апскейл: {f} — взят оригинал")
     log(f"Апскейл: {len(todo)} картинок")
+
+
+def black_upscales(src, dst, names):
+    """Картинки, у которых апскейл почти чёрный, а оригинал нет."""
+    from PIL import Image, ImageStat
+    lum = lambda f: ImageStat.Stat(Image.open(f).convert("L").resize((32, 18))).mean[0]
+    out = []
+    for f in names:
+        up = os.path.join(dst, os.path.splitext(f)[0] + ".png")
+        if not os.path.exists(up) or (lum(up) < 3 and lum(os.path.join(src, f)) > 12):
+            out.append(f)
+    return out
 
 
 # ======================= МОНТАЖ И РЕНДЕР =======================
