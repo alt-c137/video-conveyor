@@ -59,6 +59,9 @@
   "exe": "E:/Adobe/Канал/виспер/.venv/Scripts/whisper.exe",
   "model": "turbo"
  },
+ "render": {
+  "tmp": ""
+ },
  "upscayl": {
   "exe": "E:/Adobe/Upscayl/resources/bin/upscayl-bin.exe",
   "models": "E:/Adobe/Upscayl/resources/models",

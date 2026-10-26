@@ -292,7 +292,12 @@ def make_edit(p, log=print):
 
 
 def node(args, log):
-    return core.run(["node", os.path.join(ENGINE, "render.mjs")] + args, log=log, cwd=ENGINE)
+    # кадры рендера (~10+ ГБ на 15 мин 2K) идут во временную папку: на C: места мало -> config render.tmp
+    env, tmp = None, core.config().get("render", {}).get("tmp")
+    if tmp:
+        os.makedirs(tmp, exist_ok=True)
+        env = dict(os.environ, TEMP=tmp, TMP=tmp)
+    return core.run(["node", os.path.join(ENGINE, "render.mjs")] + args, log=log, cwd=ENGINE, env=env)
 
 
 def stills(p, log, secs=None):

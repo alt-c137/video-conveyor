@@ -247,9 +247,10 @@ def extract_json(text):
     raise ValueError("в ответе ИИ нет JSON:\n" + text[:500])
 
 
-def run(cmd, log=print, cwd=None, shell=False):
+def run(cmd, log=print, cwd=None, shell=False, env=None):
     log("$ " + (cmd if isinstance(cmd, str) else " ".join(map(str, cmd)))[:300])
-    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace", shell=shell)
+    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace", shell=shell,
+                       env=env)
     if r.returncode != 0:
         raise RuntimeError((r.stderr or r.stdout)[-1500:])
     return r.stdout

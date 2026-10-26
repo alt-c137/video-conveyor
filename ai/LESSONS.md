@@ -40,3 +40,7 @@
     пишем map-файл и качаем python'ом прямо в `<проект>/images/N.jpg`. Ни одного 404 = карта верна.
   * Вставка промтов: PowerShell `Set-Clipboard` из prompts_lines.txt → фокус на `#premium-prompts-textarea` → ctrl+v.
     Режим «1 персонаж» = радио `method_premium`, реф `#subject_image` (ава.png уже стоял), `num_images`=1, `aspect_ratio`=16:9.
+
+## 2026-10-26 — рендер упал ENOSPC на 20%
+Remotion кладёт кадры в %TEMP% (C:), а на C: свободно ~2 ГБ; 15 мин 2K — это 10+ ГБ кадров. Теперь `config.render.tmp`
+(у нас `D:/remotion_tmp`) — edit.node() передаёт TEMP/TMP рендеру. Перед рендером проверяй место на диске tmp и на диске проекта (final.mp4 ~2–4 ГБ).
