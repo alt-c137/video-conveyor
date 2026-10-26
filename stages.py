@@ -6,7 +6,7 @@
   python stages.py new <канал> <номер темы из topics.json> [минуты]
   python stages.py auto <папка проекта> [с этапа]  # все этапы подряд
 """
-import glob, hashlib, json, os, re, shutil, subprocess, sys, time
+import difflib, glob, hashlib, json, os, re, shutil, subprocess, sys, time
 import requests
 import core
 from core import Project, llm, prompt, rj, wj, rt, wt
@@ -286,6 +286,25 @@ def stage_whisper(p, log=print):
     wt(p.f("words.txt"), "\n".join(" ".join(f"{w['word'].strip()}@{w['start']:.2f}" for w in s.get("words", []))
                                     for s in d["segments"]))
     log(f"Транскрипт: {len(d['segments'])} сегментов, до {d['segments'][-1]['end']:.0f} с")
+    tts_artifacts(p, d, log)
+
+
+def tts_artifacts(p, d, log=print):
+    """Слова, которых нет в сценарии и в которых Whisper не уверен, — вероятный мусор TTS («Baha!», вздох).
+    Только предупреждение: глушить кусок в voice.mp3 (оригинал сохранить) до этапа монтажа."""
+    src = p.f("narration.txt") if os.path.exists(p.f("narration.txt")) else p.f("script.md")
+    if not os.path.exists(src):
+        return []
+    known = set(re.findall(r"[a-z']+", rt(src).lower()))
+    sus = []
+    for s in d["segments"]:
+        for w in s.get("words", []):
+            t = re.sub(r"[^a-z']", "", w["word"].lower())
+            if t and not t.isdigit() and t not in known and w.get("probability", 1) < 0.65                     and not difflib.get_close_matches(t, known, n=1, cutoff=0.6):  # grill/grille, имена
+                sus.append(f"{w['word'].strip()}@{w['start']:.1f}")
+    if sus:
+        log(f"ВНИМАНИЕ: возможный мусор в озвучке (нет в сценарии): {', '.join(sus[:20])} — послушай эти места")
+    return sus
 
 
 # ======================= СЦЕНЫ И ПРОМТЫ =======================
