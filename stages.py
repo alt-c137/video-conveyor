@@ -290,18 +290,20 @@ def stage_whisper(p, log=print):
 
 
 def tts_artifacts(p, d, log=print):
-    """Слова, которых нет в сценарии и в которых Whisper не уверен, — вероятный мусор TTS («Baha!», вздох).
+    """Лишние слова в озвучке, которых нет в сценарии, — вероятный мусор TTS («Baha!», «Night.», вздох).
+    Выравниваем слова Whisper по словам сценария: вставка 1-3 слов без пары = подозрение (даже если Whisper уверен).
     Только предупреждение: глушить кусок в voice.mp3 (оригинал сохранить) до этапа монтажа."""
     src = p.f("narration.txt") if os.path.exists(p.f("narration.txt")) else p.f("script.md")
     if not os.path.exists(src):
         return []
-    known = set(re.findall(r"[a-z']+", rt(src).lower()))
+    norm = lambda x: re.sub(r"[^a-z']", "", x.lower())
+    ref = [t for t in map(norm, re.findall(r"\S+", rt(src))) if t]
+    words = [w for s in d["segments"] for w in s.get("words", []) if norm(w["word"])]
+    hyp = [norm(w["word"]) for w in words]
     sus = []
-    for s in d["segments"]:
-        for w in s.get("words", []):
-            t = re.sub(r"[^a-z']", "", w["word"].lower())
-            if t and not t.isdigit() and t not in known and w.get("probability", 1) < 0.65                     and not difflib.get_close_matches(t, known, n=1, cutoff=0.6):  # grill/grille, имена
-                sus.append(f"{w['word'].strip()}@{w['start']:.1f}")
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, ref, hyp, autojunk=False).get_opcodes():
+        if op == "insert" and j2 - j1 <= 3 and not any(c.isdigit() for w in words[j1:j2] for c in w["word"]):
+            sus.append(f"{' '.join(w['word'].strip() for w in words[j1:j2])}@{words[j1]['start']:.1f}")
     if sus:
         log(f"ВНИМАНИЕ: возможный мусор в озвучке (нет в сценарии): {', '.join(sus[:20])} — послушай эти места")
     return sus
