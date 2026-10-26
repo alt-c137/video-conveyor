@@ -76,6 +76,7 @@ class H(BaseHTTPRequestHandler):
         self.send_header("Content-Type", ctype)
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("Access-Control-Allow-Private-Network", "true")  # страницы https (агрегатор) → 127.0.0.1
         self.end_headers()
         self.wfile.write(body)
 
@@ -131,6 +132,24 @@ class H(BaseHTTPRequestHandler):
 
     def do_POST(self):
         u = urllib.parse.urlparse(self.path)
+        if u.path == "/api/inbox":  # ZIP с кадрами прямо со страницы агрегатора: POST ?project=<папка>&name=<x.zip>
+            try:
+                q = dict(urllib.parse.parse_qsl(u.query))
+                p = self.proj(q["project"])
+                n = int(self.headers["Content-Length"])
+                os.makedirs(p.f("inbox"), exist_ok=True)
+                fp = p.f("inbox", os.path.basename(q.get("name") or "frames.zip"))
+                with open(fp, "wb") as fh:
+                    while n > 0:
+                        chunk = self.rfile.read(min(n, 1 << 20))
+                        if not chunk:
+                            break
+                        fh.write(chunk)
+                        n -= len(chunk)
+                p.log(f"ZIP получен со страницы: {os.path.basename(fp)} ({os.path.getsize(fp) // 1048576} МБ)")
+                return self.send(200, {"ok": True, "path": fp})
+            except Exception as e:
+                return self.send(400, {"error": str(e)})
         try:
             b = self.body()
             if u.path == "/flow/progress":

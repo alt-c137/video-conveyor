@@ -302,7 +302,8 @@ def stills(p, log, secs=None):
     node([p.path, "--stills"] + [str(s) for s in secs], log)
     try:
         from PIL import Image
-        ims = [Image.open(p.f("out", "check", f"s_{s}.jpg")) for s in secs]
+        # render.mjs пишет имя через JS Number: 269.0 -> "s_269.jpg"
+        ims = [Image.open(p.f("out", "check", f"s_{s:g}.jpg")) for s in secs]
         w, h = 640, 360
         cols = 4
         sheet = Image.new("RGB", (cols * w, ((len(ims) + cols - 1) // cols) * h), "white")
