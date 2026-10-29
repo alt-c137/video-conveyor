@@ -17,12 +17,13 @@ fs.mkdirSync(path.join(out, "check"), { recursive: true });
 const log = (s) => { fs.appendFileSync(path.join(out, "render_log.txt"), s + "\n"); console.log(s); };
 
 const serveUrl = await bundle({ entryPoint: path.join(here, "src/index.ts"), publicDir: path.join(proj, "public") });
-const composition = await selectComposition({ serveUrl, id: "Video", inputProps });
+// машина занята вторым рендером/апскейлом — 33 с по умолчанию мало (Logic 02, 2026-10-29)
+const composition = await selectComposition({ serveUrl, id: "Video", inputProps, timeoutInMilliseconds: 180000 });
 const chromiumOptions = { gl: "angle" };
 
 if (args[0] === "--stills") {
   for (const s of args.slice(1).map(Number)) {
-    await renderStill({ composition, serveUrl, inputProps, frame: Math.round(s * 30), output: path.join(out, "check", `s_${s}.jpg`), imageFormat: "jpeg", jpegQuality: 80, scale: 0.5, chromiumOptions });
+    await renderStill({ composition, serveUrl, inputProps, frame: Math.round(s * 30), output: path.join(out, "check", `s_${s}.jpg`), imageFormat: "jpeg", jpegQuality: 80, scale: 0.5, chromiumOptions, timeoutInMilliseconds: 180000 });
     console.log("still", s);
   }
 } else {

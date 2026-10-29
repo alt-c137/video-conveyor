@@ -5,13 +5,9 @@ Rules:
 - A scene must match EXACTLY what the voice says during its time range. Start a scene when the topic of the scene starts being spoken.
 - Every study/researcher/year mentioned -> a "study" scene. Every number -> "big_number" / "bars" / "dots". Every list of steps -> "list" or "steps". Every contrast -> "split" or "scale" or "myth_fact".
 - Use variety: do not use the same type twice in a row; use at least 10 different types over the whole video.
-- LIVE ANIMATION FIRST (user feedback 2026-10-29: "you only gave quotes — who cares? Do it like before: graphs, 5 little people for 5 types, a car driving"):
-  * at least 60 % of scenes are PICTURE types where something moves: lineup, drive, race, timeline, thought, spotlight, pile, battery, clock, scale, loop, iceberg, dots, meter, curve, bars, steps;
-  * text-card types (question, quote, words, myth_fact, list, cards, split) together at most 30 %, never two in a row; quote and words at most 3 each per video;
-  * the video promises N types / kinds / reasons -> a "lineup" with N people when the list is introduced, and again a short lineup with highlight when each type starts or in the recap;
-  * a car, a trip, a commute, "years of driving", buying/selling a car -> "drive"; two or more choices/paths/people compared over time -> "race";
-  * history, years, "since 1950", an evolution -> "timeline";
-  * when the voice describes a situation, show it acted out (lineup / thought / drive), not written.
+- ANIMATION, NOT A SLIDESHOW OF QUOTES (user 2026-10-29): the viewer must see beautiful animation that fits the MEANING of the words — graphs, comparisons, things moving, growing, filling, tipping, accumulating, a character reacting. Quotes and text cards stay, but they are the seasoning, not the meal:
+  * at least 60 % of scenes are picture types where something moves (bars, dots, curve, meter, scale, iceberg, loop, steps, battery, clock, pile, spotlight, thought, timeline, race, drive, lineup); text-card types (question, quote, words, myth_fact, list, cards, split) at most 30 %, never two in a row;
+  * pick each scene ONLY because it shows what the voice says at that second. A type that does not fit the meaning is worse than a plain image. Never force one scene type everywhere: lineup only when the voice really introduces several kinds of people, drive/race only when the voice really talks about a car, a journey or paths compared, timeline only for real dates/history.
 - Texts on screen are SHORT (titles up to 6 words, items up to 7 words). English. Only facts said in the voiceover.
 - "cues": absolute times (seconds) when each element should appear = when the voice says it. Take times from the transcript words (word@seconds).
 - Do NOT place a scene in the first 3 seconds after a section start ({{sections}}) — a section title card is added there automatically.

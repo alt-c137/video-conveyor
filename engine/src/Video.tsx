@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, OffthreadVideo, Sequence, staticFile, useVideoConfig } from "remotion";
 import { H, ThemeCtx, useSceneFade, useT, W } from "./kit";
 import { Images } from "./layers/Images";
-import { Captions, CTA, EndScreen, Progress } from "./layers/Overlay";
+import { Captions, CTA, EndScreen } from "./layers/Overlay";
 import * as A from "./scenes/A_text";
 import * as B from "./scenes/B_visual";
 import * as C from "./scenes/C_motion";
@@ -59,7 +59,7 @@ export const Video: React.FC<Edit> = (e0) => {
         <Stage>
           {active.map((s, i) => <SceneLayer key={s.start + "_" + i} sc={s} />)}
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 85% 80% at 50% 50%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.22))" }} />
-          <Progress sections={e.sections} hide={inScene} end={e.duration} />
+          {/* полоска разделов справа сверху убрана по просьбе пользователя 2026-10-29: мешает, сегменты видны в плеере YouTube */}
           <Captions caps={e.captions} hide={inScene} />
           {e.cta.intro ? <CTA at={e.cta.intro} /> : null}
           {e.cta.outro ? <CTA at={e.cta.outro} /> : null}
