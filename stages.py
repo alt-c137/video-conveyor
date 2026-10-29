@@ -170,9 +170,11 @@ def stage_script(p, log=print):
 def mech_issues(body, nw):
     iss = []
     n = words(body)
-    if abs(n - nw) / nw > 0.12:
+    # короче цели больше чем на 5 % — переписать: ролик не должен выйти короче 10 минут (просьба 2026-10-29)
+    if n < nw * 0.95 or n > nw * 1.12:
         iss.append({"severity": "fix", "type": "length", "quote": "", "why": f"{n} words, target {nw}",
-                    "fix": "expand" if n < nw else "cut"})
+                    "fix": "expand by opening up the existing items deeper (scene, why, cost, twist), never by padding"
+                    if n < nw else "cut"})
     for sent in re.split(r"(?<=[.!?])\s+", re.sub(r"\[SECTION:.*?\]", "", body)):
         if words(sent) > 28:
             iss.append({"severity": "fix", "type": "voice", "quote": sent[:120], "why": "sentence too long for voiceover",
@@ -190,12 +192,13 @@ def mech_issues(body, nw):
 def score_issues(res):
     """Оценки интереса от проверяющего ИИ: ниже 8 — переписать (зацепка или скучные места)."""
     iss = []
-    for k, t in (("hook_score", "hook"), ("interest_score", "boring")):
+    for k, t in (("hook_score", "hook"), ("interest_score", "boring"), ("depth_score", "shallow")):
         v = res.get(k)
         if isinstance(v, (int, float)) and v < 8:
             iss.append({"severity": "fix", "type": t, "quote": "", "why": f"{k} = {v}/10",
-                        "fix": "rewrite the hook by the hook pattern" if t == "hook" else
-                        "add a new example, twist, number or question every ~60 s; make the viewer feel seen"})
+                        "fix": {"hook": "rewrite the hook by the hook pattern",
+                                "shallow": "open every promised item fully: scene, why (study), cost/benefit, twist, 200-300 words"}
+                        .get(t, "add a new example, twist, number or question every ~60 s; make the viewer feel seen")})
     return iss
 
 
@@ -211,7 +214,7 @@ def stage_check(p, log=print, rounds=3):
         res["issues"] = [i for i in res.get("issues", []) if i.get("severity") in ("block", "fix")] + mech_issues(body, nw) + score_issues(res)
         wj(p.f(f"check_{r}.json"), res)
         log(f"Проверка {r}: {len(res['issues'])} замечаний, зацепка {res.get('hook_score', '?')}/10, "
-            f"интерес {res.get('interest_score', '?')}/10. {res.get('summary', '')}")
+            f"интерес {res.get('interest_score', '?')}/10, глубина {res.get('depth_score', '?')}/10. {res.get('summary', '')}")
         if not res["issues"]:
             p.state["check"] = "ok"
             p.save()

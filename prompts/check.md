@@ -12,12 +12,13 @@ Check, in this order:
 7. Length: more than 12% off the target = "fix". Count it, do not guess.
 8. Interest: any stretch of ~60 seconds (~180 words) with no new example, twist, question or number = "fix" (type "boring"). Each block must give the viewer something they did not know.
 9. Value: the practical block must be usable today; vague advice = "fix".
+10. Depth: every promised item (type / reason / sign / step) must have its own scene, mechanism, cost-or-benefit and a twist, about 200-300 words. Any item covered in under ~150 words or with no example = "fix" (type "shallow"; quote the item's first words).
 
 {{rules}}
 
 Answer ONLY with JSON:
-{"verdict": "ok" | "fix", "issues": [{"severity": "block|fix|minor", "type": "rules|fact|hook|repeat|structure|voice|length|boring|value", "quote": "<exact words from the script>", "why": "<short>", "fix": "<what to do>"}], "hook_score": <1-10>, "interest_score": <1-10 for the whole script: new example/twist/number every ~60 s, viewer feels seen>, "summary": "<one sentence>"}
-"verdict" is "ok" only if there are no block/fix issues and both scores are 8 or more.
+{"verdict": "ok" | "fix", "issues": [{"severity": "block|fix|minor", "type": "rules|fact|hook|repeat|structure|voice|length|boring|value", "quote": "<exact words from the script>", "why": "<short>", "fix": "<what to do>"}], "hook_score": <1-10>, "interest_score": <1-10 for the whole script: new example/twist/number every ~60 s, viewer feels seen>, "depth_score": <1-10: is every item opened up fully, or only touched?>, "summary": "<one sentence>"}
+"verdict" is "ok" only if there are no block/fix issues and all three scores are 8 or more.
 
 SCRIPT:
 {{script}}

@@ -5,6 +5,7 @@ Rules:
 - A scene must match EXACTLY what the voice says during its time range. Start a scene when the topic of the scene starts being spoken.
 - Every study/researcher/year mentioned -> a "study" scene. Every number -> "big_number" / "bars" / "dots". Every list of steps -> "list" or "steps". Every contrast -> "split" or "scale" or "myth_fact".
 - Use variety: do not use the same type twice in a row; use at least 10 different types over the whole video.
+- LIVE ANIMATION FIRST (user feedback 2026-10-29: "I wanted real scene animation, not just quotes"): at least 60 % of scenes must be types where something MOVES and acts — thought (the character reacts), spotlight, pile, battery, clock, scale, loop, iceberg, dots, meter, curve, steps, bars. Text-only types (quote, words, question) together at most 20 % of scenes, never two of them in a row. When the voice describes a situation, show it acted out, not written.
 - Texts on screen are SHORT (titles up to 6 words, items up to 7 words). English. Only facts said in the voiceover.
 - "cues": absolute times (seconds) when each element should appear = when the voice says it. Take times from the transcript words (word@seconds).
 - Do NOT place a scene in the first 3 seconds after a section start ({{sections}}) — a section title card is added there automatically.

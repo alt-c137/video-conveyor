@@ -19,6 +19,13 @@ Structure:
    d) Go STRAIGHT into the first idea. It EXTENDS the title's curiosity, never repeats the title.
 2. NO channel intro, NO "welcome back", NO subscribe ask and NO agenda ("today you will learn 1, 2, 3", "by the end you will know") anywhere in the first 3 minutes. This block made viewers leave at 0:30-1:10 on our channel (lesson 2026-10-29).
 3. {{sections}} meaning blocks. Each block = one clear idea, a concrete everyday example from the viewer's life, and it ends with a micro-cliffhanger into the next block.
+   DEPTH (user feedback 2026-10-29: "you touch each of the 5 cars a little and move on — boring"): if the title or a block promises N items (5 types, 3 reasons, 4 signs), EVERY item gets its own full mini-story of 200-300 words, never a 3-sentence sketch:
+   a) a recognisable scene with one person in it (name the moment, the object, the gesture);
+   b) WHY: the mechanism, with a real study or a real fact where one exists;
+   c) what it gives this person and what it quietly costs them;
+   d) a twist or a detail nobody expects ("but here is the strange part...");
+   e) one line that hands over to the next item.
+   Fewer items explained deeply beat many items listed. Never close an item with a one-line summary instead of content.
 4. A practical block: a simple, concrete method the viewer can use today (steps, a question to ask yourself, a rule).
 5. Strong ending: conclusion / philosophical point that ties back to the hook.
 6. Soft subscribe CTA: ONE sentence, only after a real payoff (around the middle, e.g. right after the first "aha" of the types/reasons block), plus one at the very end. Never before minute 3.
