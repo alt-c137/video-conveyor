@@ -359,6 +359,10 @@ def check_images(p, log=print, n=12):
         for i, im in enumerate(ims):
             sheet.paste(im.resize((640, 360)), ((i % 4) * 640, (i // 4) * 360))
         sheet.save(p.f("out", "check_images.jpg"), quality=82)
+    if not ims:
+        # ни одного кадра с картинкой — значит в edit.json нет картинок (Logic 03, 2026-10-29), а не «всё хорошо»
+        log("ВНИМАНИЕ: в ролике нет ни одной картинки (edit.json shots без src) — проверь shotlist/edit, не отдавай ролик")
+        return [-1]
     if dark:
         log(f"ВНИМАНИЕ: чёрные кадры на месте картинок ({len(dark)} из {len(ims)}): {dark} — проверь images_2x")
     else:

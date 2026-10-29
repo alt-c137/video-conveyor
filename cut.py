@@ -7,7 +7,7 @@
 «Welcome back... subscribe... By the end you will know 1, 2, 3» — 22-30 с разговора о видео вместо видео.
 У конкурентов (Nous Psychology, The Gen X Way, PsychToons, Throttle Psychology) такого нет вообще.
 """
-import json, os, re, shutil
+import glob, json, os, re, shutil
 import core
 from core import rj, wj
 
@@ -59,6 +59,17 @@ def cut(p, a, b, log=print):
                 x["end"] = clip(e)
             out.append(x)
         return out
+
+    # первый вырез в проекте: старые *_precut.* остались от прошлого прогона (откат, пересборка) и уже не оригинал —
+    # убираем их в *_precut_stale.*, иначе вырез возьмёт устаревший монтаж (Logic 03, 2026-10-29: ролик без картинок)
+    if not p.state.get("cuts"):
+        for old in glob.glob(p.f("*_precut.*")) + glob.glob(p.f(os.path.join("public", "*_precut.*"))):
+            root, ext = os.path.splitext(old)
+            n, dst = 1, f"{root}_stale{ext}"
+            while os.path.exists(dst):
+                n += 1
+                dst = f"{root}_stale{n}{ext}"
+            os.replace(old, dst)
 
     # звук: оригинал сохраняем, стык — короткий кроссфейд
     for f in ("voice.mp3", os.path.join("public", "voice.mp3")):
