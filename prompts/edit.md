@@ -5,7 +5,13 @@ Rules:
 - A scene must match EXACTLY what the voice says during its time range. Start a scene when the topic of the scene starts being spoken.
 - Every study/researcher/year mentioned -> a "study" scene. Every number -> "big_number" / "bars" / "dots". Every list of steps -> "list" or "steps". Every contrast -> "split" or "scale" or "myth_fact".
 - Use variety: do not use the same type twice in a row; use at least 10 different types over the whole video.
-- LIVE ANIMATION FIRST (user feedback 2026-10-29: "I wanted real scene animation, not just quotes"): at least 60 % of scenes must be types where something MOVES and acts — thought (the character reacts), spotlight, pile, battery, clock, scale, loop, iceberg, dots, meter, curve, steps, bars. Text-only types (quote, words, question) together at most 20 % of scenes, never two of them in a row. When the voice describes a situation, show it acted out, not written.
+- LIVE ANIMATION FIRST (user feedback 2026-10-29: "you only gave quotes — who cares? Do it like before: graphs, 5 little people for 5 types, a car driving"):
+  * at least 60 % of scenes are PICTURE types where something moves: lineup, drive, race, timeline, thought, spotlight, pile, battery, clock, scale, loop, iceberg, dots, meter, curve, bars, steps;
+  * text-card types (question, quote, words, myth_fact, list, cards, split) together at most 30 %, never two in a row; quote and words at most 3 each per video;
+  * the video promises N types / kinds / reasons -> a "lineup" with N people when the list is introduced, and again a short lineup with highlight when each type starts or in the recap;
+  * a car, a trip, a commute, "years of driving", buying/selling a car -> "drive"; two or more choices/paths/people compared over time -> "race";
+  * history, years, "since 1950", an evolution -> "timeline";
+  * when the voice describes a situation, show it acted out (lineup / thought / drive), not written.
 - Texts on screen are SHORT (titles up to 6 words, items up to 7 words). English. Only facts said in the voiceover.
 - "cues": absolute times (seconds) when each element should appear = when the voice says it. Take times from the transcript words (word@seconds).
 - Do NOT place a scene in the first 3 seconds after a section start ({{sections}}) — a section title card is added there automatically.
@@ -36,6 +42,10 @@ SCENE TYPES (type: props):
 - spotlight: {before, after}  — person under a spotlight feels watched (before), then the crowd is revealed busy with themselves (after). cues = [spotlight, reveal].
 - thought: {expression: neutral|happy|sad|panic|calm|scared|smug, pose: stand|wave|sit|hold|point|clench|open|drop|shrug, thought, label?}  — the character's inner voice. cues = [character, bubble].
 - pile: {title, icons: [1-3 emojis], count 10-40, caption?}  — things accumulating (time, money, effort invested).
+- lineup: {title?, people: [{label (1-3 words), color?, expression?, pose?, car? (colour name, if the topic is cars)} x2-6], highlight? (index)}  — N little people walk in one by one (the N types / kinds of people). cues = [title, each person].
+- drive: {label?, color?, from?, to?, driver?: true, stop?: true}  — a car drives along a road left to right (a journey, years behind the wheel, "from A to B"). color = colour name (red, white, gray, silver, black, blue, beige...).
+- timeline: {title?, events: [{year, text (2-5 words)}] x2-6}  — events light up left to right. cues = one per event.
+- race: {title?, lanes: [{label, color?, speed 0.2-1}] x2-4, caption?}  — cars on parallel lanes at different speeds (which path/choice gets further). caption = the conclusion.
 
 {{theme_req}}
 Answer ONLY with JSON:

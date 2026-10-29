@@ -9,7 +9,8 @@ from core import llm, prompt, rj, wj, rt
 
 ENGINE = os.path.join(core.ROOT, "engine")
 TYPES = {"clip", "question", "quote", "words", "big_number", "list", "recap", "myth_fact", "study", "split", "cards", "bars",
-         "dots", "scale", "iceberg", "meter", "curve", "steps", "loop", "battery", "clock", "spotlight", "thought", "pile"}
+         "dots", "scale", "iceberg", "meter", "curve", "steps", "loop", "battery", "clock", "spotlight", "thought", "pile",
+         "lineup", "drive", "timeline", "race"}
 DEFAULT_THEME = {"paper": "#EFEAE0", "ink": "#24272C", "a1": "#2F6F6B", "a2": "#D39B45", "a3": "#B8C9C1", "dark": "#1E2124"}
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 

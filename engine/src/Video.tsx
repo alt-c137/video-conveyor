@@ -5,6 +5,7 @@ import { Images } from "./layers/Images";
 import { Captions, CTA, EndScreen, Progress } from "./layers/Overlay";
 import * as A from "./scenes/A_text";
 import * as B from "./scenes/B_visual";
+import * as C from "./scenes/C_motion";
 import type { Edit, Scene } from "./types";
 
 export const REGISTRY: Record<string, React.FC<{ sc: Scene }>> = {
@@ -12,7 +13,7 @@ export const REGISTRY: Record<string, React.FC<{ sc: Scene }>> = {
   list: A.List, recap: A.Recap, myth_fact: A.MythFact, study: A.Study, split: A.Split, cards: A.Cards,
   bars: B.Bars, dots: B.Dots, scale: B.Scale, iceberg: B.Iceberg, meter: B.Meter, curve: B.Curve,
   steps: B.Steps, loop: B.Loop, battery: B.Battery, clock: B.Clock, spotlight: B.Spotlight, thought: B.Thought,
-  pile: B.Pile,
+  pile: B.Pile, lineup: C.Lineup, drive: C.Drive, timeline: C.Timeline, race: C.Race,
 };
 
 /** Готовый ролик-вставка (HyperFrames и др.): public/clips/<файл>.mp4, без звука, на всю сцену. */
