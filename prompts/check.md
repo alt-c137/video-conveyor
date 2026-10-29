@@ -5,7 +5,7 @@ Target: about {{minutes}} minutes (~{{words}} words). Actual: {{actual_words}} w
 Check, in this order:
 1. RULES (below). Any violation is severity "block".
 2. Facts: every study, researcher, year and number. Wrong or invented = "block". Disputed but stated as certain without a hedge = "fix".
-3. Hook: grabs within 15 seconds? Weak = "fix".
+3. Hook (first ~100 words): opens inside a specific recognisable scene with sensory details, rejects the obvious label, promises something deeper, no greeting / channel name / subscribe / agenda ("today you will", "by the end of this video you will know") in the first 3 minutes. Any of these missing or present = "fix" (type "hook"). Also score it: "hook_score" 1-10 = would a 45-year-old scrolling at night stop and keep watching past 0:30? Below 8 = "fix".
 4. Repetition: the same thought repeated in other words = "fix".
 5. Structure: micro-cliffhangers between blocks, practical method, strong ending, soft CTA. Missing = "fix".
 6. Voiceover: sentences over ~22 words, brackets, symbols, hard-to-read words = "fix".
@@ -16,8 +16,8 @@ Check, in this order:
 {{rules}}
 
 Answer ONLY with JSON:
-{"verdict": "ok" | "fix", "issues": [{"severity": "block|fix|minor", "type": "rules|fact|hook|repeat|structure|voice|length|boring|value", "quote": "<exact words from the script>", "why": "<short>", "fix": "<what to do>"}], "summary": "<one sentence>"}
-"verdict" is "ok" only if there are no block/fix issues.
+{"verdict": "ok" | "fix", "issues": [{"severity": "block|fix|minor", "type": "rules|fact|hook|repeat|structure|voice|length|boring|value", "quote": "<exact words from the script>", "why": "<short>", "fix": "<what to do>"}], "hook_score": <1-10>, "interest_score": <1-10 for the whole script: new example/twist/number every ~60 s, viewer feels seen>, "summary": "<one sentence>"}
+"verdict" is "ok" only if there are no block/fix issues and both scores are 8 or more.
 
 SCRIPT:
 {{script}}

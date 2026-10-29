@@ -177,6 +177,25 @@ def mech_issues(body, nw):
         if words(sent) > 28:
             iss.append({"severity": "fix", "type": "voice", "quote": sent[:120], "why": "sentence too long for voiceover",
                         "fix": "split into short sentences"})
+    # первые ~3 минуты: никаких «welcome/subscribe/today you will learn» — на этом зрители уходили (урок 2026-10-29)
+    head = " ".join(re.sub(r"\[SECTION:.*?\]", "", body).split()[:540])
+    for m in re.finditer(r"[^.!?]*\b(welcome back|welcome to|subscribe|today you will|in this video|by the end of this video"
+                         r"|by the end, you will|let's dive in)\b[^.!?]*[.!?]", head, re.I):
+        iss.append({"severity": "fix", "type": "hook", "quote": m.group(0).strip()[:120],
+                    "why": "channel intro / CTA / agenda in the first 3 minutes makes viewers leave",
+                    "fix": "delete it; go straight from the hook scene into the first idea; CTA only after the first payoff"})
+    return iss
+
+
+def score_issues(res):
+    """Оценки интереса от проверяющего ИИ: ниже 8 — переписать (зацепка или скучные места)."""
+    iss = []
+    for k, t in (("hook_score", "hook"), ("interest_score", "boring")):
+        v = res.get(k)
+        if isinstance(v, (int, float)) and v < 8:
+            iss.append({"severity": "fix", "type": t, "quote": "", "why": f"{k} = {v}/10",
+                        "fix": "rewrite the hook by the hook pattern" if t == "hook" else
+                        "add a new example, twist, number or question every ~60 s; make the viewer feel seen"})
     return iss
 
 
@@ -189,9 +208,10 @@ def stage_check(p, log=print, rounds=3):
         out = llm(prompt("check", channel_name=ch["name"], minutes=f"{target_minutes(p):g}", words=str(nw),
                          actual_words=str(words(body)), rules=rules(), script=body), stage="check", log=log)
         res = core.extract_json(out)
-        res["issues"] = [i for i in res.get("issues", []) if i.get("severity") in ("block", "fix")] + mech_issues(body, nw)
+        res["issues"] = [i for i in res.get("issues", []) if i.get("severity") in ("block", "fix")] + mech_issues(body, nw) + score_issues(res)
         wj(p.f(f"check_{r}.json"), res)
-        log(f"Проверка {r}: {len(res['issues'])} замечаний. {res.get('summary', '')}")
+        log(f"Проверка {r}: {len(res['issues'])} замечаний, зацепка {res.get('hook_score', '?')}/10, "
+            f"интерес {res.get('interest_score', '?')}/10. {res.get('summary', '')}")
         if not res["issues"]:
             p.state["check"] = "ok"
             p.save()
@@ -747,6 +767,11 @@ if __name__ == "__main__":
     elif a[0] == "thumbs":  # thumbs/raw/A..D -> превью с текстом + лист проверки
         import package
         package.thumbs(Project(a[1]))
+    elif a[0] == "cut":  # python stages.py cut <проект> <a> <b> | welcome — вырезать кусок голоса, сдвинуть тайминги
+        import cut
+        p = Project(a[1])
+        r = cut.welcome_range(p) if a[2] == "welcome" else (float(a[2]), float(a[3]))
+        print("раздел Welcome не найден" if not r else cut.cut(p, *r))
     elif a[0] == "auto":
         run_auto(Project(a[1]), a[2] if len(a) > 2 else None, a[3] if len(a) > 3 else None)
     else:

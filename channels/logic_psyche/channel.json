@@ -3,7 +3,7 @@
  "url": "https://www.youtube.com/@badass05",
  "language": "English",
  "niche": "Cognitive biases and how thinking works. Promise of the channel: no fluff, structured, practical.",
- "audience": "18-35, self-improvement. Their pain: 'why do I get in my own way'.",
+ "audience": "18-45, thoughtful, often quiet/introverted, self-improvement. Their pain: 'why do I get in my own way'. Their pull: to feel SEEN and understood (PsychToons, Psychology Simplified outliers: 'people who go quiet when hurt', 'love staying at home').",
  "format": "One bias per video. Bias -> how it breaks your life -> what to do. Every video ends with a practical exit.",
  "honesty": "Facts only if verifiable. Disputed science gets ONE honest hedge (possibly / likely / we don't know for sure), then speak confidently. Scientific honesty is the channel's edge over competitors.",
  "voice": "Then Life 2",
@@ -11,7 +11,12 @@
   13,
   16
  ],
- "competitors": [],
+ "competitors": [
+  "https://www.youtube.com/channel/UC7ogBsKt4AoJBu8bObb0QiA",
+  "https://www.youtube.com/channel/UCHacVMLp7bHDC7e4eoPi9Dw",
+  "https://www.youtube.com/channel/UCpExuV8qJMfCaSQNL1YG6bQ",
+  "https://www.youtube.com/channel/UCvxPZUIEE6KWq--H0tsSqtw"
+ ],
  "character": "the host",
  "character_w": "a young woman in a long beige coat and a light headscarf",
  "notes": "Cross-link related videos (IKEA effect <-> sunk cost).",
