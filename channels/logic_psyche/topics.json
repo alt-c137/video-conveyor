@@ -165,6 +165,54 @@
    "why": "Closes the habits/procrastination block with a fully practical tool and sets up a future compilation of all the biases.",
    "series_link": "Back to #7 and #6; forward to a future compilation video.",
    "n": 15
+  },
+  {
+   "title": "The Psychology of People Who Fix Everything Themselves",
+   "safe_title": "The IKEA Effect: Why We Love What We Build",
+   "angle": "Hook: a woman spends a weekend fixing a shelf she could replace for $20 — and loves it more than any new one. IKEA effect (Norton, Mochon & Ariely 2012), effort justification, self-efficacy. When it helps (skills, confidence) and when it traps you (sunk cost link). Exit: the build-or-buy test.",
+   "hedge": "",
+   "demand": "proven: 'Psychology of Mechanical Intelligence (Why Some People Can Fix Anything)' [PsychToons] 1.3M; 'People Who Know How To Fix Everything' [Psychology Simplified] 659k",
+   "difficulty": "low",
+   "minutes": 13,
+   "why": "Identity framing + a real bias; cross-link with sunk cost video.",
+   "series_link": "-> can't quit things (sunk cost)",
+   "n": 16
+  },
+  {
+   "title": "The Psychology of People Who Never Ask for Help",
+   "safe_title": "Why Asking for Help Feels So Hard (and Works Better Than You Think)",
+   "angle": "Hook: lost in a city for 40 minutes rather than asking a stranger. Flynn & Lake 2008: people underestimate by about half how many strangers will say yes. Spotlight of shame, fear of looking weak. Exit: the small-ask method.",
+   "hedge": "",
+   "demand": "proven: 'It Sucks But It Will Make Asking for Help Easier' [Psychology Simplified] recent; 'People That Have Gone Through Too Much' 884k",
+   "difficulty": "low",
+   "minutes": 13,
+   "why": "Bias with a precise real study; viewers feel seen.",
+   "series_link": "-> nobody is watching you",
+   "n": 17
+  },
+  {
+   "title": "The Psychology of People Who Overthink Every Decision",
+   "safe_title": "Maximizers vs Satisficers: Why Overthinkers Feel Worse",
+   "angle": "Hook: 45 minutes comparing two kettles. Schwartz et al. 2002 maximizers vs satisficers; choice overload (Iyengar & Lepper 2000, with ONE hedge: later meta-analyses mixed). Exit: 'good enough' rules.",
+   "hedge": "Choice overload replications are mixed: one honest hedge.",
+   "demand": "proven: PsychToons identity titles 700k-4.3M; 'Why You Keep Second-Guessing' in our list",
+   "difficulty": "medium",
+   "minutes": 13,
+   "why": "Identity + bias, broad audience.",
+   "series_link": "-> second-guessing; -> worse decisions",
+   "n": 18
+  },
+  {
+   "title": "The Psychology of People Who Prefer to Be Alone",
+   "safe_title": "Why Some People Recharge Alone: The Science of Solitude",
+   "angle": "Hook: Friday night, phone on silent, a book, and a quiet happiness others call sad. Solitude research (Nguyen, Ryan & Deci 2018), introversion myths, fundamental attribution error (others misread it). Exit: healthy solitude vs hiding.",
+   "hedge": "",
+   "demand": "proven: 'People Who Like To Be Alone Share These Traits' [Psychology Simplified] 565k; 'Why Some People Are Meant to Walk Alone' [PsychToons] 900k; 'Love Staying At Home' 3.1M",
+   "difficulty": "low",
+   "minutes": 13,
+   "why": "Huge demand; validates a quiet audience.",
+   "series_link": "-> judge others harder",
+   "n": 19
   }
  ],
  "diagnosis_2026-10-25": "1) The competitor outliers fall into three groups. Group one: the viewer's own mind turning against them ('self-sabotage', 'your brain lies to you', 'thinking errors'): TEDx 'Breaking the Cycle of Self Sabotage' 2.3M, Clark Kegley 1.95M, 'Catastrophizing' (Therapy in a Nutshell) 1.86M. Group two: one well-known bias told as a story with an experiment, like Veritasium 'The Most Common Cognitive Bias' 17.4M (confirmation bias, the 2-4-6 task). Group three: big collections, '21 Mind Traps' 7.5M and 'Every Bias Explained' 1.8M.\n2) Behind each title is one personal question: 'why do I do this to myself / why do I see it wrong'. Patterns that work: 'Why You/People...', 'X Is Lying to You', '[Distortion]: how to stop...'. A practical exit is promised in the title or the description.\n3) Length: the self-sabotage and distortion outliers run 15-17 min, so the 13-16 min format is supported. The channel's own outlier is 7.6 min, but with only 3 videos that is not yet a signal.\n4) The channel itself: one hit, the spotlight effect (x4.0, 515 views). It is a social-self bias with a 'Why You Think... (And Why They Aren't)' title, a personal fear plus relief in the brackets. The abstract topic about the feeling of mastery (illusion of competence) failed (x0.0, 'The Brain's Biggest Lie'): no clear personal question.\n5) Started but not continued: the social-self line ('everyone is watching you'), the 'quitting / sunk cost' line, and decisions under fatigue.\n6) Gaps with proven demand that the channel has not covered: confirmation bias, catastrophizing, black-and-white thinking, the negativity filter, self-handicapping, second-guessing / hindsight. Logical white space: the liking gap and the planning fallacy, both direct continuations of 'why do I get in my own way'.\n7) Assumption: we follow the 'one bias = one video' format and build each title as 'Why You... (And...)', like the channel's only outlier.",
@@ -197,5 +245,6 @@
    "evidence": "'21 Mind Traps' 7.5M (21.9 min), 'Every Bias Explained in 8 Minutes' 1.8M, '12 Cognitive Biases Explained' 2.8M. Collections can be built from parts of videos already made and link viewers to the single-bias videos."
   }
  ],
- "last_analysis": "2026-10-25"
+ "last_analysis": "2026-10-25",
+ "competitors_2026-10-29": "См. docs/COMPETITORS.md"
 }

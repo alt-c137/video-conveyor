@@ -119,6 +119,78 @@
    "why": "Big proven demand, car fans share it.",
    "series_link": "-> same car 10 years; -> car faces",
    "n": 10
+  },
+  {
+   "title": "The Psychology of People Who Would Rather Fix Than Replace",
+   "safe_title": "Why Some People Fix Things Instead of Buying New",
+   "angle": "Hook: a man in his garage on the 4th Saturday fixing a $60 lawnmower. Not stubbornness: competence and control (Bandura self-efficacy), IKEA effect (Norton, Mochon & Ariely 2012), growing up with less, distrust of throwaway culture. 4-5 types. Exit: when fixing is wisdom and when it is a trap (time cost test).",
+   "hedge": "",
+   "demand": "proven: 'Would Rather Fix Than Replace' [Nous Psychology] 642k (x703); 'Mindset of People Who Keep Fixing Their Old Cars' [The Gen X Way] 211k",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Biggest outlier in the niche; dignified identity for the 35-65 male audience.",
+   "series_link": "-> same car 10 years; -> rich people drive boring cars",
+   "n": 11
+  },
+  {
+   "title": "The Psychology of People Who Pay Cash for Their Car",
+   "safe_title": "Why Some People Refuse to Finance a Car",
+   "angle": "Hook: a buyer at the dealership saying 'no monthly payments' and the salesman's face. Pain of paying (Prelec & Loewenstein 1998), mental accounting (Thaler), freedom from obligation, patience as strength. No interest/loan promotion: show why debt-free feels lighter. Exit: the 'wait and save' rule.",
+   "hedge": "",
+   "demand": "proven: 'Only 1 In 5 People Pay Cash For A New Car' [The Gen X Way] 18k on 10k subs; 'Most People Are Broke - Lamborghini Salesman' 2.8M",
+   "difficulty": "low",
+   "minutes": 11,
+   "why": "Fits our no-riba rule perfectly and the frugal-competence cluster.",
+   "series_link": "-> cars they can't afford; -> rich people boring cars",
+   "n": 12
+  },
+  {
+   "title": "Kept the Old Car vs Upgraded: 20 Years Later",
+   "safe_title": "Keeping an Old Car vs Upgrading: The Psychology and the Math",
+   "angle": "Two brothers, same salary: one upgrades every 3 years, one keeps his car. Hedonic adaptation (Brickman 1978 — careful, use Frederick & Loewenstein 1999), depreciation, positional goods (Frank). Exit: the upgrade test.",
+   "hedge": "",
+   "demand": "proven: 'Upgrading vs. Kept Old Car — 20 Years Later' [The Gen X Way] 800k (x727)",
+   "difficulty": "medium",
+   "minutes": 12,
+   "why": "Top outlier of the niche; story format with a payoff at the end.",
+   "series_link": "-> same car 10 years",
+   "n": 13
+  },
+  {
+   "title": "Still Driving Manual Says a Lot About You",
+   "safe_title": "The Psychology of People Who Still Drive Manual",
+   "angle": "Hook: left foot on the clutch at a red light, everybody else in automatics. Sense of control and flow (Csikszentmihalyi), skill as identity, attention. Types. Exit: keeping one 'manual' skill in an automatic life.",
+   "hedge": "Personality claims are pop psychology: one hedge.",
+   "demand": "proven: 'Still Driving Manual In A World Of Automatics Says A Lot About You' [The Gen X Way] 239k",
+   "difficulty": "low",
+   "minutes": 10,
+   "why": "Proven, warm identity topic.",
+   "series_link": "-> fix than replace",
+   "n": 14
+  },
+  {
+   "title": "The Psychology of People Who Drive Old Luxury Cars",
+   "safe_title": "Why Some People Buy Old Luxury Cars Instead of New Ordinary Ones",
+   "angle": "A 15-year-old Mercedes next to a new hatchback. Craftsmanship, nostalgia, quiet luxury, smart depreciation. Types. Exit: buying quality vs buying a badge.",
+   "hedge": "",
+   "demand": "proven: 'Psychology of People Who Drive Old Luxury Cars' [Nous Psychology] 259k; 'Still Love Old BMWs' 64k",
+   "difficulty": "low",
+   "minutes": 10,
+   "why": "Links to our best video (BMW/Mercedes/Audi).",
+   "series_link": "-> BMW vs Mercedes vs Audi; -> luxury logos",
+   "n": 15
+  },
+  {
+   "title": "The Psychology of People Who Know Every Car on the Road",
+   "safe_title": "Why Some People Can Name Every Car They See",
+   "angle": "A kid in the back seat naming every car — now he is 45 and still does it. Expertise and pattern recognition (chess studies, Chase & Simon 1973), childhood passion, belonging. Exit: feeding a passion without buying.",
+   "hedge": "",
+   "demand": "proven: [Nous Psychology] 89k (x97)",
+   "difficulty": "low",
+   "minutes": 10,
+   "why": "Car fans share it; easy visuals.",
+   "series_link": "-> car faces",
+   "n": 16
   }
  ],
  "diagnosis_2026-10-26": "Own channel: 9 subs, median 109 views. The only real outlier is 'Why You REALLY Chose BMW, Mercedes, or Audi' (x4.6, 9.9 min): brand names the viewer already owns or wants + 'really' (hidden reason). Grey-car 'types' (x1.9) is the second hit, so the car-psychology line works; the off-niche 'Why He Stopped Posting' (x0.3) flopped and the debt-flavoured 'cars they can't afford' underperformed (x0.7).\nNiche demand: 'The Psychology of People Who ...' about one concrete car habit is a proven machine (Nous Psychology: 620k know how to work on cars, 407k modify their cars, 115k keep cars spotless; 'Driving the same car for 10 years says a lot about you' 734k). Viewer question behind all of them: 'what does my habit/choice say about me?'.\nBrand psychology has huge outliers when it names famous brands and exposes the hidden mechanism: 'How Apple and Nike have branded your brain' 4.9M, 'How luxury brands brainwash you to buy' 3.9M, 'The psychology of premium branding' 1.4M, 'Pricing psychology explained' 225k. 'The hidden psychology behind a car's face' (116k) joins both lines.\nLength: winners sit at 8-12 min; our best was 9.9 min, so 10-12 min is the target, not 15.\nGaps: car-face design, keeping one car for years, white cars (colour series started with red and grey), quiet luxury logos, why rich people drive boring cars, pricing tricks, supermarket layout, car modifying. Title pattern to keep: 'Why You REALLY…', 'The Psychology of People Who…', a concrete object + a hidden reason.",
@@ -151,5 +223,6 @@
    "evidence": "Nous Psychology habit videos: 620k, 407k, 390k, 115k"
   }
  ],
- "last_analysis": "2026-10-26"
+ "last_analysis": "2026-10-26",
+ "competitors_2026-10-29": "См. docs/COMPETITORS.md"
 }

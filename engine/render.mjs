@@ -31,7 +31,9 @@ if (args[0] === "--stills") {
   let last = -1;
   await renderMedia({
     composition, serveUrl, inputProps, codec: "h264", crf: 20, x264Preset: "slow", audioBitrate: "192k", pixelFormat: "yuv420p",
-    outputLocation: path.join(out, "final.mp4"), concurrency: 8, chromiumOptions, imageFormat: "jpeg", jpegQuality: 92,
+    // когда машина занята (upscayl, второй рендер) кадр может грузиться дольше 30 с — ждём до 3 мин
+    outputLocation: path.join(out, "final.mp4"), concurrency: Number(process.env.REMOTION_CONCURRENCY || 8), chromiumOptions,
+    timeoutInMilliseconds: 180000, imageFormat: "jpeg", jpegQuality: 92,
     onProgress: ({ progress, renderedFrames, encodedFrames }) => {
       const pc = Math.floor(progress * 100);
       if (pc !== last) {

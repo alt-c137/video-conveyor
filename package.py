@@ -6,7 +6,7 @@
 Картинки превью: secretslider «Слайды с 1 персонажем» + style_ref канала, строки из thumbs/prompts.txt
 (или Flow). Их генератор «Превью» не берём: он рисует фото-лица, а у нас мультяшный стиль с глазами-точками.
 """
-import glob, json, os
+import glob, json, os, re
 import core
 from core import llm, prompt, rj, wj, wt
 
@@ -63,11 +63,14 @@ def youtube_md(p, log=print):
           "### Промты обложек (secretslider «1 персонаж» + персонаж канала; без текста — текст кладёт `stages.py thumbs`)",
           *[f"{x['id']}. {x['image_prompt']}" for x in pk["thumbs"]], "",
           "### Те же, но генератор сам пишет текст (вариант на сравнение)",
-          *[f"{x['id']}t. " + x['image_prompt'].replace("No text, no letters, no logos.", "").replace(" 16:9.", "")
+          *[f"{x['id']}t. " + re.sub(r"\s*No (text|letters)[^.]*\.", "", x['image_prompt']).replace(" 16:9.", "")
             + f' Big bold all-caps headline text "{x["text"]}" in a heavy condensed font, white with a thick black outline,'
             + f' the word "{x.get("accent", "")}" in bright yellow, placed on the {x.get("text_side", "left")} third. 16:9.'
             for x in pk["thumbs"]], "",
           "Файлы: `thumbs/A.jpg`…; лист проверки `thumbs/sheet.jpg`. Видео: `out/final.mp4`."]
+    long = [l[:3] for l in md if len(l) > 1000 and l[:2].strip(". ").rstrip("t") in "ABCD"]
+    if long:  # secretslider: «один из промптов слишком длинный! Лимит: 1000 символов» — и форма висит (урок 2026-10-29)
+        log(f"ВНИМАНИЕ: промпты обложек длиннее 1000 символов: {long} — сократи")
     os.makedirs(p.f("out"), exist_ok=True)
     wt(p.f("out", "youtube.md"), "\n".join(md) + "\n")
     log(f"Упаковка: out/youtube.md, {len(pk['thumbs'])} идей превью, глав: {len(ch)}")
