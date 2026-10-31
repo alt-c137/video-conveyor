@@ -97,7 +97,7 @@ export const Morph: React.FC<P> = ({ sc }) => {
         })}
       </svg>
       {sc.props.label_from ? <At x={W / 2} y={940} o={1 - p(at, 0.4)}><Txt size={62} w={900} color="#fff">{sc.props.label_from}</Txt></At> : null}
-      {sc.props.label_to ? <At x={W / 2} y={940} o={p(at + 0.5, 0.4)} s={0.9 + 0.1 * p(at + 0.5, 0.4, BACK)}><Txt size={68} w={900} color={th.a2}>{sc.props.label_to}</Txt></At> : null}
+      {sc.props.label_to ? <At x={W / 2} y={940} o={p(at + 0.5, 0.4)} s={0.9 + 0.1 * p(at + 0.5, 0.4, BACK)}><Txt size={68} w={900} color="#fff">{sc.props.label_to}</Txt></At> : null}
       {sc.props.caption ? <At x={W / 2} y={1020} o={p(at + 1, 0.4)}><Txt size={36} w={700} color="#ffffffcc">{sc.props.caption}</Txt></At> : null}
     </Mesh>
   );
