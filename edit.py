@@ -10,7 +10,8 @@ from core import llm, prompt, rj, wj, rt
 ENGINE = os.path.join(core.ROOT, "engine")
 TYPES = {"clip", "question", "quote", "words", "big_number", "list", "recap", "myth_fact", "study", "split", "cards", "bars",
          "dots", "scale", "iceberg", "meter", "curve", "steps", "loop", "battery", "clock", "spotlight", "thought", "pile",
-         "lineup", "drive", "timeline", "race"}
+         "lineup", "drive", "timeline", "race", "morph", "sketch", "donut", "lines", "network", "funnel",
+         "assemble", "map", "doc", "phone", "bubbles", "stage"}
 DEFAULT_THEME = {"paper": "#EFEAE0", "ink": "#24272C", "a1": "#2F6F6B", "a2": "#D39B45", "a3": "#B8C9C1", "dark": "#1E2124"}
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 
@@ -238,6 +239,13 @@ def sfx_for(scenes, cta):
             fx.append({"t": c, "name": "pop", "vol": 0.16})
         if s["type"] == "study" and len(s.get("cues", [])) >= 3:
             fx.append({"t": s["cues"][2] + 0.4, "name": "stamp", "vol": 0.3})
+        if s["type"] == "assemble":
+            fx.append({"t": s["start"] + 0.2, "name": "riser", "vol": 0.14})
+            fx.append({"t": s["start"] + 1.9, "name": "thud", "vol": 0.26})
+        if s["type"] in ("morph", "doc") and s.get("cues"):
+            fx.append({"t": s["cues"][0], "name": "swish", "vol": 0.2})
+        if s["type"] == "map":
+            fx.append({"t": s["start"] + 0.1, "name": "whirr", "vol": 0.12})
         if s["type"] == "big_number":
             fx.append({"t": s["start"] + 0.2, "name": "tick", "vol": 0.15})
         if s["type"] == "myth_fact" and len(s.get("cues", [])) >= 2:

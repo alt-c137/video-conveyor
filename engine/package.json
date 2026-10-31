@@ -5,10 +5,16 @@
   "type": "module",
   "dependencies": {
     "@remotion/bundler": "4.0.529",
+    "@remotion/google-fonts": "^4.0.529",
     "@remotion/renderer": "4.0.529",
-    "remotion": "4.0.529",
+    "d3-geo": "^3.1.1",
+    "flubber": "^0.4.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "remotion": "4.0.529",
+    "roughjs": "^4.6.6",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@types/react": "19.1.8",

@@ -1,11 +1,12 @@
 import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, OffthreadVideo, Sequence, staticFile, useVideoConfig } from "remotion";
-import { H, ThemeCtx, useSceneFade, useT, W } from "./kit";
+import { EO, H, ThemeCtx, useSceneFade, useT, W } from "./kit";
 import { Images } from "./layers/Images";
 import { Captions, CTA, EndScreen } from "./layers/Overlay";
 import * as A from "./scenes/A_text";
 import * as B from "./scenes/B_visual";
 import * as C from "./scenes/C_motion";
+import * as D from "./scenes/D_cinema";
 import type { Edit, Scene } from "./types";
 
 export const REGISTRY: Record<string, React.FC<{ sc: Scene }>> = {
@@ -14,6 +15,8 @@ export const REGISTRY: Record<string, React.FC<{ sc: Scene }>> = {
   bars: B.Bars, dots: B.Dots, scale: B.Scale, iceberg: B.Iceberg, meter: B.Meter, curve: B.Curve,
   steps: B.Steps, loop: B.Loop, battery: B.Battery, clock: B.Clock, spotlight: B.Spotlight, thought: B.Thought,
   pile: B.Pile, lineup: C.Lineup, drive: C.Drive, timeline: C.Timeline, race: C.Race,
+  morph: D.Morph, sketch: D.Sketch, donut: D.Donut, lines: D.Lines, network: D.Network, funnel: D.Funnel,
+  assemble: D.Assemble, map: D.GeoMap, doc: D.Doc, phone: D.Phone, bubbles: D.Bubbles, stage: D.Stage,
 };
 
 /** Готовый ролик-вставка (HyperFrames и др.): public/clips/<файл>.mp4, без звука, на всю сцену. */
@@ -31,8 +34,12 @@ REGISTRY.clip = Clip;
 const SceneLayer: React.FC<{ sc: Scene }> = ({ sc }) => {
   const C = REGISTRY[sc.type];
   const o = useSceneFade(sc);
+  const { p } = useT();
   if (!C) return null;
-  return <AbsoluteFill style={{ opacity: o }}><C sc={sc} /></AbsoluteFill>;
+  const k = p(sc.start, 0.5, EO);
+  const mode = Math.round(sc.start * 7) % 4;
+  const clip = k >= 1 ? undefined : mode === 0 ? `circle(${k * 115}% at 50% 50%)` : mode === 1 ? `inset(0 ${(1 - k) * 100}% 0 0)` : mode === 2 ? `inset(${(1 - k) * 100}% 0 0 0)` : undefined;
+  return <AbsoluteFill style={{ opacity: mode === 3 || k >= 1 ? o : 1, clipPath: clip }}><C sc={sc} /></AbsoluteFill>;
 };
 
 /** Слой 1920×1080, растянутый на кадр (2560×1440): всё векторное, остаётся чётким. */

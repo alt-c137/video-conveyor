@@ -53,3 +53,10 @@
 Одна крупная фигура, 2–3 цвета, 2–3 слова, которые **не повторяют заголовок**, эмоция на лице. Наши A–D уже так
 сделаны (`prompts/package.md`). Для «мужского» кластера: старая машина или гараж с инструментами крупно, ведущий
 гордый или спокойный, а не испуганный.
+
+## Скан 2026-10-31 (поиск YouTube за месяц + свежие выбросы)
+- Новая волна: быт/выживание в истории у мелких каналов. Past Trek 3k подп. — 1.1M; Fossil 50k — 12M, 3.8M; Relic Explains 17k — 5.1M;
+  StickOrbit 8k — 1.4M. Каркас: один вопрос «how did people…» или лестница «How long you'd last in every X». Отсюда канал how_they_survived.
+- Logic: PsychToons «Psychology of X» 1.3–3.3M; Unf*ck Everything «Lazy but Ambitious» 2.7M (x642).
+- Brand: Sushmit Ghosh «Why India's Rich Are Suddenly Wearing Onitsuka» 1.8M (x14); The Gen X Way «Kept Old Car» 821k (x75).
+- Не брать: AI-пузырь (устаревает за неделю), здоровье «после 60» (риск вреда), темы про секс/удовольствия у Relic и Lore.

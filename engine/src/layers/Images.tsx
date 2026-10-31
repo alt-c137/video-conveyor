@@ -82,8 +82,15 @@ const One: React.FC<{ s: Shot; cam: Cam; t: number }> = ({ s, cam, t }) => {
   const p = interpolate(t, [s.start - XF, s.end + XF], [0, 1], { ...clamp, easing: ease });
   const k = k0 + (k1 - k0) * p, x = x0 + (x1 - x0) * p, y = y0 + (y1 - y0) * p;
   const o = interpolate(t, [s.start - XF, s.start], [0, 1], clamp);
+  // переход: не один наплыв, а разные чистые шторки (детерминированно по номеру кадра, направление одно — вправо/наружу)
+  const m = ((s.id * 2654435761) >>> 0) % 10;
+  const e = ease(o);
+  const tr: React.CSSProperties = m < 5 || o >= 1 ? { opacity: o }
+    : m < 7 ? { clipPath: `circle(${e * 115}% at 50% 50%)` }
+    : m < 9 ? { WebkitMaskImage: `linear-gradient(90deg, #000 ${e * 130 - 30}%, transparent ${e * 130}%)`, maskImage: `linear-gradient(90deg, #000 ${e * 130 - 30}%, transparent ${e * 130}%)` }
+    : { opacity: o, transform: `scale(${1.22 - 0.22 * e})` };
   return (
-    <AbsoluteFill style={{ opacity: o, overflow: "hidden" }}>
+    <AbsoluteFill style={{ ...tr, overflow: "hidden" }}>
       <Img src={staticFile(s.src!)} style={{ width: "100%", height: "100%", objectFit: "cover",
         transform: `scale(${k}) translate(${x / k}%, ${y / k}%)` }} />
     </AbsoluteFill>
