@@ -1,6 +1,18 @@
 {
  "topics": [
   {
+   "title": "The Psychology of People Who Would Rather Fix Than Replace",
+   "safe_title": "The Psychology of People Who Would Rather Fix Than Replace",
+   "angle": "Everyone tells you to just buy a new one, and you are on the garage floor with a wrench anyway. Open every chapter fully, each with a concrete object and a story: the IKEA effect, we value what our own hands made (Norton, Mochon and Ariely 2012); the endowment effect, the mug study (Kahneman, Knetsch and Thaler 1990); why things stopped being repairable: the Phoebus light bulb cartel of 1924 that fixed bulbs at about 1000 hours, General Motors and the yearly model change under Alfred Sloan, Brooks Stevens and the phrase planned obsolescence in 1954, glued batteries; self-efficacy, a repair is a small proof that you can (Bandura 1977); Matthew Crawford and Shop Class as Soulcraft (2009); kintsugi and the Japanese word mottainai as respect for the object, told as craft and thrift with no religion; Martine Postma and the first Repair Cafe in Amsterdam in 2009; Irv Gordon and his 1966 Volvo P1800 past 3 million miles with the Guinness record; the EU right to repair rules of 2024. Then the honest catch: fixing can become sunk cost, some repairs are not safe to do yourself (brakes, airbags, gas, mains electricity), and give a plain three-question test for fix or replace with worked cash numbers. All money examples in cash, no loans, no interest, no leasing.",
+   "hedge": "The IKEA effect was measured in short lab tasks, so the jump to a lifetime habit is an inference.",
+   "demand": "proven: biggest identity outlier of the car niche",
+   "difficulty": "medium",
+   "minutes": 16,
+   "why": "Biggest outlier in the niche; dignified identity for the 35-plus viewer.",
+   "series_link": "-> The Psychology of People Who Pay Cash for Their Car",
+   "n": 11
+  },
+  {
    "title": "Why Every Car Seems to Have a Face (and a Mood)",
    "safe_title": "The Psychology of Car Faces: Why Cars Look Angry or Friendly",
    "angle": "Our brain sees faces everywhere (pareidolia); designers use headlights and grilles as eyes and mouths -> we pick cars whose 'face' matches how we want to be seen -> notice the face, then choose the car for what it does for you.",
@@ -119,18 +131,6 @@
    "why": "Big proven demand, car fans share it.",
    "series_link": "-> same car 10 years; -> car faces",
    "n": 10
-  },
-  {
-   "title": "The Psychology of People Who Would Rather Fix Than Replace",
-   "safe_title": "Why Some People Fix Things Instead of Buying New",
-   "angle": "Hook: a man in his garage on the 4th Saturday fixing a $60 lawnmower. Not stubbornness: competence and control (Bandura self-efficacy), IKEA effect (Norton, Mochon & Ariely 2012), growing up with less, distrust of throwaway culture. 4-5 types. Exit: when fixing is wisdom and when it is a trap (time cost test).",
-   "hedge": "",
-   "demand": "proven: 'Would Rather Fix Than Replace' [Nous Psychology] 642k (x703); 'Mindset of People Who Keep Fixing Their Old Cars' [The Gen X Way] 211k",
-   "difficulty": "low",
-   "minutes": 11,
-   "why": "Biggest outlier in the niche; dignified identity for the 35-65 male audience.",
-   "series_link": "-> same car 10 years; -> rich people drive boring cars",
-   "n": 11
   },
   {
    "title": "The Psychology of People Who Pay Cash for Their Car",
