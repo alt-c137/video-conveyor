@@ -570,7 +570,7 @@ export const Stage: React.FC<P> = ({ sc }) => {
           return (
             <React.Fragment key={i}>
               <At x={num(a.x, 0.5) * W + f[0] * (1 - k)} y={610 + f[1] * (1 - k) - hop} s={num(a.scale, 1) * 1.9} o={a.from ? 1 : k}>
-                <Character expression={ex || "neutral"} pose={a.pose || "stand"} />
+                <Character expression={ex || "neutral"} pose={a.pose || "stand"} coat={a.coat || [th.a1, th.a3, th.a2][i % 3]} />
               </At>
               {a.say ? (
                 <At x={num(a.x, 0.5) * W} y={245} s={sp(cues[i] + 0.55, 12)}>
