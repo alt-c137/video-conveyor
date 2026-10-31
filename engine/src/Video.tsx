@@ -73,11 +73,15 @@ export const Video: React.FC<Edit> = (e0) => {
           <EndScreen from={e.duration} title={e.title} channel={e.channel} />
         </Stage>
         <Audio src={staticFile(e.voice)} />
-        {e.sfx.map((s, i) => (
-          <Sequence key={i} from={Math.max(0, Math.round(s.t * fps))} durationInFrames={Math.round(3 * fps)} layout="none">
-            <Audio src={staticFile("sfx/" + s.name + ".wav")} volume={s.vol ?? 0.3} />
-          </Sequence>
-        ))}
+        {e.sfx.map((s, i) => {
+          const len = Math.round((s.dur ?? 3) * fps), vol = s.vol ?? 0.3;
+          return (
+            <Sequence key={i} from={Math.max(0, Math.round(s.t * fps))} durationInFrames={len} layout="none">
+              {/* s.dur = атмосфера кадра (ветер, огонь, дождь): петля, мягко входит и выходит */}
+              <Audio src={staticFile("sfx/" + s.name + ".wav")} loop={!!s.dur} volume={s.dur ? (f) => vol * Math.min(1, f / 30, (len - f) / 30) : vol} />
+            </Sequence>
+          );
+        })}
       </AbsoluteFill>
     </ThemeCtx.Provider>
   );

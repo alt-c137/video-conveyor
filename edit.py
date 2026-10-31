@@ -121,6 +121,9 @@ def build_shots(shots, have):
 TRANS = (("fade", 34), ("zoom", 22), ("whip", 14), ("mosaic", 10), ("flip", 8), ("iris", 7), ("wipe", 5))
 
 
+AMB_SOUND = {"snow": "amb_wind", "fog": "amb_wind", "rain": "amb_rain", "embers": "amb_fire", "dust": "amb_dust"}
+
+
 def plan_shots(p, shots, scenes, secs, sfx, log=print):
     """Режиссура кадров: слои, фокус, переходы, отрисовка, выход персонажа. Детерминированно по номеру кадра, звук к переходам."""
     lay = rj(p.f("layers.json"), {})
@@ -153,6 +156,15 @@ def plan_shots(p, shots, scenes, secs, sfx, log=print):
         s["tr"], last_tr = kind, kind
         if kind in ("zoom", "whip", "flip", "mosaic"):
             sfx.append({"t": s["start"] - 0.22, "name": "swish" if kind != "zoom" else "whoosh", "vol": 0.2})
+    run = None  # атмосфера под голосом: соседние кадры с одной погодой — одна петля
+    for s in shots + [{"start": 1e9, "end": 1e9}]:
+        name = AMB_SOUND.get(s.get("fx"))
+        if run and (name != run[0] or s["start"] - run[2] > 1):
+            if run[2] - run[1] >= 3:
+                sfx.append({"t": round(run[1], 2), "name": run[0], "vol": 0.1, "dur": round(run[2] - run[1], 2)})
+            run = None
+        if name:
+            run = [name, run[1] if run else s["start"], s["end"]]
     log(f"Режиссура: слоёв {sum(1 for x in shots if x.get('fg'))} из {len(shots)}, отрисовок {n_draw}, "
         f"выходов {sum(1 for x in shots if x.get('pop'))}, переходов {sum(1 for x in shots if x.get('tr'))}")
 
