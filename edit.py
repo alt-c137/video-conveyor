@@ -83,13 +83,27 @@ def link_public(p, log):
     return {n: f"img/{n}{os.path.splitext(f)[1].lower()}" for n, f in have.items()}
 
 
+# атмосфера поверх картинки по смыслу кадра (Images.tsx): чтобы кадр жил, а не стоял слайдом; порядок = приоритет
+AMBIENT = (("snow", r"\b(snow\w*|blizzard|igloo|arctic|tundra|ice age|frost\w*|snowfall)\b"),
+           ("rain", r"\b(rain\w*|downpour|monsoon|thunderstorm)\b"),
+           ("embers", r"\b(fire|fires|fireplace|hearth|campfire|bonfire|forge|furnace|stove|embers?|torch\w*|flames?|burning)\b"),
+           ("fog", r"\b(fog\w*|mist\w*|smoke|smoky|smog)\b"),
+           ("dust", r"\b(desert|dust\w*|sandy|sandstorm|mine|attic|barn|workshop|factory|mill|dungeon|cellar)\b"))
+
+
+def ambient(prompt):
+    scene = (prompt or "").split("SCENE:")[-1].lower()
+    return next((k for k, rx in AMBIENT if re.search(rx, scene)), None)
+
+
 def build_shots(shots, have):
     """Картинки по кадрам; нет картинки — тянем предыдущую (или следующую в начале)."""
     out = []
     for s in shots:
         src = have.get(s["id"])
         if src:
-            out.append({"id": s["id"], "start": s["start"], "end": s["end"], "src": src, **({"cam": s["cam"]} if s.get("cam") else {})})
+            fx = ambient(s.get("prompt"))
+            out.append({"id": s["id"], "start": s["start"], "end": s["end"], "src": src, **({"cam": s["cam"]} if s.get("cam") else {}), **({"fx": fx} if fx else {})})
         elif out:
             out[-1]["end"] = s["end"]
         else:

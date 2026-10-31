@@ -77,6 +77,47 @@ export const camsFor = (shots: Shot[]): Cam[] => {
   return out;
 };
 
+const rnd = (i: number) => { const x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+const SW = 2560, SH = 1440;
+
+/** Живая атмосфера поверх картинки. Чистая функция времени, движение в одну сторону: без дрожи и зерна. */
+const Ambient: React.FC<{ kind: string; t: number }> = ({ kind, t }) => {
+  const dots = useMemo(() => Array.from({ length: kind === "rain" ? 120 : kind === "snow" ? 150 : 70 }).map((_, i) => {
+    const near = rnd(i + 9); // ближние крупнее и быстрее: глубина
+    return { x: rnd(i), y: rnd(i + 3), near, ph: rnd(i + 5) * 6.28 };
+  }), [kind]);
+  const wrap = (v: number, m: number) => ((v % m) + m) % m;
+  if (kind === "fog") return (
+    <AbsoluteFill style={{ pointerEvents: "none", mixBlendMode: "screen", opacity: 0.5 }}>
+      {[0, 1, 2].map((i) => (
+        <div key={i} style={{ position: "absolute", width: "130%", height: "70%", left: `${wrap(t * (5 + i * 2) + i * 47, 200) - 115}%`, top: `${12 + i * 26}%`,
+          background: "radial-gradient(ellipse at center, #d9e0e0aa 0%, #d9e0e033 42%, transparent 70%)" }} />
+      ))}
+    </AbsoluteFill>
+  );
+  return (
+    <svg viewBox={`0 0 ${SW} ${SH}`} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
+      {dots.map((d, i) => {
+        const v = 0.45 + d.near;
+        if (kind === "snow") {
+          const y = wrap(d.y * SH + t * 95 * v, SH + 40) - 20, x = wrap(d.x * SW + t * 28 * v + Math.sin(t * 0.6 + d.ph) * 26, SW);
+          return <circle key={i} cx={x} cy={y} r={3.5 + d.near * 8} fill="#fff" opacity={0.5 + d.near * 0.42} />;
+        }
+        if (kind === "rain") {
+          const y = wrap(d.y * SH + t * 1500 * v, SH + 120) - 60, x = wrap(d.x * SW - t * 260 * v, SW);
+          return <line key={i} x1={x} y1={y} x2={x + 13 * v} y2={y - 76 * v} stroke="#dbe9f4" strokeWidth={1.6 + d.near} opacity={0.2 + d.near * 0.26} />;
+        }
+        if (kind === "embers") {
+          const life = wrap(t * 0.22 * v + d.y, 1), y = SH - life * SH * 0.8, x = d.x * SW + Math.sin(t * 0.9 + d.ph) * 22 + life * 90;
+          return <circle key={i} cx={x} cy={y} r={3.2 + d.near * 5.4} fill={i % 3 ? "#ffb347" : "#ff7a2e"} opacity={Math.sin(life * Math.PI) * 0.85} />;
+        }
+        const y = wrap(d.y * SH - t * 12 * v, SH), x = wrap(d.x * SW + t * 20 * v, SW); // dust
+        return <circle key={i} cx={x} cy={y} r={2.6 + d.near * 4} fill="#ffe9bd" opacity={0.26 + 0.34 * d.near * (0.6 + 0.4 * Math.sin(t * 0.7 + d.ph))} />;
+      })}
+    </svg>
+  );
+};
+
 const One: React.FC<{ s: Shot; cam: Cam; t: number }> = ({ s, cam, t }) => {
   const [k0, k1, x0, x1, y0, y1] = MOVES[cam];
   const p = interpolate(t, [s.start - XF, s.end + XF], [0, 1], { ...clamp, easing: ease });
@@ -93,6 +134,7 @@ const One: React.FC<{ s: Shot; cam: Cam; t: number }> = ({ s, cam, t }) => {
     <AbsoluteFill style={{ ...tr, overflow: "hidden" }}>
       <Img src={staticFile(s.src!)} style={{ width: "100%", height: "100%", objectFit: "cover",
         transform: `scale(${k}) translate(${x / k}%, ${y / k}%)` }} />
+      {s.fx ? <Ambient kind={s.fx} t={t} /> : null}
     </AbsoluteFill>
   );
 };
