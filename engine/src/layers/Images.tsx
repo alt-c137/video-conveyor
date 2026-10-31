@@ -7,7 +7,7 @@ const XF = 0.45; // кроссфейд, с: новая картинка проя
 
 /** Камера по картинке: наезд, отъезд, панорамы влево/вправо, наклон вверх/вниз, наезд со сдвигом.
  * Плавный разгон/торможение, без дрожи и случайного дрейфа. Сдвиг всегда в пределах запаса масштаба (края не видны). */
-export const CAMS = ["in", "out", "left", "right", "up", "down", "in_left", "in_right"] as const;
+export const CAMS = ["in", "out", "left", "right", "up", "down", "in_left", "in_right", "punch", "reveal"] as const;
 type Cam = (typeof CAMS)[number];
 // [масштаб от, до, сдвиг x от, до, y от, до] — сдвиг в % кадра
 const MOVES: Record<Cam, number[]> = {
@@ -19,13 +19,16 @@ const MOVES: Record<Cam, number[]> = {
   down: [1.07, 1.07, 0, 0, -2.5, 2.5],
   in_left: [1.0, 1.07, 0, -2.5, 0, 0],
   in_right: [1.0, 1.07, 0, 2.5, 0, 0],
+  punch: [1.0, 1.2, 0, 0, 0, 0], // быстрый наезд на лицо: разгон в начале, дальше почти стоит
+  reveal: [1.22, 1.0, 0, 0, 0, 0], // с крупного плана на общий
 };
 const WEIGHTS: [Cam, number][] = [["in", 36], ["out", 16], ["left", 10], ["right", 10], ["up", 4], ["down", 4],
-  ["in_left", 10], ["in_right", 10]];
+  ["in_left", 10], ["in_right", 10], ["punch", 18], ["reveal", 10]];
 // разворот направления на соседнем кадре = «землетрясение» (урок 2026-09-27) — запрещён
 const OPPOSITE: Partial<Record<Cam, Cam[]>> = { left: ["right", "in_right"], right: ["left", "in_left"], up: ["down"],
   down: ["up"], in_left: ["right", "in_right"], in_right: ["left", "in_left"] };
 const ease = Easing.inOut(Easing.quad);
+const snap = Easing.bezier(0.16, 1, 0.3, 1);
 const MIN = 1.6; // картинка на экране не меньше, с
 
 /** Что реально видно между код-сценами. Кадры под сценой не показываются; от кадра, который выглядывает
@@ -69,7 +72,7 @@ export const camsFor = (shots: Shot[]): Cam[] => {
   shots.forEach((s, i) => {
     if (s.cam && s.cam in MOVES) return out.push(s.cam as Cam);
     const short = s.end - s.start < 2;
-    const opts = WEIGHTS.filter(([c]) => (!short || c === "in" || c === "out") && c !== out[i - 1] && !(OPPOSITE[out[i - 1]] ?? []).includes(c));
+    const opts = WEIGHTS.filter(([c]) => (!short || c === "in" || c === "out") && (s.focus || (c !== "punch" && c !== "reveal")) && c !== out[i - 1] && !(OPPOSITE[out[i - 1]] ?? []).includes(c));
     const total = opts.reduce((a, [, w]) => a + w, 0);
     let r = ((s.id * 2654435761) >>> 0) % total;
     out.push(opts.find(([, w]) => (r -= w) < 0)?.[0] ?? "in");
@@ -118,23 +121,79 @@ const Ambient: React.FC<{ kind: string; t: number }> = ({ kind, t }) => {
   );
 };
 
-const One: React.FC<{ s: Shot; cam: Cam; t: number }> = ({ s, cam, t }) => {
-  const [k0, k1, x0, x1, y0, y1] = MOVES[cam];
-  const p = interpolate(t, [s.start - XF, s.end + XF], [0, 1], { ...clamp, easing: ease });
-  const k = k0 + (k1 - k0) * p, x = x0 + (x1 - x0) * p, y = y0 + (y1 - y0) * p;
-  const o = interpolate(t, [s.start - XF, s.start], [0, 1], clamp);
-  // переход: не один наплыв, а разные чистые шторки (детерминированно по номеру кадра, направление одно — вправо/наружу)
-  const m = ((s.id * 2654435761) >>> 0) % 10;
+const TD: Record<string, number> = { zoom: 0.36, whip: 0.3 }; // длительность перехода, если короче XF
+
+/** Как кадр входит (role "in") и как уходит (role "out"), o = 0..1 внутри перехода. Направление всегда одно. */
+const trans = (kind: string, role: "in" | "out", o: number): React.CSSProperties => {
   const e = ease(o);
-  const tr: React.CSSProperties = m < 5 || o >= 1 ? { opacity: o }
-    : m < 7 ? { clipPath: `circle(${e * 115}% at 50% 50%)` }
-    : m < 9 ? { WebkitMaskImage: `linear-gradient(90deg, #000 ${e * 130 - 30}%, transparent ${e * 130}%)`, maskImage: `linear-gradient(90deg, #000 ${e * 130 - 30}%, transparent ${e * 130}%)` }
-    : { opacity: o, transform: `scale(${1.22 - 0.22 * e})` };
-  return (
-    <AbsoluteFill style={{ ...tr, overflow: "hidden" }}>
-      <Img src={staticFile(s.src!)} style={{ width: "100%", height: "100%", objectFit: "cover",
-        transform: `scale(${k}) translate(${x / k}%, ${y / k}%)` }} />
+  const none: React.CSSProperties = {};
+  if (o >= 1 && role === "in") return none;
+  if (kind === "zoom") return role === "in"
+    ? { opacity: Math.min(1, o * 1.7), transform: `scale(${0.76 + 0.24 * e})`, filter: `blur(${(1 - e) * 12}px)` }
+    : { transform: `scale(${1 + 0.95 * e})`, filter: `blur(${e * 14}px)` };
+  if (kind === "whip") return role === "in"
+    ? { transform: `translateX(${(1 - e) * 100}%)`, filter: "url(#whipblur)" }
+    : { transform: `translateX(${-e * 100}%)`, filter: "url(#whipblur)" };
+  if (kind === "flip") return role === "in"
+    ? { transformOrigin: "0% 50%", transform: `perspective(3200px) translateX(${(1 - e) * 100}%) rotateY(${(1 - e) * 88}deg)` }
+    : { transformOrigin: "100% 50%", transform: `perspective(3200px) translateX(${-e * 100}%) rotateY(${-e * 88}deg)` };
+  if (kind === "mosaic") return role === "in" ? { opacity: o >= 0.5 ? 1 : 0, filter: "url(#pixelate)" } : { filter: "url(#pixelate)" };
+  if (kind === "iris") return role === "in" ? { clipPath: `circle(${e * 115}% at 50% 50%)` } : none;
+  if (kind === "wipe") return role === "in"
+    ? { WebkitMaskImage: `linear-gradient(100deg, #000 ${e * 130 - 30}%, transparent ${e * 130}%)`, maskImage: `linear-gradient(100deg, #000 ${e * 130 - 30}%, transparent ${e * 130}%)` } : none;
+  return role === "in" ? { opacity: o } : none;
+};
+
+/** Мазки кисти: открывает кадр полосами туда-обратно, край мазка рваный (неподвижный). k 0..1, в % кадра. */
+const brush = (k: number, id: number, rows = 7) => {
+  if (k <= 0) return "polygon(0 0, 0 0, 0 0)";
+  if (k >= 1) return undefined;
+  const pos = k * rows, i = Math.min(rows - 1, Math.floor(pos)), fr = pos - i, h = 100 / rows;
+  const rag = (x: number, row: number) => (rnd(Math.round(x) * 7 + row * 31 + id) - 0.5) * h * 0.34;
+  const edge = (y: number, row: number, from: number, to: number) => {
+    const pts: string[] = [], n = Math.max(1, Math.round(Math.abs(to - from) / 3));
+    for (let j = 0; j <= n; j++) { const x = from + ((to - from) * j) / n; pts.push(`${x}% ${y + rag(x, row)}%`); }
+    return pts;
+  };
+  const y0 = i * h, y1 = (i + 1) * h, ltr = i % 2 === 0, tip = ltr ? fr * 104 - 2 : 102 - fr * 104;
+  const mid = (y0 + y1) / 2, nose = ltr ? tip + 2.4 : tip - 2.4;
+  const pts = ["0% 0%", "100% 0%"];
+  if (ltr) pts.push(`100% ${y0}%`, ...edge(y0, i, 100, tip), `${nose}% ${mid}%`, ...edge(y1, i + 1, tip, 0));
+  else pts.push(`100% ${y1}%`, ...edge(y1, i + 1, 100, tip), `${nose}% ${mid}%`, ...edge(y0, i, tip, 0));
+  return `polygon(${pts.join(", ")})`;
+};
+
+const One: React.FC<{ s: Shot; cam: Cam; t: number; style: React.CSSProperties }> = ({ s, cam, t, style }) => {
+  const [k0, k1, x0, x1, y0, y1] = MOVES[cam];
+  const strong = cam === "punch" || cam === "reveal";
+  const p = interpolate(t, [s.start - XF, s.end + XF], [0, 1], { ...clamp, easing: strong ? snap : ease });
+  const k = k0 + (k1 - k0) * p, x = x0 + (x1 - x0) * p, y = y0 + (y1 - y0) * p;
+  const zoomy = x0 === 0 && x1 === 0 && y0 === 0 && y1 === 0;
+  const origin = s.focus && zoomy ? `${s.focus[0] * 100}% ${s.focus[1] * 100}%` : "50% 50%";
+  const layered = !!(s.fg && s.bg);
+  const fill: React.CSSProperties = { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transformOrigin: origin };
+  const back: React.CSSProperties = { ...fill, transform: `scale(${k}) translate(${x / k}%, ${y / k}%)` };
+  // передний план ближе к камере: и наезд, и сдвиг сильнее фона, это и есть глубина
+  const kf = k * 1.02 + (k - Math.min(k0, k1)) * 0.35;
+  const front: React.CSSProperties = { ...fill, transform: `scale(${kf}) translate(${(1.6 * x) / kf}%, ${(1.3 * y) / kf}%)` };
+  const pk = s.pop ? interpolate(t, [s.start - 0.22, s.start + 0.26], [0, 1], { ...clamp, easing: Easing.out(Easing.back(1.7)) }) : 1;
+  const pop: React.CSSProperties = s.pop ? { opacity: interpolate(t, [s.start - 0.22, s.start - 0.1], [0, 1], clamp),
+    transform: `translateY(${(1 - pk) * 7}%) scale(${0.84 + 0.16 * pk})`, transformOrigin: "50% 85%" } : {};
+  const pic = (
+    <>
+      <Img src={staticFile(layered ? s.bg! : s.src!)} style={back} />
+      {layered ? <AbsoluteFill style={pop}><Img src={staticFile(s.fg!)} style={front} /></AbsoluteFill> : null}
       {s.fx ? <Ambient kind={s.fx} t={t} /> : null}
+    </>
+  );
+  if (!(s.draw && s.line)) return <AbsoluteFill style={{ ...style, overflow: "hidden" }}>{pic}</AbsoluteFill>;
+  // отрисовка: перо ведёт контур по бумаге, следом вторая кисть заливает цветом
+  const k_line = interpolate(t, [s.start - 0.2, s.start + 0.9], [0, 1], { ...clamp, easing: Easing.inOut(Easing.sin) });
+  const k_col = interpolate(t, [s.start + 0.72, s.start + 1.6], [0, 1], { ...clamp, easing: Easing.inOut(Easing.sin) });
+  return (
+    <AbsoluteFill style={{ ...style, overflow: "hidden", background: "#F6F1E7" }}>
+      {k_col < 1 ? <AbsoluteFill style={{ clipPath: brush(k_line, s.id) }}><Img src={staticFile(s.line)} style={back} /></AbsoluteFill> : null}
+      <AbsoluteFill style={{ clipPath: brush(k_col, s.id + 3, 5) }}>{pic}</AbsoluteFill>
     </AbsoluteFill>
   );
 };
@@ -143,16 +202,33 @@ export const Images: React.FC<{ shots: Shot[]; scenes?: Scene[] }> = ({ shots: a
   const { t } = useT();
   const shots = useMemo(() => visibleShots(all, scenes), [all, scenes]);
   const cams = useMemo(() => camsFor(shots), [shots]);
-  // только кадр сейчас и предыдущий (на время кроссфейда) — не монтируем сотни картинок
+  // только кадр сейчас и предыдущий (на время перехода) — не монтируем сотни картинок
   // берём ПОСЛЕДНИЙ начавшийся (с учётом проявления) кадр; раньше findIndex отдавал старый кадр,
   // и новый не рисовался во время перехода — выходила резкая склейка (жалоба 2026-10-26)
   let i = -1;
   for (let j = 0; j < shots.length && t >= shots[j].start - XF; j++) i = j;
   if (i < 0) i = 0;
-  const list = [shots[i - 1], shots[i]].filter((s) => s && s.src && t >= s.start - XF && t < s.end + XF) as Shot[];
+  const cur = shots[i], prev = shots[i - 1];
+  const kind = cur?.tr || "fade", td = TD[kind] ?? XF;
+  const o = cur ? interpolate(t, [cur.start - td, cur.start], [0, 1], clamp) : 1;
+  const list = [prev, cur].filter((s) => s && s.src && t >= s.start - XF && t < s.end + XF) as Shot[];
+  const px = Math.max(1, Math.round(2 + (1 - Math.abs(2 * o - 1)) * 78)); // размер блока мозаики: пик на середине перехода
   return (
     <AbsoluteFill style={{ background: "#111" }}>
-      {list.map((s) => <One key={s.id} s={s} cam={cams[shots.indexOf(s)]} t={t} />)}
+      <svg width={0} height={0} style={{ position: "absolute" }}>
+        <defs>
+          <filter id="whipblur" x="-15%" y="-5%" width="130%" height="110%"><feGaussianBlur stdDeviation="52 0" /></filter>
+          <filter id="pixelate" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+            <feFlood x={px / 2} y={px / 2} width={1} height={1} />
+            <feComposite width={px} height={px} />
+            <feTile result="dots" />
+            <feComposite in="SourceGraphic" in2="dots" operator="in" />
+            <feMorphology operator="dilate" radius={px / 2} />
+          </filter>
+        </defs>
+      </svg>
+      {list.map((s) => <One key={s.id} s={s} cam={cams[shots.indexOf(s)]} t={t}
+        style={o >= 1 ? {} : trans(kind, s === cur ? "in" : "out", o)} />)}
     </AbsoluteFill>
   );
 };

@@ -74,6 +74,10 @@ def link_public(p, log):
                 have[int(n)] = f
     for n, f in have.items():
         ln(f, os.path.join(pub, "img", f"{n}{os.path.splitext(f)[1].lower()}"))
+    if glob.glob(p.f("layers", "*.*")):
+        os.makedirs(os.path.join(pub, "layers"), exist_ok=True)
+        for f in glob.glob(p.f("layers", "*.*")):
+            ln(f, os.path.join(pub, "layers", os.path.basename(f)))
     clips = glob.glob(p.f("clips", "*.mp4"))  # вставки из HyperFrames: <проект>/clips/*.mp4 → сцена type "clip"
     if clips:
         os.makedirs(os.path.join(pub, "clips"), exist_ok=True)
@@ -112,6 +116,45 @@ def build_shots(shots, have):
         out[1]["start"] = out[0]["start"]
         out.pop(0)
     return out
+
+
+TRANS = (("fade", 34), ("zoom", 22), ("whip", 14), ("mosaic", 10), ("flip", 8), ("iris", 7), ("wipe", 5))
+
+
+def plan_shots(p, shots, scenes, secs, sfx, log=print):
+    """Режиссура кадров: слои, фокус, переходы, отрисовка, выход персонажа. Детерминированно по номеру кадра, звук к переходам."""
+    lay = rj(p.f("layers.json"), {})
+    last_tr, since_draw, since_pop, n_draw = None, 99, 99, 0
+    marks = [x["start"] for x in secs]
+    for s in shots:
+        l, n = lay.get(str(s["id"])), s["id"]
+        if not l or not s.get("src"):
+            continue
+        s["focus"], s["line"] = l["focus"], f"layers/{n}_line.webp"
+        if not l.get("flat"):
+            s["fg"], s["bg"] = f"layers/{n}_fg.webp", f"layers/{n}_bg.jpg"
+        hidden = any(sc["start"] - 0.5 <= s["start"] < sc["end"] for sc in scenes)
+        h = (n * 2654435761) % 4294967296
+        since_draw, since_pop = since_draw + 1, since_pop + 1
+        dur = s["end"] - s["start"]
+        opens = any(abs(s["start"] - m) < 4 for m in marks)
+        if dur >= 3.0 and since_draw >= 5 and (opens or h % 5 < 2):
+            s["draw"], since_draw = True, 0
+            n_draw += 1
+            sfx.append({"t": s["start"] - 0.1, "name": "swish", "vol": 0.16})
+            continue
+        if s.get("fg") and since_pop >= 2 and h % 3 == 0:
+            s["pop"], since_pop = True, 0
+        if hidden or dur < 2:
+            continue  # переход не виден или кадр слишком короткий
+        opts = [(k, w) for k, w in TRANS if k != last_tr or k == "fade"]
+        r = h % sum(w for _, w in opts)
+        kind = next(k for k, w in opts if (r := r - w) < 0)
+        s["tr"], last_tr = kind, kind
+        if kind in ("zoom", "whip", "flip", "mosaic"):
+            sfx.append({"t": s["start"] - 0.22, "name": "swish" if kind != "zoom" else "whoosh", "vol": 0.2})
+    log(f"Режиссура: слоёв {sum(1 for x in shots if x.get('fg'))} из {len(shots)}, отрисовок {n_draw}, "
+        f"выходов {sum(1 for x in shots if x.get('pop'))}, переходов {sum(1 for x in shots if x.get('tr'))}")
 
 
 def missing_ranges(shots, have):
@@ -284,6 +327,8 @@ def make_edit(p, log=print):
     words = all_words(tr)
     dur = float(p.state.get("duration") or tr["segments"][-1]["end"])
     shots = rj(p.f("shotlist.json"))
+    import layers
+    layers.run(p.path, log=log)
     have = link_public(p, log)
     miss = missing_ranges(shots, have)
     secs = sections(p, words)
@@ -305,6 +350,8 @@ def make_edit(p, log=print):
     edit = {"fps": 30, "duration": round(dur, 2), "title": p.state.get("title", ""), "channel": p.channel.get("name", ""),
             "theme": th, "voice": "voice.mp3", "shots": build_shots(shots, have), "captions": caps,
             "sections": secs, "scenes": scenes, "sfx": sfx_for(scenes, cta), "cta": cta, "endSeconds": 20}
+    plan_shots(p, edit["shots"], scenes, secs, edit["sfx"], log)
+    edit["sfx"].sort(key=lambda x: x["t"])
     wj(p.f("edit.json"), edit)
     used = {}
     for s in scenes:
