@@ -1,37 +1,37 @@
 {
-  "name": "How They Survived",
-  "url": "",
-  "language": "English",
-  "niche": "Curiosity history: how ordinary people actually survived and solved everyday problems before modern life (winter without heating, food without fridges, medicine, travel, cities). Promise: the clever, surprising, very human engineering of daily life in the past.",
-  "audience": "Men and women 25-65, curious, like survival, old skills, how-things-worked and history without dry dates. Proven by small new channels getting millions of views: Past Trek, Fossil, Relic Explains, StickOrbit.",
-  "format": "One burning question ('how did people...?'). Open with a vivid life-or-death situation -> 5-7 real solutions or eras, each with a mini-story, how it physically worked (explain the mechanism so the viewer could rebuild it), what it cost, a twist -> what we forgot. Maps, timelines, cutaway logic. Never dry lists of dates.",
-  "honesty": "Only verifiable history and physics. Numbers need a real source; disputed claims get ONE honest hedge. Never invent quotes or statistics. Avoid human-evolution claims (say 'hunters of the Ice Age', not 'early humans evolved'), avoid glorifying idols, pagan rituals, magic or superstition; if a past belief matters mention it briefly and neutrally as what people did, without endorsing. No nudity, no sexual topics, no gore beyond a factual mention.",
-  "voice": "Warm Storyteller",
-  "wpm": 195,
-  "minutes": [
-    16,
-    17
-  ],
-  "competitors": [
-    "https://www.youtube.com/@PastTrek",
-    "https://www.youtube.com/@FossilYT",
-    "https://www.youtube.com/@RelicExplains",
-    "https://www.youtube.com/@StickOrbit"
-  ],
-  "character": "the traveller, a young man in a rust-orange hooded parka with wooden toggles, grey trousers, brown boots and a small canvas backpack",
-  "character_w": "a young woman in a long brown cloak and a plain headscarf",
-  "notes": "New channel 2026-10-31. Best competitor frames: 'How Long You'd Last in Every X' (12M), 'How Ancient Inuit Slept Safely...' (1.1M, 3k subs), 'How Did Mountain Men Sleep Through Freezing Nights' (389k).",
-  "style_ref": "E:/Adobe/Видео ИИ редактор/conveyor/channels/how_they_survived/host.jpg",
-  "image_source": "secretslider.com: режим «Слайды с 1 персонажем», Персонаж/объект = style_ref (ава.png), промты из prompts_lines.txt. Или Flow Batch Multi (галочка «Конвейер»).",
-  "search": [
-    "how did ancient people survive",
-    "how people lived before electricity",
-    "what life was like in",
-    "how did medieval people",
-    "how long would you survive"
-  ],
-  "analysis_every": {
-    "min_free_topics": 3,
-    "batch": 10
-  }
+ "name": "How They Survived",
+ "url": "",
+ "language": "English",
+ "niche": "Curiosity history: how ordinary people actually survived and solved everyday problems before modern life (winter without heating, food without fridges, medicine, travel, cities). Promise: the clever, surprising, very human engineering of daily life in the past.",
+ "audience": "Men and women 25-65, curious, like survival, old skills, how-things-worked and history without dry dates. Proven by small new channels getting millions of views: Past Trek, Fossil, Relic Explains, StickOrbit.",
+ "format": "One burning question ('how did people...?'). Open with a vivid life-or-death situation -> 5-7 real solutions or eras, each with a mini-story, how it physically worked (explain the mechanism so the viewer could rebuild it), what it cost, a twist -> what we forgot. Maps, timelines, cutaway logic. Never dry lists of dates.",
+ "honesty": "Only verifiable history and physics. Numbers need a real source; disputed claims get ONE honest hedge. Never invent quotes or statistics. Avoid human-evolution claims (say 'hunters of the Ice Age', not 'early humans evolved'), avoid glorifying idols, pagan rituals, magic or superstition; if a past belief matters mention it briefly and neutrally as what people did, without endorsing. No nudity, no sexual topics, no gore beyond a factual mention.",
+ "voice": "Warm Storyteller",
+ "wpm": 197,
+ "minutes": [
+  16,
+  17
+ ],
+ "competitors": [
+  "https://www.youtube.com/@PastTrek",
+  "https://www.youtube.com/@FossilYT",
+  "https://www.youtube.com/@RelicExplains",
+  "https://www.youtube.com/@StickOrbit"
+ ],
+ "character": "the traveller, a young man in a rust-orange hooded parka with wooden toggles, grey trousers, brown boots and a small canvas backpack",
+ "character_w": "a young woman in a long brown cloak and a plain headscarf",
+ "notes": "New channel 2026-10-31. Best competitor frames: 'How Long You'd Last in Every X' (12M), 'How Ancient Inuit Slept Safely...' (1.1M, 3k subs), 'How Did Mountain Men Sleep Through Freezing Nights' (389k).",
+ "style_ref": "E:/Adobe/Видео ИИ редактор/conveyor/channels/how_they_survived/host.jpg",
+ "image_source": "secretslider.com: режим «Слайды с 1 персонажем», Персонаж/объект = style_ref (ава.png), промты из prompts_lines.txt. Или Flow Batch Multi (галочка «Конвейер»).",
+ "search": [
+  "how did ancient people survive",
+  "how people lived before electricity",
+  "what life was like in",
+  "how did medieval people",
+  "how long would you survive"
+ ],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
 }
