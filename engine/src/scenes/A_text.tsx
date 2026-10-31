@@ -1,4 +1,5 @@
 // Текстовые сцены: карточки разделов, вопросы, цитаты, числа, списки, исследования, сравнения.
+import { PixelFx } from "./E_pixel";
 import React from "react";
 import { interpolate } from "remotion";
 import { At, BACK, Card, clamp, cueTimes, FONT, H, Paper, pop, SERIF, Txt, useT, useTheme, W } from "../kit";
@@ -9,22 +10,25 @@ type P = { sc: Scene };
 /** Карточка раздела: номер + название, линия «рисуется». */
 export const TitleCard: React.FC<P> = ({ sc }) => {
   const th = useTheme();
-  const { p, sp } = useT();
+  const { p, sp, t } = useT();
   const a = sc.start;
-  const { n = 1, title = "", kicker = "" } = sc.props;
+  const { n = 1, title = "", kicker = "", fx = "" } = sc.props;
   return (
     <Paper color={th.dark} grid={false}>
-      <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
-        <circle cx={W / 2} cy={H / 2 - 40} r={300 * p(a, 1.2)} fill="none" stroke={th.a2} strokeOpacity={0.18} strokeWidth={3} />
-        <circle cx={W / 2} cy={H / 2 - 40} r={420 * p(a + 0.15, 1.3)} fill="none" stroke={th.a2} strokeOpacity={0.1} strokeWidth={3} />
-      </svg>
+      {fx ? <PixelFx kind={fx} t={t - a} bg={th.dark} zoom={fx === "campfire" || fx === "brazier" ? 1.7 : 1} /> : (
+        <svg width={W} height={H} style={{ position: "absolute", inset: 0 }}>
+          <circle cx={W / 2} cy={H / 2 - 40} r={300 * p(a, 1.2)} fill="none" stroke={th.a2} strokeOpacity={0.18} strokeWidth={3} />
+          <circle cx={W / 2} cy={H / 2 - 40} r={420 * p(a + 0.15, 1.3)} fill="none" stroke={th.a2} strokeOpacity={0.1} strokeWidth={3} />
+        </svg>
+      )}
+      {fx ? <div style={{ position: "absolute", left: 0, right: 0, top: H / 2 - 260, height: 400, background: "radial-gradient(ellipse at center, #000a 0%, #0006 50%, transparent 74%)" }} /> : null}
       <At x={W / 2} y={H / 2 - 170} s={sp(a, 11)}>
         <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 40, color: th.a2, letterSpacing: "0.3em" }}>{kicker || `PART ${n}`}</div>
       </At>
       <At x={W / 2} y={H / 2 - 30} s={0.92 + 0.08 * sp(a + 0.15)} o={p(a + 0.15, 0.4)}>
         <Txt size={title.length > 26 ? 92 : 120} w={900} color="#F6F2EA" style={{ maxWidth: 1600 }}>{title}</Txt>
       </At>
-      <div style={{ position: "absolute", left: W / 2 - 260, top: H / 2 + 90, width: 520 * p(a + 0.4, 0.7), height: 8, borderRadius: 4, background: th.a2 }} />
+      <div style={{ position: "absolute", left: W / 2 - 260, top: H / 2 + (title.length > 18 ? 128 : 90), width: 520 * p(a + 0.4, 0.7), height: 8, borderRadius: 4, background: th.a2 }} />
     </Paper>
   );
 };

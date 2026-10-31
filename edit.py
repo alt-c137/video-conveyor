@@ -281,8 +281,20 @@ def clean_scenes(scenes, secs, dur):
         if any(x["start"] < st + 2.8 and x["end"] > st for x in out):
             continue
         cards.append({"type": "title_card", "start": round(st, 2), "end": round(st + 2.8, 2),
-                      "props": {"n": sc["n"] - 1, "title": sc["title"]}, "cues": []})
+                      "props": {"n": sc["n"] - 1, "title": sc["title"], "fx": title_fx(sc["title"], sc["n"])}, "cues": []})
     return sorted(out + cards, key=lambda x: x["start"])
+
+
+CARD_FX = (("blizzard", r"snow|ice|winter|frozen|arctic|freez|cold"), ("campfire", r"fire|stove|hearth|heat|warm|burn|hot\\b|flame"),
+           ("storm", r"storm|war|fight|crash|collapse|disaster"), ("rain", r"rain|flood|sea|ship|ocean|river|water"),
+           ("rays", r"desert|sun|light|truth|reveal|answer"), ("fog", r"fog|plague|hidden|secret|silent|unseen|shadow"))
+CARD_LOOP = ("fireflies", "rays", "clouds", "aurora", "leaves")
+
+
+def title_fx(title, n):
+    """Живой пиксельный фон карточки раздела: по смыслу названия, иначе по кругу."""
+    low = title.lower()
+    return next((k for k, rx in CARD_FX if re.search(rx, low)), CARD_LOOP[n % len(CARD_LOOP)])
 
 
 def sfx_for(scenes, cta):

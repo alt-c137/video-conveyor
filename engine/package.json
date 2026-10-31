@@ -9,6 +9,7 @@
     "@remotion/renderer": "4.0.529",
     "d3-geo": "^3.1.1",
     "flubber": "^0.4.2",
+    "pixelfx": "github:patch-gg/pixelfx",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "remotion": "4.0.529",
