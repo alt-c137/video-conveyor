@@ -372,12 +372,13 @@ def make_edit(p, log=print):
     cta = cta_times(words, dur)
     import montage  # эффекты поверх картинок по сценарию монтажа (montage.json); нет файла — пусто
     montage.stickers(p, log=log)
-    fx, fx_sfx = montage.resolve(p, words, scenes, dur, log=log)
     caps = captions(shots, [w for w in words])
     edit = {"fps": 30, "duration": round(dur, 2), "title": p.state.get("title", ""), "channel": p.channel.get("name", ""),
             "theme": th, "voice": "voice.mp3", "shots": build_shots(shots, have), "captions": caps,
-            "sections": secs, "scenes": scenes, "sfx": sfx_for(scenes, cta) + fx_sfx, "fx": fx, "cta": cta, "endSeconds": 20}
+            "sections": secs, "scenes": scenes, "sfx": sfx_for(scenes, cta), "cta": cta, "endSeconds": 20}
     plan_shots(p, edit["shots"], scenes, secs, edit["sfx"], log)
+    edit["fx"], fx_sfx = montage.resolve(p, words, scenes, dur, shots=edit["shots"], log=log)  # после plan_shots: нужны fg кадров
+    edit["sfx"] += fx_sfx
     edit["sfx"].sort(key=lambda x: x["t"])
     wj(p.f("edit.json"), edit)
     used = {}

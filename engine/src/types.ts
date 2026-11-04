@@ -32,4 +32,5 @@ export type Edit = {
   endSeconds: number; // длина концовки после голоса
 };
 
-export type Fx = { type: string; start: number; end: number; props: Record<string, unknown> };
+export type FxLayer = { tool: string; t0: number; t1: number; [k: string]: unknown };
+export type Fx = { start: number; end: number; idea?: string; layers: FxLayer[] };
