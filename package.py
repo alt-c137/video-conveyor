@@ -28,8 +28,28 @@ def plan(p, log=print):
               stage="package", log=log)
     pk = core.extract_json(out)
     wj(p.f("package.json"), pk)
+    return shrink(p, log)
+
+
+MAXP = 740  # secretslider режет > 1000, а вариант «t» добавляет к промту ~230 символов текста-заголовка
+
+
+def shrink(p, log=print):
+    """Сжать длинные промты обложек ИИ (не обрезкой), потом prompts.txt и youtube.md. python package.py shrink <проект>"""
+    pk = rj(p.f("package.json"))
+    for x in pk["thumbs"]:
+        s = x["image_prompt"].replace("\n", " ").strip()
+        for _ in range(2):
+            if len(s) <= MAXP:
+                break
+            s = llm(f"Rewrite this image prompt in under {MAXP - 60} characters. Keep every key visual fact: style words, location, "
+                    "the car and its recognisable silhouette, the host, the pose, colours, where the empty text space is, and the "
+                    "final 'No text ... 16:9.' sentence. Plain prose, one paragraph. Answer with the prompt only.\n\n" + s,
+                    stage="package", log=log).strip().strip('"').replace("\n", " ")
+        x["image_prompt"] = s
+    wj(p.f("package.json"), pk)
     os.makedirs(p.f("thumbs", "raw"), exist_ok=True)
-    wt(p.f("thumbs", "prompts.txt"), "\n".join(x["image_prompt"].replace("\n", " ") for x in pk["thumbs"]) + "\n")
+    wt(p.f("thumbs", "prompts.txt"), "\n".join(x["image_prompt"] for x in pk["thumbs"]) + "\n")
     youtube_md(p, log)
     return pk
 
