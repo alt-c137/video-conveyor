@@ -3,6 +3,7 @@ import { AbsoluteFill, Audio, OffthreadVideo, Sequence, staticFile, useVideoConf
 import { EO, H, ThemeCtx, useSceneFade, useT, W } from "./kit";
 import { Images } from "./layers/Images";
 import { Captions, CTA, EndScreen } from "./layers/Overlay";
+import { FxLayer, fxImageStyle } from "./layers/Fx";
 import * as A from "./scenes/A_text";
 import * as B from "./scenes/B_visual";
 import * as C from "./scenes/C_motion";
@@ -49,7 +50,7 @@ const Stage: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 export const Video: React.FC<Edit> = (e0) => {
-  const { t } = useT();
+  const { t, frame } = useT();
   // окно между двумя сценами короче 1.6 с — сцена держится до следующей, без мелькнувшей картинки
   const e = useMemo(() => {
     const sc = [...e0.scenes].sort((a, b) => a.start - b.start)
@@ -62,11 +63,14 @@ export const Video: React.FC<Edit> = (e0) => {
   return (
     <ThemeCtx.Provider value={e.theme}>
       <AbsoluteFill style={{ background: "#111" }}>
-        <Images shots={e.shots} scenes={e.scenes} />
+        <AbsoluteFill style={fxImageStyle(e.fx, t, frame)}>
+          <Images shots={e.shots} scenes={e.scenes} />
+        </AbsoluteFill>
         <Stage>
           {active.map((s, i) => <SceneLayer key={s.start + "_" + i} sc={s} />)}
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 85% 80% at 50% 50%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.22))" }} />
           {/* полоска разделов справа сверху убрана по просьбе пользователя 2026-10-29: мешает, сегменты видны в плеере YouTube */}
+          <FxLayer fx={e.fx} />
           <Captions caps={e.captions} hide={inScene} />
           {e.cta.intro ? <CTA at={e.cta.intro} /> : null}
           {e.cta.outro ? <CTA at={e.cta.outro} /> : null}

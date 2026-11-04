@@ -1,0 +1,37 @@
+{
+ "name": "What If Earth",
+ "url": "",
+ "language": "English",
+ "niche": "Science what-if and scale: what would really happen if something about Earth, the Moon, the Sun or your own body changed, and how long you would survive in extreme places. Promise: real physics told as a vivid story you can picture, step by step, minute by minute.",
+ "audience": "Men and women 16-55 worldwide, curious, watch Kurzgesagt, What If, Fossil-style ladders. Proven by small channels: Tracer Project (3k subs) 'What If Asteroid Apophis Hit Earth' 5.4M; Ifverse (58k) 'What If Your Reaction Time Was 10x Faster' 4.6M; Universe Dimensions (98k) 'TON 618 at Different Distances' 9.3M; BeyondTheBlue 'How Long You'd Last in Every Prehistoric Ocean' 3.3M.",
+ "format": "One clear what-if question. Open inside the moment (second zero, a real place, a person), then a timeline ladder: first second, first minute, first hour, first day, first year, each step with ONE physical mechanism explained so a 14-year-old could picture it, a number with a real source, and a human-scale comparison (a bus, a football field, a kitchen kettle). Middle twist that surprises. End: what this tells us about how finely balanced our real world is. No intro, no channel name, no 'today we will'.",
+ "honesty": "Only real physics and published numbers (NASA, ESA, USGS, peer-reviewed papers); estimates are called estimates, with one honest hedge where scientists disagree. Never invent numbers or quotes. Hypotheticals are clearly hypothetical. Respectful wonder about the created world: no claims that the universe made itself by chance, no human-evolution claims, no astrology, no doomsday prophecy or religious end-of-the-world talk, no mockery of belief.",
+ "voice": "Adam",
+ "wpm": 175,
+ "minutes": [
+  14,
+  16
+ ],
+ "competitors": [
+  "https://www.youtube.com/@TracerProject",
+  "https://www.youtube.com/@Ifverse",
+  "https://www.youtube.com/@UniverseDimensions",
+  "https://www.youtube.com/@FossilYT"
+ ],
+ "character": "the explorer, a young man in a white space suit with orange shoulder panels, the round glass helmet tipped back so his face shows, brown boots",
+ "character_w": "a young woman in a white long-sleeved space suit and a plain headscarf under the open helmet",
+ "notes": "New channel 2026-11-04, picked from niche_scan (science and what-if outliers on tiny channels). YouTube channel not created yet; the owner creates it. Host picture (style_ref) not made yet: first secretslider task makes it.",
+ "style_ref": "E:/Adobe/Видео ИИ редактор/conveyor/channels/what_if_earth/host.jpg",
+ "image_source": "secretslider.com: режим «Слайды с 1 персонажем», Персонаж/объект = style_ref (ава.png), промты из prompts_lines.txt. Или Flow Batch Multi (галочка «Конвейер»).",
+ "search": [
+  "what if earth",
+  "what would happen if",
+  "how long would you survive on",
+  "what if the moon",
+  "what if the sun"
+ ],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
+}

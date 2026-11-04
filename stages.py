@@ -395,6 +395,11 @@ def stage_scenes(p, log=print):
     if core.config().get("code_scenes_first", True):
         clean = skip_under_scenes(p, clean, end_total, log)
     build_shots(p, clean, end_total, log)
+    try:  # сценарий монтажа (эффекты поверх картинок + стикеры), docs/MONTAGE.md; сбой не ломает раскадровку
+        import montage
+        montage.plan(p, log=log)
+    except Exception as e:
+        log(f"Сценарий монтажа не вышел: {e}. Повторить: python montage.py plan <проект>")
 
 
 def skip_under_scenes(p, rows, end_total, log=print, MIN=1.6):
@@ -660,7 +665,7 @@ STAGE_FN = {"script": stage_script, "check": stage_check, "tts": stage_tts, "whi
 
 DOWNSTREAM_CACHE = {"script": ["motifs.json", "scenes_parts", "edit_parts", "edit.json"],
                     "check": ["motifs.json", "scenes_parts", "edit_parts", "edit.json"],
-                    "whisper": ["scenes_parts", "edit_parts", "edit.json"], "scenes": ["edit_parts", "edit.json"],
+                    "whisper": ["scenes_parts", "edit_parts", "edit.json", "montage.json"], "scenes": ["edit_parts", "edit.json", "montage.json"],
                     "edit": ["edit_parts"]}
 
 

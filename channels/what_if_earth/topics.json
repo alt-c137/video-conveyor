@@ -1,0 +1,64 @@
+{
+ "topics": [
+  {
+   "n": 1,
+   "title": "What If Earth Stopped Spinning for One Second?",
+   "safe_title": "What Would Happen If Earth Stopped Spinning",
+   "angle": "Second zero on a normal afternoon in a real city. The ground at the equator moves about 1,670 km/h; the air, the oceans and everything not bolted down keep going. Ladder: first second (winds faster than any tornado, buildings, the inertia explained with a bus braking), first minutes (oceans rush, why the atmosphere keeps moving), first hours (the oceans slowly pull toward the poles because Earth's bulge of about 21 km at the equator no longer has a reason to exist, one giant continent ring along the equator), first year (one day becomes one year long, six months of daylight, the magnetic field question with an honest hedge). Twist: Earth IS slowing, by about 1.7 to 2.3 milliseconds per century, tides do it; leap seconds exist because of it. End: the quiet balance of a spinning world. Keep it physically correct; every number from NASA, ESA, USGS or a named paper; hedge once where estimates differ.",
+   "hedge": "Model estimates differ between papers; say so once.",
+   "demand": "proven: what-if and ladder formats on small science channels get millions (see channel.json audience)",
+   "difficulty": "medium",
+   "minutes": 15,
+   "why": "Evergreen, global, visual, halal-safe.",
+   "series_link": ""
+  },
+  {
+   "n": 2,
+   "title": "How Long Would You Survive on Every Planet?",
+   "safe_title": "How Long You Would Survive on Every Planet",
+   "angle": "Ladder from shortest to longest survival, each planet a chapter with what kills you first and the physics why: the Sun's surface (an instant), Venus (460 C, 90 times Earth's pressure, like being 900 m under the sea; Soviet Venera 13 lasted 127 minutes in 1982), Jupiter and Saturn (no surface, falling through layers, pressure crushing), Mercury (day side 430 C, night side minus 180 C, standing on the terminator line), Uranus and Neptune (winds over 2,000 km/h on Neptune), Mars (about 1 to 2 minutes without a suit, the boiling of body water at low pressure, Armstrong limit), the Moon (same as Mars, plus why you do not explode), and finally Earth with a twist: the thin layer where we can live. Use a timer on screen for each. Keep it physically correct; every number from NASA, ESA, USGS or a named paper; hedge once where estimates differ.",
+   "hedge": "Model estimates differ between papers; say so once.",
+   "demand": "proven: what-if and ladder formats on small science channels get millions (see channel.json audience)",
+   "difficulty": "medium",
+   "minutes": 16,
+   "why": "Evergreen, global, visual, halal-safe.",
+   "series_link": ""
+  },
+  {
+   "n": 3,
+   "title": "What If the Moon Disappeared Tonight?",
+   "safe_title": "What Would Happen Without the Moon",
+   "angle": "Tonight at 9 pm the Moon is simply gone. Ladder: the first night (darkness, nocturnal animals that hunt by moonlight), the next tide (tides shrink to about a third, from the Sun only), the coral and the turtles and the crabs whose timing follows the Moon, the slow wobble: the Moon steadies Earth's tilt at about 23.4 degrees; without it the tilt could swing much more over long time (Laskar 1993, later studies say less, hedge), seasons gone wild, and the days: the Moon has been slowing Earth's spin. Twist: the Moon moves away about 3.8 cm a year, measured by lasers bounced off mirrors that Apollo astronauts left there in 1969. End: the gift of a quiet neighbour. Keep it physically correct; every number from NASA, ESA, USGS or a named paper; hedge once where estimates differ.",
+   "hedge": "Model estimates differ between papers; say so once.",
+   "demand": "proven: what-if and ladder formats on small science channels get millions (see channel.json audience)",
+   "difficulty": "medium",
+   "minutes": 15,
+   "why": "Evergreen, global, visual, halal-safe.",
+   "series_link": ""
+  },
+  {
+   "n": 4,
+   "title": "What If a 1 km Asteroid Hit Your City?",
+   "safe_title": "What Would Really Happen If an Asteroid Hit a City",
+   "angle": "Not the dinosaur rock, a realistic 1 km one. Ladder by distance from impact, like rings: the fireball, the crater (about 10 to 15 km wide), the air blast, the earthquake, the ejecta that comes back down as heat, the dust. Use Purdue's Impact Earth model and the 2013 Chelyabinsk meteor (about 20 m, broke 7,000 buildings' windows, 1,500 injured from glass) and Tunguska 1908 for scale. Then the hopeful twist: NASA's DART mission in 2022 changed the orbit of the asteroid Dimorphos by about 32 minutes; Apophis will pass Earth in April 2029 closer than many satellites and will NOT hit. End: what we can actually do now. No graphic gore, people shown only as tiny silhouettes far away. Keep it physically correct; every number from NASA, ESA, USGS or a named paper; hedge once where estimates differ.",
+   "hedge": "Model estimates differ between papers; say so once.",
+   "demand": "proven: what-if and ladder formats on small science channels get millions (see channel.json audience)",
+   "difficulty": "medium",
+   "minutes": 15,
+   "why": "Evergreen, global, visual, halal-safe.",
+   "series_link": ""
+  },
+  {
+   "n": 5,
+   "title": "What If You Dug a Hole Straight Through the Earth?",
+   "safe_title": "What If You Could Drill Through the Earth",
+   "angle": "Start at the deepest hole humans ever made: the Kola Superdeep Borehole, about 12.26 km, stopped in 1992 because the rock at about 180 C behaved like plastic. Ladder down by layers: crust, mantle (slow solid rock that flows), outer core (liquid iron, the magnetic field), inner core (hotter than the Sun's surface, solid because of pressure). Then the famous thought experiment: jump into a hole through the centre and you fall for about 38 minutes to the other side and back again, like a pendulum (with an honest note that the real density changes the number to about 38 minutes, not 42). Where would you come out? Most land maps to ocean on the other side. End: we have been to the Moon but never below 12 km of our own planet. Keep it physically correct; every number from NASA, ESA, USGS or a named paper; hedge once where estimates differ.",
+   "hedge": "Model estimates differ between papers; say so once.",
+   "demand": "proven: what-if and ladder formats on small science channels get millions (see channel.json audience)",
+   "difficulty": "medium",
+   "minutes": 15,
+   "why": "Evergreen, global, visual, halal-safe.",
+   "series_link": ""
+  }
+ ]
+}

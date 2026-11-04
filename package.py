@@ -23,7 +23,8 @@ def plan(p, log=print):
     ch, t = p.channel, p.state["topic"]
     out = llm(prompt("package", channel_name=ch["name"], niche=ch["niche"], audience=ch["audience"],
                      title=p.state.get("title") or t["title"], angle=t.get("angle", ""),
-                     script=script_text(p)[:30000], rules=core.rt(os.path.join(core.PROMPTS, "rules.md"))),
+                     script=script_text(p)[:30000], rules=core.rt(os.path.join(core.PROMPTS, "rules.md")),
+                     package_notes=ch.get("package_notes", "")),
               stage="package", log=log)
     pk = core.extract_json(out)
     wj(p.f("package.json"), pk)

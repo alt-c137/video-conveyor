@@ -22,6 +22,9 @@ Rules that win clicks (from CTR research and top thumbnail guides):
 - Leave a clean empty third of the frame (left or right) for the words. Nothing important in the bottom-right corner (time stamp).
 - No text, letters, logos or numbers inside the image. No real brand logos (draw generic shapes).
 - Channel rules: modest clothing, no haram objects, animals only as simple cartoons with dot eyes.
+CHANNEL DATA (real CTR of this channel; overrides the general rules above where they conflict):
+{{package_notes}}
+
 Thumbnail words: 1-4 words, ALL CAPS, NEVER repeating the title; they add emotion, a stake or a twist. Mark one accent word.
 
 TASK 3 — SEO for YouTube:

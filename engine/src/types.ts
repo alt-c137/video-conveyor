@@ -27,6 +27,9 @@ export type Edit = {
   sections: Section[];
   scenes: Scene[];
   sfx: Sfx[];
+  fx?: Fx[]; // эффекты поверх картинок по сценарию монтажа (montage.py)
   cta: { intro: number; outro: number };
   endSeconds: number; // длина концовки после голоса
 };
+
+export type Fx = { type: string; start: number; end: number; props: Record<string, unknown> };

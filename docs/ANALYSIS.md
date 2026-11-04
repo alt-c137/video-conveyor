@@ -27,3 +27,6 @@ minutes, competitors, search, character, character_w, style_ref, prompt_template
 ## Конкуренты
 Список пока пуст — первым делом при следующем анализе найди 5–10 каналов ниши (по выдаче `search`, где x и просмотры
 высокие, faceless/анимация) и впиши их URL в `competitors`.
+
+## Разборы каналов
+- Brand on the Couch, 04.11.2026: `docs/ANALYSIS_BRAND_2026-11-04.md` (цифры Studio, обложки, уязвимости).
