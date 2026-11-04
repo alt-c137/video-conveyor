@@ -30,7 +30,26 @@ def _mask(im, ses):
     for i in range(1, n):  # крошки-острова дают мусор на параллаксе
         if st[i, cv2.CC_STAT_AREA] > m.size * 0.004:
             keep[lab == i] = 255
-    return cv2.GaussianBlur(cv2.bitwise_and(m, cv2.dilate(keep, np.ones((9, 9), np.uint8))), (3, 3), 0)
+    m = cv2.bitwise_and(m, cv2.dilate(keep, np.ones((9, 9), np.uint8)))
+    return _smooth(m, np.array(im.convert("L")))
+
+
+def _guided(I, p, r, eps):
+    box = lambda x: cv2.boxFilter(x, -1, (2 * r + 1, 2 * r + 1))
+    mI, mp = box(I), box(p)
+    a = (box(I * p) - mI * mp) / (box(I * I) - mI * mI + eps)
+    b = mp - a * mI
+    return box(a) * I + box(b)
+
+
+def _smooth(m, gray):
+    """Маска считается на 1024 px и растягивается в 2-3 раза: край выходит лесенкой. Ведём край по контуру
+    настоящей картинки (guided filter по полному разрешению), потом мягкий порог: ровная линия с 1-2 px сглаживания."""
+    k = gray.shape[1] / W_MASK
+    p = cv2.GaussianBlur(m.astype(np.float32) / 255, (0, 0), max(1.0, k * 0.9))
+    g = _guided(gray.astype(np.float32) / 255, p, max(2, round(k * 2)), 1e-3)
+    a = np.clip((g - 0.5) * 3.0 + 0.5, 0, 1)
+    return (a * 255).astype(np.uint8)
 
 
 def _fill(rgb, m):
