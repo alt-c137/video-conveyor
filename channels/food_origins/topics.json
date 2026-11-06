@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "Why Bread Goes Stale (and How People Kept It Fresh)",
+   "safe_title": "Why Bread Goes Stale (and How People Kept It Fresh)",
+   "n": 1,
+   "angle": "Where everyday food really comes from and why it tastes the way it does - origins, factories, flavour science (halal only: no pork, no alcohol). Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "How Rice Feeds Half the Planet",
+   "safe_title": "How Rice Feeds Half the Planet",
+   "n": 2,
+   "angle": "Where everyday food really comes from and why it tastes the way it does - origins, factories, flavour science (halal only: no pork, no alcohol). Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "Why Spicy Food Feels Hot (It's Not Heat)",
+   "safe_title": "Why Spicy Food Feels Hot (It's Not Heat)",
+   "n": 3,
+   "angle": "Where everyday food really comes from and why it tastes the way it does - origins, factories, flavour science (halal only: no pork, no alcohol). Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  }
+ ]
+}

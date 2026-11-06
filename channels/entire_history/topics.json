@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "The Entire History of the Mongol Empire, Simply Told",
+   "safe_title": "The Entire History of the Mongol Empire, Simply Told",
+   "n": 1,
+   "angle": "The ENTIRE history of a country/empire/city in one funny animated story, chapters by era, anachronism gags, maps on every era change. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "The Entire History of Japan, Simply Told",
+   "safe_title": "The Entire History of Japan, Simply Told",
+   "n": 2,
+   "angle": "The ENTIRE history of a country/empire/city in one funny animated story, chapters by era, anachronism gags, maps on every era change. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "The Entire History of the Ottoman Empire, Simply Told",
+   "safe_title": "The Entire History of the Ottoman Empire, Simply Told",
+   "n": 3,
+   "angle": "The ENTIRE history of a country/empire/city in one funny animated story, chapters by era, anachronism gags, maps on every era change. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  }
+ ]
+}

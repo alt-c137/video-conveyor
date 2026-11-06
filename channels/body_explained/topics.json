@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "What Happens to Your Body When You Stop Eating Sugar for 30 Days",
+   "safe_title": "What Happens to Your Body When You Stop Eating Sugar for 30 Days",
+   "n": 1,
+   "angle": "What happens to your body when/if you ... - human body explained with friendly cartoon organs and a curious host; only verified medicine, no advice. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "What Happens to Your Body When You Don't Sleep for 3 Days",
+   "safe_title": "What Happens to Your Body When You Don't Sleep for 3 Days",
+   "n": 2,
+   "angle": "What happens to your body when/if you ... - human body explained with friendly cartoon organs and a curious host; only verified medicine, no advice. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "What Happens Inside Your Body When You Drink Ice Cold Water",
+   "safe_title": "What Happens Inside Your Body When You Drink Ice Cold Water",
+   "n": 3,
+   "angle": "What happens to your body when/if you ... - human body explained with friendly cartoon organs and a curious host; only verified medicine, no advice. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  }
+ ]
+}

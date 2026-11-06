@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "How Blockbuster Died: The $50 Million Mistake",
+   "safe_title": "How Blockbuster Died: The $50 Million Mistake",
+   "n": 1,
+   "angle": "How a famous company died (or almost died): the decisions, the psychology, the lesson - animated business case stories; no promotion of interest-based finance. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "What Really Happened to Kodak",
+   "safe_title": "What Really Happened to Kodak",
+   "n": 2,
+   "angle": "How a famous company died (or almost died): the decisions, the psychology, the lesson - animated business case stories; no promotion of interest-based finance. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "Why Toys R Us Disappeared",
+   "safe_title": "Why Toys R Us Disappeared",
+   "n": 3,
+   "angle": "How a famous company died (or almost died): the decisions, the psychology, the lesson - animated business case stories; no promotion of interest-based finance. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "Why the Hagfish Is the Most Disturbing Animal in the Ocean",
+   "safe_title": "Why the Hagfish Is the Most Disturbing Animal in the Ocean",
+   "n": 1,
+   "angle": "Comedy-horror animal facts: hook with the vivid gross/creepy question, then 5-7 TRUE facts that get worse as they go (each a mini-scene with a joke and how it physically works), a \"but it gets worse\" turn, the human angle, a callback joke at the end. Verify every fact; no gore beyond factual mention.",
+   "used": false
+  },
+  {
+   "title": "Why the Cassowary Is the Most Dangerous Bird Alive",
+   "safe_title": "Why the Cassowary Is the Most Dangerous Bird Alive",
+   "n": 2,
+   "angle": "Comedy-horror animal facts: hook with the vivid gross/creepy question, then 5-7 TRUE facts that get worse as they go (each a mini-scene with a joke and how it physically works), a \"but it gets worse\" turn, the human angle, a callback joke at the end. Verify every fact; no gore beyond factual mention.",
+   "used": false
+  },
+  {
+   "title": "Why the Greenland Shark Is the Creepiest Animal on Earth",
+   "safe_title": "Why the Greenland Shark Is the Creepiest Animal on Earth",
+   "n": 3,
+   "angle": "Comedy-horror animal facts: hook with the vivid gross/creepy question, then 5-7 TRUE facts that get worse as they go (each a mini-scene with a joke and how it physically works), a \"but it gets worse\" turn, the human angle, a callback joke at the end. Verify every fact; no gore beyond factual mention.",
+   "used": false
+  }
+ ]
+}

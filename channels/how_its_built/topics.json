@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "How Did They Build a Tunnel Under the Ocean?",
+   "safe_title": "How Did They Build a Tunnel Under the Ocean?",
+   "n": 1,
+   "angle": "How did they build that? Mega-projects and everyday engineering step by step (bridges, tunnels, dams, ships), cutaways, assemble animations. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "How Do 200,000-Ton Ships Not Sink?",
+   "safe_title": "How Do 200,000-Ton Ships Not Sink?",
+   "n": 2,
+   "angle": "How did they build that? Mega-projects and everyday engineering step by step (bridges, tunnels, dams, ships), cutaways, assemble animations. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "How the Burj Khalifa Stands Up in the Desert Wind",
+   "safe_title": "How the Burj Khalifa Stands Up in the Desert Wind",
+   "n": 3,
+   "angle": "How did they build that? Mega-projects and everyday engineering step by step (bridges, tunnels, dams, ships), cutaways, assemble animations. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  }
+ ]
+}

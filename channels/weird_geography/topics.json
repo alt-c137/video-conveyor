@@ -1,0 +1,26 @@
+{
+ "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "topics": [
+  {
+   "title": "Why Almost Nobody Lives in 90% of Canada",
+   "safe_title": "Why Almost Nobody Lives in 90% of Canada",
+   "n": 1,
+   "angle": "Why does this country/place look like this? Strange borders, empty regions, cities in impossible places - animated maps, globe zooms, simple logic. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "Why Egypt's Entire Population Lives on 5% of Its Land",
+   "safe_title": "Why Egypt's Entire Population Lives on 5% of Its Land",
+   "n": 2,
+   "angle": "Why does this country/place look like this? Strange borders, empty regions, cities in impossible places - animated maps, globe zooms, simple logic. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  },
+  {
+   "title": "Why Russia Is So Big but So Empty",
+   "safe_title": "Why Russia Is So Big but So Empty",
+   "n": 3,
+   "angle": "Why does this country/place look like this? Strange borders, empty regions, cities in impossible places - animated maps, globe zooms, simple logic. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "used": false
+  }
+ ]
+}
