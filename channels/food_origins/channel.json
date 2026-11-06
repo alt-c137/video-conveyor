@@ -1,0 +1,33 @@
+{
+ "name": "Why We Eat This",
+ "url": "",
+ "handle": "@WhyWeEatThis",
+ "language": "English",
+ "niche": "Where everyday food really comes from and why it tastes the way it does - origins, factories, flavour science (halal only: no pork, no alcohol).",
+ "audience": "English-speaking, US-first, 18-55, curious; faceless animated explainer viewers",
+ "format": "Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+ "honesty": "Only verifiable history and physics. Numbers need a real source; disputed claims get ONE honest hedge. Never invent quotes or statistics. Avoid human-evolution claims (say 'hunters of the Ice Age', not 'early humans evolved'), avoid glorifying idols, pagan rituals, magic or superstition; if a past belief matters mention it briefly and neutrally as what people did, without endorsing. No nudity, no sexual topics, no gore beyond a factual mention.",
+ "voice": "Warm Storyteller",
+ "wpm": 190,
+ "minutes": [
+  10,
+  12
+ ],
+ "competitors": [],
+ "character": "the cook, a young man in a white apron over a green shirt, round head, dot eyes",
+ "character_w": "a young woman in a long modest dress and a plain headscarf",
+ "notes": "New channel 2026-11 (bought account; 7-day warm-up before renaming/uploading). Proof: food origin / food science channels, wide audience, safe advertisers",
+ "topics_seed": [
+  "Why Bread Goes Stale (and How People Kept It Fresh)",
+  "How Rice Feeds Half the Planet",
+  "Why Spicy Food Feels Hot (It's Not Heat)"
+ ],
+ "logo_prompt": "flat cartoon logo: a steaming clay bowl with a wooden spoon, warm orange and cream, thick outline, round badge, no text",
+ "style_ref": "",
+ "image_source": "secretslider / Flow, 1-character slides",
+ "search": [],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "name": "Map Logic",
+ "url": "",
+ "handle": "@MapLogicHQ",
+ "language": "English",
+ "niche": "Why does this country/place look like this? Strange borders, empty regions, cities in impossible places - animated maps, globe zooms, simple logic.",
+ "audience": "English-speaking, US-first, 18-55, curious; faceless animated explainer viewers",
+ "format": "Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+ "honesty": "Only verifiable history and physics. Numbers need a real source; disputed claims get ONE honest hedge. Never invent quotes or statistics. Avoid human-evolution claims (say 'hunters of the Ice Age', not 'early humans evolved'), avoid glorifying idols, pagan rituals, magic or superstition; if a past belief matters mention it briefly and neutrally as what people did, without endorsing. No nudity, no sexual topics, no gore beyond a factual mention.",
+ "voice": "Then Life 2",
+ "wpm": 190,
+ "minutes": [
+  10,
+  12
+ ],
+ "competitors": [],
+ "character": "the explorer, a young man in a khaki vest with many pockets and a rolled map under his arm, round head, dot eyes",
+ "character_w": "a young woman in a long modest dress and a plain headscarf",
+ "notes": "New channel 2026-11 (bought account; 7-day warm-up before renaming/uploading). Proof: RealLifeLore, Geography by Geo, Atlas Pro; our engine already has map/globe scenes",
+ "topics_seed": [
+  "Why Almost Nobody Lives in 90% of Canada",
+  "Why Egypt's Entire Population Lives on 5% of Its Land",
+  "Why Russia Is So Big but So Empty"
+ ],
+ "logo_prompt": "flat cartoon logo: a cartoon globe with a compass rose, blue and sand colours, thick outline, round badge, no text",
+ "style_ref": "",
+ "image_source": "secretslider / Flow, 1-character slides",
+ "search": [],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
+}

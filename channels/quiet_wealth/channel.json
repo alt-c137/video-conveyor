@@ -1,0 +1,33 @@
+{
+ "name": "Quiet Wealth",
+ "url": "",
+ "handle": "@QuietWealthHQ",
+ "language": "English",
+ "niche": "Habits and psychology of people who quietly build wealth - frugality, ownership, patience, debt-free living, honest trade; no interest, gambling or get-rich-quick.",
+ "audience": "English-speaking, US-first, 18-55, curious; faceless animated explainer viewers",
+ "format": "Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+ "honesty": "Only verifiable history and physics. Numbers need a real source; disputed claims get ONE honest hedge. Never invent quotes or statistics. Avoid human-evolution claims (say 'hunters of the Ice Age', not 'early humans evolved'), avoid glorifying idols, pagan rituals, magic or superstition; if a past belief matters mention it briefly and neutrally as what people did, without endorsing. No nudity, no sexual topics, no gore beyond a factual mention.",
+ "voice": "Then Life 2",
+ "wpm": 190,
+ "minutes": [
+  12,
+  14
+ ],
+ "competitors": [],
+ "character": "the host, a calm middle-aged man in a beige knitted cardigan and simple glasses, round head, dot eyes",
+ "character_w": "a young woman in a long modest dress and a plain headscarf",
+ "notes": "New channel 2026-11 (bought account; 7-day warm-up before renaming/uploading). Proof: old money / frugal millionaire psychology; our Brand channel proved 'millionaires drive boring cars'; high finance RPM",
+ "topics_seed": [
+  "Old Money Habits That Look Cheap but Aren't",
+  "Why the Rich Buy Used Cars and Old Furniture",
+  "The Psychology of People Who Never Show Their Money"
+ ],
+ "logo_prompt": "flat cartoon logo: a small plain wooden coin box with one gold coin on top, cream and dark green, thick outline, round badge, no text",
+ "style_ref": "",
+ "image_source": "secretslider / Flow, 1-character slides",
+ "search": [],
+ "analysis_every": {
+  "min_free_topics": 3,
+  "batch": 10
+ }
+}
