@@ -16,3 +16,9 @@ Honesty:
 - Facts, numbers, researchers and years only if they are real and verifiable. If unsure, describe the idea without numbers.
 - Disputed findings get ONE short honest hedge ("possibly", "likely", "we don't know for sure"), then continue confidently.
 - No medical or financial advice presented as professional advice.
+
+## Лица персонажей (правило владельца, 06.11.2026)
+- Либо глаза прорисованы (могут быть милые японские черточки, закрытые/закрашенные глаза, брови можно), но тогда рот — простая палочка;
+  либо рот прорисован (улыбка, крик), но тогда глаза — точки. Никогда одновременно детальные глаза И детальный рот. Можно чередовать по кадрам.
+- Животные: простые точки-глаза (указывать в промте генерации), кадры вручную не замазывать — дорого.
+- Темы про религию на каналах не делаем.

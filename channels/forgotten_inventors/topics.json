@@ -1,25 +1,25 @@
 {
- "source": "seed 2026-11-06 (Claude, niche analysis)",
+ "source": "seed 2026-11-06 v2 (no religion topics)",
  "topics": [
   {
-   "title": "The Man Who Explained the Camera 1000 Years Ago (Ibn al-Haytham)",
-   "safe_title": "The Man Who Explained the Camera 1000 Years Ago (Ibn al-Haytham)",
+   "title": "The Forgotten Man Who Invented the Traffic Light",
+   "safe_title": "The Forgotten Man Who Invented the Traffic Light",
    "n": 1,
-   "angle": "The forgotten people behind inventions we use every day - especially scholars of the Islamic Golden Age, China, India - told as adventure stories. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "angle": "The forgotten people behind inventions we use every day (traffic lights, TV, cameras, fridges) - told as adventure stories with a twist: who really invented it and why the world forgot them. No religion topics. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
    "used": false
   },
   {
-   "title": "Al-Jazari: The Engineer Who Built Machines in 1206",
-   "safe_title": "Al-Jazari: The Engineer Who Built Machines in 1206",
+   "title": "Who Really Invented Television (It Wasn't Who You Think)",
+   "safe_title": "Who Really Invented Television (It Wasn't Who You Think)",
    "n": 2,
-   "angle": "The forgotten people behind inventions we use every day - especially scholars of the Islamic Golden Age, China, India - told as adventure stories. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "angle": "The forgotten people behind inventions we use every day (traffic lights, TV, cameras, fridges) - told as adventure stories with a twist: who really invented it and why the world forgot them. No religion topics. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
    "used": false
   },
   {
-   "title": "How Al-Khwarizmi Gave Us the Word Algorithm",
-   "safe_title": "How Al-Khwarizmi Gave Us the Word Algorithm",
+   "title": "The Inventor of the Fridge Nobody Remembers",
+   "safe_title": "The Inventor of the Fridge Nobody Remembers",
    "n": 3,
-   "angle": "The forgotten people behind inventions we use every day - especially scholars of the Islamic Golden Age, China, India - told as adventure stories. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
+   "angle": "The forgotten people behind inventions we use every day (traffic lights, TV, cameras, fridges) - told as adventure stories with a twist: who really invented it and why the world forgot them. No religion topics. Hook with a concrete vivid question in the first 10 s -> 5-7 beats, each a mini-story with a visual mechanism -> twist -> short recap. Never dry lists.",
    "used": false
   }
  ]
