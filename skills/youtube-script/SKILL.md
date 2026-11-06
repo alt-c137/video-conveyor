@@ -21,11 +21,23 @@ the conveyor's own prompts `prompts/script.md` / `check.md` / `fix.md`. Output f
 - Then the twist / hidden cost / counter-intuitive claim. Extend the title's curiosity, never repeat the title.
 - No greetings, no "in this video", no channel name in the first sentence.
 - Test: if the first two sentences were a tweet, would someone stop scrolling?
+- Pattern of the competitor outliers (Nous Psychology, The Gen X Way, PsychToons; 200k-800k views on tiny channels):
+  1) present-tense scene, 3-5 sensory details the viewer recognises ("Grease under his fingernails that will not fully
+  wash out"); 2) reject the obvious label ("This is not stubbornness. Not exactly."); 3) promise something deeper;
+  4) go straight into content.
+- NO welcome / channel intro / subscribe / "by the end you will know 1, 2, 3" in the first 3 minutes. Lesson
+  2026-10-29: Brand 01 lost viewers at 0:30-1:10 exactly on a 25 s welcome+agenda block. Subscribe ask only after the
+  first payoff (>= minute 3) and once at the end.
+- Frame the topic as identity, not lecture: "The Psychology of People Who…" — defend and respect the viewer
+  (frugal, quiet, fixes things himself), never mock him.
 
 ## 3. Body structure
 - 3-5 sections. Each: example → mechanism (study: who, year, what they did, what they found) → how it breaks life →
   mini-conclusion → micro-cliffhanger into the next section.
 - Re-hook every ~3 minutes: surprising fact, direct question, or change of scale.
+- DEPTH (user, 2026-10-29): when the title promises N items (5 cars, 3 reasons), each item is a full 200-300-word mini-story:
+  scene with one person -> why (mechanism/study) -> what it gives and costs -> a twist -> handover. Never a 3-sentence sketch.
+- Length: never under 10 min of final video, aim 12-14 (Brand) / 13-15 (Logic). Re-read your own draft for interest and depth.
 - Connect with "but" / "so" (tension, consequence), not "and then".
 - Specific > generic. Numbers only real ones. One honest hedge for disputed science, then speak confidently.
 - Practical exit (channel promise): 2-4 steps doable today, phrased as questions or rules.
